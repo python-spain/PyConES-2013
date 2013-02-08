@@ -1,43 +1,36 @@
 from django.db import models
 
+from symposion.newsletter.managers import ArticleManager
+
 class Newsletter(models.Model):
-	create_date = models.DateTimeField(editable=False, auto_now_add=True)
-	title = models.CharField(max_length=100)
-	update_date = models.DateTimeField(editable=False, auto_now=True)
-	path = models.CharField(max_length=100)
-	visible = models.BooleanField(default=False)
+    create_date = models.DateTimeField(editable=False, auto_now_add=True)
+    path = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    update_date = models.DateTimeField(editable=False, auto_now=True)
+    visible = models.BooleanField(unique=True,default=False)
 
-	def __unicode__(self):
-		return self.title
+    def __unicode__(self):
+        return self.title
 
-	@models.permalink
-	def get_absolute_url(self):
-		return ("newsletter",[self.path])
-
-	@property
-	def is_visible(self):
-		return self.visible
-
-		
+    class Meta:
+        ordering = ["update_date","create_date"]
 
 class Article(models.Model):
-	create_date = models.DateTimeField(editable=False, auto_now_add=True)
-	text = models.TextField()
-	title = models.CharField(max_length=100)
-	update_date = models.DateTimeField(editable=False, auto_now=True)
-	path = models.CharField(max_length=100)
-	publish_date = models.DateTimeField()
-	visible = models.BooleanField(default=False)
+    create_date = models.DateTimeField(editable=False, auto_now_add=True)
+    path = models.CharField(max_length=100)
+    publish_date = models.DateTimeField()
+    text = models.TextField()
+    title = models.CharField(max_length=100)
+    update_date = models.DateTimeField(editable=False, auto_now=True)
+    visible = models.BooleanField(default=False)
+    newsletter = models.ForeignKey(Newsletter)
 
-	def __unicode__(self):
-		return self.title
-	
-	@models.permalink
-	def get_absolute_url(self):
-		return ("newsletter", [self.path])
+    objects = ArticleManager()
 
-	@property
-	def is_visible(self):
-		return self.visible
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        ordering = ["create_date"]
 
 
