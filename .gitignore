@@ -1,0 +1,5 @@
+_build
+*.pyc
+dev.db
+site_media
+venv
