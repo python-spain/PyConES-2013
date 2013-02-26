@@ -21,8 +21,10 @@
 		<article id="newsletter">
 			<h3>Newsletter</h3>
 			<p>Apúntate a nuestra newsletter y enterate de todas las novedades al instante. Déjanos tu email</p>
-			<input type="email" placeholder="email"/>
-			<input type="button" value="ENVIAR"/>
+			<form action="/newsletter/suscribe/" method="POST">
+				<input type="email" placeholder="email" required/>
+				<input type="submit" value="ENVIAR" />
+			</form>
 		</article>
 		<article id="sponsors">
 			<h3>Patrocinadores</h3>
