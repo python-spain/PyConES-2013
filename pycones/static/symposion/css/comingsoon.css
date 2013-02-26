@@ -1,0 +1,125 @@
+*{
+	border : 0;
+	margin : 0;
+	padding : 0;
+}
+
+body{
+	background : rgb(212,0,0);
+	color : #FFF;
+	font : 16px 'Open Sans',serif,Arial;
+	height : 100%;
+	text-align : center;
+	width : 100%;
+}
+
+header{
+	background : #FFF;
+	color : #222;
+	font-family : 'Ubuntu';
+	padding : 2em 0;
+	width : 100%;
+}
+
+header h1{
+	color : rgb(212,0,0);
+	font-size : 3em;
+}
+
+header h2{
+	color : rgb(255,205,0);
+	font-size : 2.8em;
+}
+
+header h3{
+	color : rgb(68,68,68);
+	font-size : 2.4em;
+}
+
+section article{
+	padding : 1em 0;
+	width : 100%;
+}
+
+article h3{
+	background : rgb(255,185,0);
+	border-radius : 0 .3em .3em 0;
+	font-size : 2.5em;
+	font-weight : normal;
+	max-width : 360px;
+	padding : 0 .2em 0 0;
+	text-align : right;
+	width : 90%;
+}
+
+article p{
+	font-size : 1.3em;
+	text-align : left;
+	padding : 0 0 0 .5em;
+	margin : .5em 0;
+	max-width : 420px;
+}
+
+article input{
+	border : 1px solid #555;
+	border-radius : .2em;
+	font-size : 1.5em;
+	margin : .5em 0;
+	max-width : 300px;
+	padding : .2em;
+	width : 90%;
+}
+
+article input[type="button"]{
+	background : rgb(255,185,0);
+	border-radius : .2em;
+	border : 0;
+	color : #FFF;
+	display : block;
+	font-size : 1.2em;
+	margin : 0 auto;
+	max-width : 130px;
+	min-width : 90px;
+	padding : .5em;
+	width : 30%;
+}
+
+article a{
+	color : #FFF;
+}
+
+article ul{
+	list-style : none;
+}
+
+li img{
+	max-width : 100px;
+	width : 30%;
+}
+
+
+
+@media screen and (min-width: 600px){
+		section article{
+			float : left;
+			width : 50%;
+		}
+		
+		article h3{
+			background : rgb(255,185,0);
+			border-radius : .3em;
+			border : 2px solid rgb(212,0,0);
+			font-size : 2.5em;
+			font-weight : normal;
+			margin : 0 auto;
+			margin-top : -1em;
+			text-align : center;
+			width : 90%;
+		}
+		
+		article p{
+			margin : 0 auto;
+			padding : 1em 0;
+		}
+		
+}
