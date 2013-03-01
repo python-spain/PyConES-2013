@@ -27,7 +27,7 @@
 	<section>
 		<article id="newsletter">
 			<h3>Newsletter</h3>
-			<p>Apúntate a nuestra newsletter y enterate de todas las novedades al instante. Déjanos tu email</p>
+			<p>Apúntate a nuestra newsletter y entérate de todas las novedades al instante. Déjanos tu email</p>
 			{% block message %}
 			<form action="/newsletter/suscribe/" method="POST">{%csrf_token%}
 				<input type="email" name="email_user" placeholder="email" required/>
