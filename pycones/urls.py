@@ -2,7 +2,9 @@ from django.conf import settings
 from django.conf.urls.defaults import *
 from django.conf.urls.static import static
 
-from django.views.generic.simple import direct_to_template
+#from django.views.generic.simple import direct_to_template
+#Changes 1.5
+from django.views.generic import TemplateView
 
 from django.contrib import admin
 admin.autodiscover()
@@ -14,9 +16,10 @@ import symposion.views
 WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
 
 urlpatterns = patterns("",
-    url(r"^$", direct_to_template, {
-        "template": "comingsoon.html",#"homepage.html",
-    }, name="home"),
+    #url(r"^$", direct_to_template, {
+    #    "template": "comingsoon.html",#"homepage.html",
+    #}, name="home"),
+    url(r"^$", TemplateView.as_view(template_name="comingsoon.html")),
     url(r"^admin/", include(admin.site.urls)),
     
     url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),
@@ -32,6 +35,7 @@ urlpatterns = patterns("",
     url(r"^reviews/", include("symposion.reviews.urls")),
     url(r"^schedule/", include("symposion.schedule.urls")),
     url(r"^markitup/", include("markitup.urls")),
+    url(r"^newsletter/", include("symposion.newsletter.urls")),
     
     url(r"^", include("symposion.cms.urls")),
 )
