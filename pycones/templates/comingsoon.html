@@ -9,6 +9,13 @@
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{{STATIC_URL}}symposion/css/comingsoon.css"/>
+	<!--[if lt IE 9]>
+	<script type="text/javascript">
+		document.createElement("header");
+		document.createElement("section");
+		document.createElement("article");
+	</script>
+	<![endif]-->
 </head>
 <body>
 	<header>
@@ -21,10 +28,12 @@
 		<article id="newsletter">
 			<h3>Newsletter</h3>
 			<p>Apúntate a nuestra newsletter y enterate de todas las novedades al instante. Déjanos tu email</p>
-			<form action="/newsletter/suscribe/" method="POST">
-				<input type="email" placeholder="email" required/>
+			{% block message %}
+			<form action="/newsletter/suscribe/" method="POST">{%csrf_token%}
+				<input type="email" name="email_user" placeholder="email" required/>
 				<input type="submit" value="ENVIAR" />
 			</form>
+			{% endblock %}
 		</article>
 		<article id="sponsors">
 			<h3>Patrocinadores</h3>

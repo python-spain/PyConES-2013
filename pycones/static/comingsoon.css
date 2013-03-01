@@ -41,6 +41,12 @@ section article{
 	width : 100%;
 }
 
+article h2{
+	color : rgb(255,185,0);
+	font-weight : bold;
+	text-decoration : underline;
+}
+
 article h3{
 	background : rgb(255,185,0);
 	border-radius : 0 .3em .3em 0;
