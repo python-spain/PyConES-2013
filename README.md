@@ -15,6 +15,7 @@ See http://eldarion.com/symposion/ for commercial support, customization and hos
 ## Setup Heroku remote
 
 - `heroku login`
+- `heroku keys:add`
 - `heroku git:remote --app pycones`
 
 ## Deploy
