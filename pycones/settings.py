@@ -110,7 +110,7 @@ MIDDLEWARE_CLASSES = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-ROOT_URLCONF = "symposion_project.urls"
+ROOT_URLCONF = "pycones.urls"
 
 TEMPLATE_DIRS = [
     os.path.join(PACKAGE_ROOT, "templates"),
@@ -140,12 +140,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
-    
+
     # theme
     "pinax_theme_bootstrap_account",
     "pinax_theme_bootstrap",
     "django_forms_bootstrap",
-    
+
     # external
     "debug_toolbar",
     "mailer",
@@ -157,7 +157,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "sitetree",
     "account",
-    
+
     # symposion
     "symposion",
     "symposion.sponsorship",
@@ -169,9 +169,9 @@ INSTALLED_APPS = [
     "symposion.teams",
     "symposion.reviews",
     "symposion.schedule",
-    
+
     # project
-    "symposion_project.proposals",
+    "pycones.proposals",
 ]
 
 FIXTURE_DIRS = [
@@ -197,7 +197,7 @@ ACCOUNT_USER_DISPLAY = lambda user: user.email
 AUTHENTICATION_BACKENDS = [
     # Permissions Backends
     "symposion.teams.backends.TeamPermissionsBackend",
-    
+
     # Auth backends
     "account.auth_backends.EmailAuthenticationBackend",
 ]
@@ -220,9 +220,9 @@ CONFERENCE_ID = 1
 SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 
 PROPOSAL_FORMS = {
-    "tutorial": "symposion_project.proposals.forms.TutorialProposalForm",
-    "talk": "symposion_project.proposals.forms.TalkProposalForm",
-    "poster": "symposion_project.proposals.forms.PosterProposalForm",
+    "tutorial": "pycones.proposals.forms.TutorialProposalForm",
+    "talk": "pycones.proposals.forms.TalkProposalForm",
+    "poster": "pycones.proposals.forms.PosterProposalForm",
 }
 
 # local_settings.py can be used to override environment-specific settings
