@@ -172,6 +172,7 @@ INSTALLED_APPS = [
 
     # project
     "pycones.proposals",
+    "pycones.newsletter",
 ]
 
 FIXTURE_DIRS = [

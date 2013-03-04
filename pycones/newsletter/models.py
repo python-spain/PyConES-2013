@@ -1,6 +1,6 @@
 from django.db import models
 
-from symposion.newsletter.managers import ArticleManager
+from pycones.newsletter.managers import ArticleManager
 
 class Newsletter(models.Model):
     create_date = models.DateTimeField(editable=False, auto_now_add=True)

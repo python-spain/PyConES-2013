@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import url,patterns
 
-urlpatterns = patterns("symposion.newsletter.views",
+urlpatterns = patterns("pycones.newsletter.views",
     #url(r"^$","get_last_entries",name="get_last_entries"),
     url(r"^suscribe/$","suscribe_newsletter",name="suscribe_newletter"),
     url(r"^unsuscribe/$","unsuscribe_newsletter",name="unsuscribe_newsletter"),
