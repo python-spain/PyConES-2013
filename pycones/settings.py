@@ -176,6 +176,10 @@ INSTALLED_APPS = [
     "pycones.newsletter",
 ]
 
+if DEBUG:
+    INSTALLED_APPS += ["django_nose"]
+    TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
+
 FIXTURE_DIRS = [
     os.path.join(PROJECT_ROOT, "fixtures"),
 ]

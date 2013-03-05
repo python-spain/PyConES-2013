@@ -9,6 +9,7 @@ from django.template.loader import render_to_string
 from django.template import RequestContext
 from django import http
 
+from pycones.profile.models import Profile
 from .models import Subscription, get_or_create_active_newsletter
 from pycones.profile.models import Profile
 
