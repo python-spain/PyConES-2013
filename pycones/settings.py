@@ -171,6 +171,7 @@ INSTALLED_APPS = [
     "symposion.schedule",
 
     # project
+    "pycones.profile",
     "pycones.proposals",
     "pycones.newsletter",
 ]
@@ -225,6 +226,8 @@ PROPOSAL_FORMS = {
     "talk": "pycones.proposals.forms.TalkProposalForm",
     "poster": "pycones.proposals.forms.PosterProposalForm",
 }
+
+ACTIVE_NEWSLETTER="2013"
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.
