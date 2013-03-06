@@ -1,0 +1,21 @@
+¡Bienvenido a la newsletter de PyConES!
+
+Hola,
+
+Muchas gracias por registrarte a la newsletter de la Python Conference de
+A partir de ahora recibirás todas las noticias y actualizaciones sobre el
+eventp directamente en tu email sin esfuerzo alguno. Serás el primero en
+recibir información crítica del evento como, por ejemplo, noticias sobre
+ponentes y patrocinadores, venta de entradas, planificación de charlas..
+
+Recuerda que también estamos en twitter en @PyConES y #PyConES. Estamos
+encantados de escucharte así que no dudes en mandarnos un tweet :)
+
+Aún así no te obligamos a aguantarnos. Podrás darte de baja con el siguiente
+enlace:
+
+http://es.pycon.org/newsletter/unsuscribe/?email={{ mail }}&val_token={{ token }}
+
+Un saludo
+Muchas gracias
+Equipo Organizativo de PyConES
