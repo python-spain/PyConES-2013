@@ -18,7 +18,7 @@ def send_welcome_msg(email_user, token):
     from django.core.mail import EmailMultiAlternatives
 
     subject = u'¡Bienvenido a PyConES!'
-    from_email = u'newsletter@es.pycon.org'
+    from_email = u'boletin@es.pycon.org'
 
     context = {"email": email_user, "token": token}
     context_email = {'email_user' : email_user, 'token' : token}
