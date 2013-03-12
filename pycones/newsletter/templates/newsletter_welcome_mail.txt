@@ -9,13 +9,13 @@ recibir información importante del evento como las actualizaciones sobre charla
 y ponentes, los patrocinios, la venta de entradas.
 
 Recuerda que también estamos en twitter como @PyConES y #PyConES y en la cuenta
-de correo correo@es.pycon.org. Estamos encantados de escucharte así que no dudes
+de correo contacto@es.pycon.org. Estamos encantados de escucharte así que no dudes
 en mandarnos un tweet o un correo :)
 
 Aún así no te obligamos a aguantarnos. Podrás darte de baja con el siguiente
 enlace:
 
-http://es.pycon.org/newsletter/unsuscribe/?email={{ mail }}&val_token={{ token }}
+http://2013.es.pycon.org/newsletter/unsuscribe/?email={{ mail }}&val_token={{ token }}
 
 Un saludo
 Muchas gracias

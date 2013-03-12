@@ -36,6 +36,12 @@ header h3{
 	font-size : 2.4em;
 }
 
+header h4{
+	color : rgb(23,123,189);
+	font-size : 1.8em;
+	font-weight : normal;
+}
+
 section article{
 	padding : 1em 0;
 	width : 100%;
