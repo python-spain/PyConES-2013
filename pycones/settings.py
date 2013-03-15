@@ -187,8 +187,6 @@ FIXTURE_DIRS = [
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 ACCOUNT_OPEN_SIGNUP = True
 ACCOUNT_USE_OPENID = False
 ACCOUNT_REQUIRED_EMAIL = False
@@ -213,12 +211,15 @@ LOGIN_URL = "/account/login/" # @@@ any way this can be a url name?
 
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
-EMAIL_HOST = os.getenv('EMAIL_HOST')
-if EMAIL_HOST:
+if not DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = os.getenv('EMAIL_HOST')
     EMAIL_PORT = os.getenv('EMAIL_PORT')
     EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
     EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', False)
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": False,
