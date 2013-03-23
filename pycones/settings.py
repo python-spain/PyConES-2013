@@ -243,14 +243,19 @@ else:
 ACTIVE_NEWSLETTER="2013"
 CONFERENCE_ID = 1
 
+if not DEBUG:
+    ######################################################################
+    # Storage settings, only valid on production/heroku environment
+    #####################################################################
 
-PROPOSAL_FORMS = {
-    "tutorial": "pycones.proposals.forms.TutorialProposalForm",
-    "talk": "pycones.proposals.forms.TalkProposalForm",
-    "poster": "pycones.proposals.forms.PosterProposalForm",
-}
+    INSTALLED_APPS.append("storages")
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-ACTIVE_NEWSLETTER="2013"
+    AWS_QUERYSTRING_AUTH = False
+    AWS_STORAGE_BUCKET_NAME = 'pycones'
+    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.
