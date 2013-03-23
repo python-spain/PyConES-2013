@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
-from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 #from django.views.generic.simple import direct_to_template
 #Changes 1.5
@@ -40,5 +40,22 @@ urlpatterns = patterns("",
     url(r"^", include("symposion.cms.urls")),
 )
 
+def mediafiles_urlpatterns():
+    """
+    Method for serve media files with runserver.
+    """
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    _media_url = settings.MEDIA_URL
+    if _media_url.startswith('/'):
+        _media_url = _media_url[1:]
+
+    from django.views.static import serve
+    return patterns('',
+        (r'^%s(?P<path>.*)$' % _media_url, serve,
+            {'document_root': settings.MEDIA_ROOT})
+    )
+
+
+# This only works on development mode
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += mediafiles_urlpatterns()

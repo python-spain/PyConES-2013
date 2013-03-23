@@ -8,10 +8,10 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = not (os.getenv("DJANGO_ENV", "devel") == "production")
-TEMPLATE_DEBUG = DEBUG
+TEMPLATE_DEBUG = True
 
 # tells Pinax to serve media through the staticfiles app.
-SERVE_MEDIA = DEBUG
+SERVE_MEDIA = True
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -60,20 +60,20 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(PACKAGE_ROOT, "site_media", "media")
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = "/site_media/media/"
+MEDIA_URL = "/media/"
 
 # Absolute path to the directory that holds static files like app media.
 # Example: "/home/media/media.lawrence.com/apps/"
-STATIC_ROOT = os.path.join(PACKAGE_ROOT, "site_media", "static")
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
 # URL that handles the static files like app media.
 # Example: "http://media.lawrence.com"
-STATIC_URL = "/site_media/static/"
+STATIC_URL = "/static/"
 
 # Additional directories which hold static files
 STATICFILES_DIRS = [
@@ -94,6 +94,8 @@ ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
 SECRET_KEY = os.getenv(
     'SECRET_KEY', "8*br)9@fs!4nzg-imfrsst&oa2udy6z-fqtdk0*e5c1=wn)(t3")
 
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = [
     "django.template.loaders.filesystem.Loader",
@@ -108,7 +110,6 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.transaction.TransactionMiddleware",
     "reversion.middleware.RevisionMiddleware",
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "pycones.urls"
@@ -129,6 +130,14 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "pinax_utils.context_processors.settings",
     "account.context_processors.account",
     "symposion.reviews.context_processors.reviews",
+]
+
+AUTHENTICATION_BACKENDS = [
+    # Permissions Backends
+    "symposion.teams.backends.TeamPermissionsBackend",
+
+    # Auth backends
+    "account.auth_backends.EmailAuthenticationBackend",
 ]
 
 INSTALLED_APPS = [
@@ -177,15 +186,19 @@ INSTALLED_APPS = [
     "pycones.newsletter",
 ]
 
-if DEBUG:
-    INSTALLED_APPS += ["django_nose"]
-    TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
+MARKITUP_FILTER = ("markdown.markdown", {"safe_mode": True})
+MARKITUP_SET = "markitup/sets/markdown"
+MARKITUP_SKIN = "markitup/skins/simple"
 
-FIXTURE_DIRS = [
-    os.path.join(PROJECT_ROOT, "fixtures"),
-]
 
-MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
+
+PROPOSAL_FORMS = {
+    "tutorial": "pycones.proposals.forms.TutorialProposalForm",
+    "talk": "pycones.proposals.forms.TalkProposalForm",
+    "poster": "pycones.proposals.forms.PosterProposalForm",
+}
+
 
 ACCOUNT_OPEN_SIGNUP = True
 ACCOUNT_USE_OPENID = False
@@ -199,16 +212,21 @@ ACCOUNT_LOGIN_REDIRECT_URL = "dashboard"
 ACCOUNT_LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_USER_DISPLAY = lambda user: user.email
 
-AUTHENTICATION_BACKENDS = [
-    # Permissions Backends
-    "symposion.teams.backends.TeamPermissionsBackend",
-
-    # Auth backends
-    "account.auth_backends.EmailAuthenticationBackend",
-]
 
 LOGIN_URL = "/account/login/" # @@@ any way this can be a url name?
 
+# Debug toolbar
+if DEBUG:
+    MIDDLEWARE_CLASSES.append("debug_toolbar.middleware.DebugToolbarMiddleware")
+    DEBUG_TOOLBAR_CONFIG = {
+        "INTERCEPT_REDIRECTS": False,
+    }
+
+FIXTURE_DIRS = [
+    os.path.join(PROJECT_ROOT, "fixtures"),
+]
+
+# Email settings
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
 if not DEBUG:
@@ -221,17 +239,10 @@ if not DEBUG:
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-DEBUG_TOOLBAR_CONFIG = {
-    "INTERCEPT_REDIRECTS": False,
-}
 
-MARKITUP_FILTER = ("markdown.markdown", {"safe_mode": True})
-MARKITUP_SET = "markitup/sets/markdown"
-MARKITUP_SKIN = "markitup/skins/simple"
-
+ACTIVE_NEWSLETTER="2013"
 CONFERENCE_ID = 1
 
-SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 
 PROPOSAL_FORMS = {
     "tutorial": "pycones.proposals.forms.TutorialProposalForm",
