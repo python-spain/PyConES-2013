@@ -1,5 +1,7 @@
+{% load static from staticfiles %}
+
 <body style="color: #333; font: 16px 'Helvetica',serif,Arial;">
-    <img src="http://2013.es.pycon.org/site_media/static/symposion/img/pycones.png" alt="Logo PyConES"/>
+    <img src="{% static 'symposion/img/pycones.png' %}" alt="Logo PyConES"/>
     <h1 style="color: rgb(212,0,0);">PyConES</h1>
     <h2 style="color: rgb(255,205,0);">¡Bienvenido a la newsletter!</h2>
     <p>Hola,</p>
