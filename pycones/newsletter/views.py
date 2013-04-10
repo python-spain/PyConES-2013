@@ -46,7 +46,7 @@ def suscribe_newsletter(request):
     newsletter = get_or_create_active_newsletter()
 
     if not email:
-        context = {'message' : u"Error al recoger el email. Intentalo de nuevo mas tarde"}
+        context = {'message' : u"Error al recoger el email. Inténtalo de nuevo mas tarde"}
         return render_to_response("newsletter/comingsoon_message.html", context,
                                   context_instance=RequestContext(request))
 
