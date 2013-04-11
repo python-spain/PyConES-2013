@@ -5,14 +5,14 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 
 
-def get_or_create_active_newsletter():
-    current_active_nl = getattr(settings, 'ACTIVE_NEWSLETTER', '2013')
-    try:
-        newsletter = Newsletter.objects.get(name=current_active_nl)
-    except Newsletter.DoesNotExist:
-        newsletter = Newsletter.objects.create(name=current_active_nl)
-
-    return newsletter
+#def get_or_create_active_newsletter():
+#    current_active_nl = getattr(settings, 'ACTIVE_NEWSLETTER', '2013')
+#    try:
+#        newsletter = Newsletter.objects.get(name=current_active_nl)
+#    except Newsletter.DoesNotExist:
+#        newsletter = Newsletter.objects.create(name=current_active_nl)
+#
+#    return newsletter
 
 
 class ArticleManager(models.Manager):
@@ -24,8 +24,7 @@ class ArticleManager(models.Manager):
         queryset = super(ArticleManager,self).get_query_set()
 
         article = queryset.get_object_or_404(
-                    path__iexact=article_path, visible=True,
-                    newsletter=get_or_create_active_newsletter())
+                    path__iexact=article_path, visible=True)
 
         return article
 
@@ -35,7 +34,7 @@ class ArticleManager(models.Manager):
         """
         article_queryset = super(ArticleManager,self).get_query_set()
         articles = article_queryset\
-            .filter(visible=True,newsletter=get_or_create_active_newsletter())\
+            .filter(visible=True)\
             .order_by('-create_date')[:5]
 
         return articles
@@ -57,7 +56,7 @@ class ArticleManager(models.Manager):
         queryset = super(ArticleManager,self).get_query_set()
 
         articles = queryset\
-            .filter(visible=True, newsletter=get_or_create_active_newsletter())\
+            .filter(visible=True)\
             .order_by('-create_date')[first_article:last_article]
 
         return articles
@@ -69,8 +68,9 @@ class ArticleManager(models.Manager):
         queryset = super(ArticleManager,self).get_query_set()
 
         articles = queryset.filter(
-                    visible=True, newsletter=get_or_create_active_newsletter(),
-                    create_date__year=year).order_by('-create_date')
+                    visible=True,
+                    create_date__year=year)\
+                    .order_by('-create_date')
 
         return articles
 
@@ -80,31 +80,35 @@ class ArticleManager(models.Manager):
         """
         queryset = super(ArticleManager,self).get_query_set()
         articles = queryset.filter(
-                        visible=True, newsletter=get_or_create_active_newsletter(),
-                        create_date__year=year, create_date__month=month
-                    ).order_by('-create_date')
+                        visible=True,
+                        create_date__year=year, create_date__month=month)\
+                    .order_by('-create_date')
 
         return articles
 
-
 class Newsletter(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    title = models.CharField(max_length=255)
+    head = models.TextField()
     create_date = models.DateTimeField(editable=False, auto_now_add=True)
+    send_date = models.DateTimeField()
+
+    articles = models.ManyToManyField(Article)
 
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        ordering = ["send_date"]
 
 class Article(models.Model):
-    create_date = models.DateTimeField(editable=False, auto_now_add=True)
-
     path = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     text = models.TextField()
-
+    create_date = models.DateTimeField(editable=False, auto_now_add=True)
     update_date = models.DateTimeField(editable=False, auto_now=True)
-    publish_date = models.DateTimeField()
     visible = models.BooleanField(default=False)
+
+    newsletters = models.ManyToManyField(Newsletter)
 
     objects = ArticleManager()
 
@@ -116,8 +120,6 @@ class Article(models.Model):
 
 
 class Subscription(models.Model):
-    user = models.ForeignKey("auth.User", related_name="subscriptions")
-    newsletter = models.ForeignKey("Newsletter", related_name="subscriptions")
+    user_email = models.EmailField()
+    val_token = models.CharField(max_length=128)
 
-    class Meta:
-        unique_together = ('user', 'newsletter')
