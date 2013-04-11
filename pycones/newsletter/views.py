@@ -14,7 +14,7 @@ from .models import Subscription, get_or_create_active_newsletter
 from pycones.profile.models import Profile
 
 
-def send_welcome_msg(email_user, token):
+def send_welcome_msg(email_user, token, request):
     from django.core.mail import EmailMultiAlternatives
 
     subject = u'¡Bienvenido a PyConES!'
@@ -23,8 +23,10 @@ def send_welcome_msg(email_user, token):
     context = {"email": email_user, "token": token}
     context_email = {'email_user' : email_user, 'token' : token}
 
-    text_content = render_to_string("newsletter_welcome_mail.txt", context)
-    html_content = render_to_string("newsletter_welcome_mail.html", context)
+    text_content = render_to_string("newsletter_welcome_mail.txt", context,
+                                    context_instance=RequestContext(request))
+    html_content = render_to_string("newsletter_welcome_mail.html", context,
+                                    context_instance=RequestContext(request))
 
     msg = EmailMultiAlternatives(subject, text_content, from_email, [email_user])
     msg.attach_alternative(html_content, "text/html")
@@ -44,7 +46,7 @@ def suscribe_newsletter(request):
     newsletter = get_or_create_active_newsletter()
 
     if not email:
-        context = {'message' : u"Error al recoger el email. Intentalo de nuevo mas tarde"}
+        context = {'message' : u"Error al recoger el email. Inténtalo de nuevo mas tarde"}
         return render_to_response("newsletter/comingsoon_message.html", context,
                                   context_instance=RequestContext(request))
 
@@ -69,7 +71,7 @@ def suscribe_newsletter(request):
     subscriber = Subscription(user=user, newsletter=newsletter)
     subscriber.save()
 
-    send_welcome_msg(user.email, user.profile.newsletter_token)
+    send_welcome_msg(user.email, user.profile.newsletter_token, request)
 
     context = {'message' : u"Registrado. Muchas gracias"}
     return render_to_response("newsletter/comingsoon_message.html", context,

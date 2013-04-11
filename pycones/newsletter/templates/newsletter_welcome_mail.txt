@@ -1,12 +1,12 @@
-¡Bienvenido a la newsletter de PyConES!
+¡Bienvenido a la newsletter de PyConES 2013!
 
 Hola,
 
-Muchas gracias por registrarte a la newsletter de la Python Conference de España.
+Muchas gracias por registrarte en la newsletter de la Python Conference de España.
 A partir de ahora recibirás todas las noticias y actualizaciones sobre el
 evento directamente en tu bandeja de entrada. Serás el primero en
-recibir información importante del evento como las actualizaciones sobre charlas
-y ponentes, los patrocinios, la venta de entradas.
+recibir la información importante del evento y las actualizaciones sobre charlas
+y ponentes, los patrocinios, la venta de entradas, etc.
 
 Recuerda que también estamos en twitter como @PyConES y #PyConES y en la cuenta
 de correo contacto2013@es.pycon.org. Estamos encantados de escucharte así que no dudes
