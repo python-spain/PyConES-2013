@@ -95,8 +95,6 @@ class Article(models.Model):
     update_date = models.DateTimeField(editable=False, auto_now=True)
     visible = models.BooleanField(default=False)
 
-    newsletters = models.ManyToManyField("Newsletter")
-
     objects = ArticleManager()
 
     def __unicode__(self):
