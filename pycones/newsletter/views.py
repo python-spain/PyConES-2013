@@ -53,10 +53,10 @@ def suscribe_newsletter(request):
                                 context,
                                 context_instance=RequestContext(request))
     except Subscription.DoesNotExist:
-        subscription = Subscription(email_user=email, val_token=unicode(uuid.uuid4())
+        subscription = Subscription(user_email=email, val_token=str(uuid.uuid4()))
         subscription.save()
 
-    send_welcome_msg(subscription.email_user, subscription.val_token)
+    send_welcome_msg(subscription.user_email, subscription.val_token)
 
     context = {'message' : u"Registrado. Muchas gracias"}
     return render_to_response("newsletter/comingsoon_message.html", context,
