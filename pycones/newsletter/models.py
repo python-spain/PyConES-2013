@@ -86,19 +86,6 @@ class ArticleManager(models.Manager):
 
         return articles
 
-class Newsletter(models.Model):
-    title = models.CharField(max_length=255)
-    head = models.TextField()
-    create_date = models.DateTimeField(editable=False, auto_now_add=True)
-    send_date = models.DateTimeField()
-
-    articles = models.ManyToManyField(Article)
-
-    def __unicode__(self):
-        return self.name
-
-    class Meta:
-        ordering = ["send_date"]
 
 class Article(models.Model):
     path = models.CharField(max_length=100)
@@ -108,7 +95,7 @@ class Article(models.Model):
     update_date = models.DateTimeField(editable=False, auto_now=True)
     visible = models.BooleanField(default=False)
 
-    newsletters = models.ManyToManyField(Newsletter)
+    newsletters = models.ManyToManyField("Newsletter")
 
     objects = ArticleManager()
 
@@ -117,6 +104,20 @@ class Article(models.Model):
 
     class Meta:
         ordering = ["create_date"]
+
+
+class Newsletter(models.Model):
+    title = models.CharField(max_length=255)
+    head = models.TextField()
+    create_date = models.DateTimeField(editable=False, auto_now_add=True)
+    send_date = models.DateTimeField()
+    articles = models.ManyToManyField("Article")
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        ordering = ["send_date"]
 
 
 class Subscription(models.Model):
