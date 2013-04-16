@@ -86,6 +86,31 @@ class ArticleManager(models.Manager):
 
         return articles
 
+class NewsletterManager(models.Manager):
+
+    def get_latest_newsletter(self):
+        """
+        Method to get latest newsletter
+        """
+        queryset = super(NewsletterManager,self).get_query_set()
+        try:
+            newsletter = queryset.all().order_by('-create_date').get()
+        except Newsletter.DoesNotExist:
+            newsletter = None
+
+        return newsletter
+
+    def get_newsletter(self,year,month):
+        """
+        Method to get a single newsletter with year and month
+        """
+        queryset = super(NewsletterManager,self).get_query_set()
+        try:
+            newsletter = queryset.filter(create_date__year=year,create_date__month=month).get()
+        except Newsletter.DoesNotExist:
+            newsletter = None
+
+        return newsletter
 
 class Article(models.Model):
     path = models.CharField(max_length=100)
@@ -110,6 +135,8 @@ class Newsletter(models.Model):
     create_date = models.DateTimeField(editable=False, auto_now_add=True)
     send_date = models.DateTimeField()
     articles = models.ManyToManyField("Article")
+
+    objects = NewsletterManager()
 
     def __unicode__(self):
         return self.name
