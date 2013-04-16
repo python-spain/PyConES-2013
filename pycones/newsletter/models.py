@@ -23,8 +23,12 @@ class ArticleManager(models.Manager):
         """
         queryset = super(ArticleManager,self).get_query_set()
 
-        article = queryset.get_object_or_404(
-                    path__iexact=article_path, visible=True)
+        try:
+            article = queryset.filter(path__iexact=article_path, visible=True)\
+                .get()
+
+        except Article.DoesNotExist:
+            article = None
 
         return article
 
