@@ -12,6 +12,6 @@ urlpatterns = patterns("pycones.newsletter.views",
     #rl(r"^(?P<year>\d(4))/(?P<month>\d(2))/$",
     #    "get_entries_per_month",
     #    name="get_entries_per_month"),
-    #url(r"^(?P<entry_path>[\w\-]+)/$","get_entry",name="get_entry"),
+    url(r"^article/(?P<article_path>[\w\-]+)/$","get_article",name="get_article"),
 
 )
