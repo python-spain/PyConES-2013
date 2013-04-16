@@ -10,7 +10,6 @@
     <title>PyCon España 2013</title>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static 'symposion/css/comingsoon.css' %}"/>
     <!--[if lt IE 9]>
     <script type="text/javascript">
         document.createElement("header");
@@ -20,6 +19,8 @@
     <![endif]-->
 </head>
 <body>
-    {{ newsletter.create_date }}
+    Fecha creacion: {{ newsletter.create_date }}<br>
+    Titulo: {{ newsletter.title }}<br>
+    Articulos: {{ newsletter.articles }}<br>
 </body>
 </html>
