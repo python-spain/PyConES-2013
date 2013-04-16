@@ -1,0 +1,26 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'symposion/img/favicon.ico' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{STATIC_URL}}symposion/img/favicon.ico" type="image/x-icon" />
+    <title>PyCon España 2013</title>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header");
+        document.createElement("section");
+        document.createElement("article");
+    </script>
+    <![endif]-->
+</head>
+<body>
+    Fecha creacion: {{ article.create_date }}<br>
+    Titulo: {{ article.title }}<br>
+    Texto: {{ article.text }}<br>
+</body>
+</html>
