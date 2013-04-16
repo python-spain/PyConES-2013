@@ -8,7 +8,7 @@ from django.template.loader import render_to_string
 from django.template import RequestContext
 from django import http
 
-from .models import Subscription
+from .models import Subscription,Newsletter
 
 
 def send_welcome_msg(email_user, token):
@@ -89,4 +89,32 @@ def unsuscribe_newsletter(request):
 
     return render_to_response("newsletter/comingsoon_message.html",
                         context, context_instance=RequestContext(request))
+
+def get_last_newsletter(request):
+    """
+    View to get latest newsletter
+    """
+    newsletter = Newsletter.objects.get_latest_newsletter()
+
+    return render_to_response("newsletter/newsletter.html",
+                    {"newsletter":newsletter},
+                    context_instance=RequestContext(request))
+
+def get_newsletter(request,year_month):
+    """
+    View to get newsletter by date
+    """
+    year=year_month[:4]
+    month=year_month[-2:]
+    newsletter = Newsletter.objects.get_newsletter(year,month)
+
+    return render_to_response("newsletter/newsletter.html",
+                    {"newsletter":newsletter},
+                    context_instance=RequestContext(request))
+
+def send_newsletter(request,year_month):
+    """
+    View to send a newsletter by email
+    """
+    pass
 
