@@ -139,7 +139,7 @@ class Newsletter(models.Model):
     objects = NewsletterManager()
 
     def __unicode__(self):
-        return self.name
+        return "{0} ({1})".format(self.title,str(self.create_date)[:7])
 
     class Meta:
         ordering = ["send_date"]
@@ -148,4 +148,8 @@ class Newsletter(models.Model):
 class Subscription(models.Model):
     user_email = models.EmailField()
     val_token = models.CharField(max_length=128)
+
+    def __unicode__(self):
+        return self.user_email
+
 
