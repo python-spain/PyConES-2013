@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'symposion/img/favicon.ico' %}" type="image/x-icon" />
-    <link rel="shortcut icon" href="{{STATIC_URL}}symposion/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'symposion/img/favicon.ico' %}" type="image/x-icon" />
     <title>PyCon España 2013</title>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+    <link href="{% static 'symposion/css/newsletter/newsletter.css' %}" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
     <script type="text/javascript">
         document.createElement("header");
@@ -19,8 +20,24 @@
     <![endif]-->
 </head>
 <body>
-    Fecha creacion: {{ article.create_date }}<br>
-    Titulo: {{ article.title }}<br>
-    Texto: {{ article.text }}<br>
+    <header>
+        <a href="/"><img alt="Logo PyConES" src="{% static 'symposion/img/pycones.png' %}"></img></a>
+        <h1>PyConES 2013</h1>
+    </header>
+    <section>
+        <h2>Artículo</h2>
+
+        {% if article %}
+        <article>
+            <h3>{{ article.title }}</h3>
+            <span>{{ article.create_date|date:"d M Y" }}</span>
+            <p>{{ article.text|linebreaksbr }}
+        </article>
+        {% else %}
+            <article>
+                <h3>No hay ningun artículo disponible</h3>
+            </article>
+        {% endif %}
+    </section>
 </body>
 </html>
