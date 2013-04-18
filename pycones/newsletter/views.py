@@ -58,11 +58,7 @@ def suscribe_newsletter(request):
         subscription = Subscription(user_email=email, val_token=str(uuid.uuid4()))
         subscription.save()
 
-<<<<<<< HEAD
-    send_welcome_msg(user.email, user.profile.newsletter_token, request)
-=======
     send_welcome_msg(subscription.user_email, subscription.val_token)
->>>>>>> update_newsletter_models
 
     context = {'message' : u"Registrado. Muchas gracias"}
     return render_to_response("newsletter/comingsoon_message.html", context,
