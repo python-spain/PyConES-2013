@@ -167,6 +167,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "sitetree",
     "account",
+    "south",
 
     # symposion
     "symposion",
@@ -240,7 +241,6 @@ else:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
-ACTIVE_NEWSLETTER="2013"
 CONFERENCE_ID = 1
 
 if not DEBUG:
