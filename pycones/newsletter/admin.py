@@ -1,10 +1,16 @@
 from django.contrib import admin
 
-from pycones.newsletter.models import Newsletter,Article,Subscription
+from pycones.newsletter.models import Newsletter, Article, Subscription
 
-admin.site.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    model = Article
+    list_display = ('title', 'create_date', 'visible')
+    prepopulated_fields = {'slug': ('title')}
+
+admin.site.register(Article, ArticleAdmin)
 
 class NewsletterAdmin(admin.ModelAdmin):
+    model = Newsletter
     list_display = ('__unicode__', 'create_date')
 
 admin.site.register(Newsletter, NewsletterAdmin)

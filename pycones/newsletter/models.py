@@ -92,8 +92,8 @@ class ArticleManager(models.Manager):
 
 
 class Article(models.Model):
-    path = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
+    slug = models.SlugField(blank=False, unique=True, null=False)
     text = models.TextField()
     create_date = models.DateTimeField(editable=False, auto_now_add=True)
     update_date = models.DateTimeField(editable=False, auto_now=True)
