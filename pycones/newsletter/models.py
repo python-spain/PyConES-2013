@@ -90,6 +90,24 @@ class ArticleManager(models.Manager):
 
         return articles
 
+
+class Article(models.Model):
+    path = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    text = models.TextField()
+    create_date = models.DateTimeField(editable=False, auto_now_add=True)
+    update_date = models.DateTimeField(editable=False, auto_now=True)
+    visible = models.BooleanField(default=False)
+
+    objects = ArticleManager()
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        ordering = ["create_date"]
+
+
 class NewsletterManager(models.Manager):
 
     def get_latest_newsletter(self):
@@ -115,22 +133,6 @@ class NewsletterManager(models.Manager):
             newsletter = None
 
         return newsletter
-
-class Article(models.Model):
-    path = models.CharField(max_length=100)
-    title = models.CharField(max_length=100)
-    text = models.TextField()
-    create_date = models.DateTimeField(editable=False, auto_now_add=True)
-    update_date = models.DateTimeField(editable=False, auto_now=True)
-    visible = models.BooleanField(default=False)
-
-    objects = ArticleManager()
-
-    def __unicode__(self):
-        return self.title
-
-    class Meta:
-        ordering = ["create_date"]
 
 
 class Newsletter(models.Model):
