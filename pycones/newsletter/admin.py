@@ -5,7 +5,7 @@ from pycones.newsletter.models import Newsletter, Article, Subscription
 class ArticleAdmin(admin.ModelAdmin):
     model = Article
     list_display = ('title', 'created_date', 'visible')
-    prepopulated_fields = {'slug': ('title')}
+    prepopulated_fields = {'slug': ('title',)}
 
 admin.site.register(Article, ArticleAdmin)
 
