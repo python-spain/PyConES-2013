@@ -19,12 +19,12 @@ class Migration(SchemaMigration):
 
         # Adding field 'Subscription.user_email'
         db.add_column('newsletter_subscription', 'user_email',
-                      self.gf('django.db.models.fields.EmailField')(default=None, max_length=75),
+                      self.gf('django.db.models.fields.EmailField')(default='', max_length=75),
                       keep_default=False)
 
         # Adding field 'Subscription.val_token'
         db.add_column('newsletter_subscription', 'val_token',
-                      self.gf('django.db.models.fields.CharField')(default=None, max_length=128),
+                      self.gf('django.db.models.fields.CharField')(default='', max_length=128),
                       keep_default=False)
 
         # Deleting field 'Newsletter.name'
@@ -32,17 +32,17 @@ class Migration(SchemaMigration):
 
         # Adding field 'Newsletter.title'
         db.add_column('newsletter_newsletter', 'title',
-                      self.gf('django.db.models.fields.CharField')(default=None, max_length=255),
+                      self.gf('django.db.models.fields.CharField')(default='', max_length=255),
                       keep_default=False)
 
         # Adding field 'Newsletter.head'
         db.add_column('newsletter_newsletter', 'head',
-                      self.gf('django.db.models.fields.TextField')(default=None),
+                      self.gf('django.db.models.fields.TextField')(default=''),
                       keep_default=False)
 
         # Adding field 'Newsletter.send_date'
         db.add_column('newsletter_newsletter', 'send_date',
-                      self.gf('django.db.models.fields.DateTimeField')(default=None),
+                      self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime(2013, 4, 19, 0, 0)),
                       keep_default=False)
 
         # Adding M2M table for field articles on 'Newsletter'
@@ -96,7 +96,7 @@ class Migration(SchemaMigration):
 
         # Adding field 'Article.publish_date'
         db.add_column('newsletter_article', 'publish_date',
-                      self.gf('django.db.models.fields.DateTimeField')(default=None),
+                      self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime(2013, 4, 19, 0, 0)),
                       keep_default=False)
 
 
