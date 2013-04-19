@@ -30,7 +30,7 @@
         {% if article %}
         <article>
             <h3>{{ article.title }}</h3>
-            <span>{{ article.create_date|date:"d M Y" }}</span>
+            <span>{{ article.created_date|date:"d M Y" }}</span>
             <p>{{ article.text|linebreaksbr }}
         </article>
         {% else %}

@@ -4,14 +4,14 @@ from pycones.newsletter.models import Newsletter, Article, Subscription
 
 class ArticleAdmin(admin.ModelAdmin):
     model = Article
-    list_display = ('title', 'create_date', 'visible')
+    list_display = ('title', 'created_date', 'visible')
     prepopulated_fields = {'slug': ('title')}
 
 admin.site.register(Article, ArticleAdmin)
 
 class NewsletterAdmin(admin.ModelAdmin):
     model = Newsletter
-    list_display = ('__unicode__', 'create_date')
+    list_display = ('__unicode__', 'created_date')
 
 admin.site.register(Newsletter, NewsletterAdmin)
 admin.site.register(Subscription)

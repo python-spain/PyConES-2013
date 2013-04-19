@@ -30,7 +30,7 @@
         {% if newsletter %}
         <article>
             <h3>{{ newsletter.title }}</h3>
-            <span>{{ newsletter.create_date|date:"d M Y" }}</span>
+            <span>{{ newsletter.created_date|date:"d M Y" }}</span>
             <p>{{ newsletter.head|linebreaksbr }}
             <h4>Artículos</h4>
             {% for article in newsletter.articles.all %}

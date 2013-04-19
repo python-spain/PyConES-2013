@@ -39,7 +39,7 @@ class ArticleManager(models.Manager):
         article_queryset = super(ArticleManager,self).get_query_set()
         articles = article_queryset\
             .filter(visible=True)\
-            .order_by('-create_date')[:5]
+            .order_by('-created_date')[:5]
 
         return articles
 
@@ -61,7 +61,7 @@ class ArticleManager(models.Manager):
 
         articles = queryset\
             .filter(visible=True)\
-            .order_by('-create_date')[first_article:last_article]
+            .order_by('-created_date')[first_article:last_article]
 
         return articles
 
@@ -73,8 +73,8 @@ class ArticleManager(models.Manager):
 
         articles = queryset.filter(
                     visible=True,
-                    create_date__year=year)\
-                    .order_by('-create_date')
+                    created_date__year=year)\
+                    .order_by('-created_date')
 
         return articles
 
@@ -85,8 +85,8 @@ class ArticleManager(models.Manager):
         queryset = super(ArticleManager,self).get_query_set()
         articles = queryset.filter(
                         visible=True,
-                        create_date__year=year, create_date__month=month)\
-                    .order_by('-create_date')
+                        created_date__year=year, created_date__month=month)\
+                    .order_by('-created_date')
 
         return articles
 
@@ -95,8 +95,8 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(blank=False, unique=True, null=False)
     text = models.TextField()
-    create_date = models.DateTimeField(editable=False, auto_now_add=True)
-    update_date = models.DateTimeField(editable=False, auto_now=True)
+    created_date = models.DateTimeField(editable=False, auto_now_add=True)
+    updated_date = models.DateTimeField(editable=False, auto_now=True)
     visible = models.BooleanField(default=False)
 
     objects = ArticleManager()
@@ -105,7 +105,7 @@ class Article(models.Model):
         return self.title
 
     class Meta:
-        ordering = ["create_date"]
+        ordering = ["created_date"]
 
 
 class NewsletterManager(models.Manager):
@@ -116,7 +116,7 @@ class NewsletterManager(models.Manager):
         """
         queryset = super(NewsletterManager,self).get_query_set()
         try:
-            newsletter = queryset.all().order_by('-create_date').get()
+            newsletter = queryset.all().order_by('-created_date').get()
         except Newsletter.DoesNotExist:
             newsletter = None
 
@@ -128,7 +128,7 @@ class NewsletterManager(models.Manager):
         """
         queryset = super(NewsletterManager,self).get_query_set()
         try:
-            newsletter = queryset.filter(create_date__year=year,create_date__month=month).get()
+            newsletter = queryset.filter(created_date__year=year,created_date__month=month).get()
         except Newsletter.DoesNotExist:
             newsletter = None
 
@@ -138,14 +138,14 @@ class NewsletterManager(models.Manager):
 class Newsletter(models.Model):
     title = models.CharField(max_length=255)
     head = models.TextField()
-    create_date = models.DateTimeField(editable=False, auto_now_add=True)
+    created_date = models.DateTimeField(editable=False, auto_now_add=True)
     send_date = models.DateTimeField()
     articles = models.ManyToManyField("Article")
 
     objects = NewsletterManager()
 
     def __unicode__(self):
-        return "{0} ({1})".format(self.title,str(self.create_date)[:7])
+        return "{0} ({1})".format(self.title,str(self.created_date)[:7])
 
     class Meta:
         ordering = ["send_date"]
