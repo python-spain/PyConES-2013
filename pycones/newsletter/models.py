@@ -18,13 +18,12 @@ from django.shortcuts import get_object_or_404
 class ArticleManager(models.Manager):
     def get_article_by_path(self, article_path):
         """
-        Method to get an article or entry by path field.
-        If path is not exist 404Exception will be raised
+        Method to get an article or entry by slug field.
         """
         queryset = super(ArticleManager,self).get_query_set()
 
         try:
-            article = queryset.filter(path__iexact=article_path, visible=True)\
+            article = queryset.filter(slug__iexact=article_path, visible=True)\
                 .get()
 
         except Article.DoesNotExist:
