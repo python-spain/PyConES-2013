@@ -11,7 +11,7 @@ admin.site.register(Article, ArticleAdmin)
 
 class NewsletterAdmin(admin.ModelAdmin):
     model = Newsletter
-    list_display = ('__unicode__', 'created_date')
+    list_display = ('__unicode__', 'created_date', 'sent')
 
 admin.site.register(Newsletter, NewsletterAdmin)
 admin.site.register(Subscription)

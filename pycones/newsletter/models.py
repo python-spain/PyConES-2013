@@ -138,16 +138,16 @@ class Newsletter(models.Model):
     title = models.CharField(max_length=255)
     head = models.TextField()
     created_date = models.DateTimeField(editable=False, auto_now_add=True)
-    send_date = models.DateTimeField()
     articles = models.ManyToManyField("Article")
+    sent = models.BooleanField(default=False)
 
     objects = NewsletterManager()
 
     def __unicode__(self):
-        return "{0} ({1})".format(self.title,str(self.created_date)[:7])
+        return u"{0} ({1})".format(self.title,str(self.created_date)[:7])
 
     class Meta:
-        ordering = ["send_date"]
+        ordering = ["created_date"]
 
 
 class Subscription(models.Model):
