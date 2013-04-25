@@ -34,8 +34,8 @@
             <p>{{ newsletter.head|linebreaksbr }}
             <h4>Artículos</h4>
             {% for article in newsletter.articles.all %}
-            <a href="/newsletter/article/{{ article.path }}/">{{ article.title }}</a>
-            <p>{{ article.text|linebreaksbr|slice:":350" }}...<a href="/newsletter/article/{{ article.path }}/">articulo++</a></p>
+            <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+            <p>{{ article.text|linebreaksbr|slice:":350" }}...<a href="{{ article.get_absolute_url }}">articulo++</a></p>
             {% endfor %}
         </article>
         {% else %}

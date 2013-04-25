@@ -2,8 +2,9 @@
 
 from django.db import models
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
-
+import uuid
 
 #def get_or_create_active_newsletter():
 #    current_active_nl = getattr(settings, 'ACTIVE_NEWSLETTER', '2013')
@@ -16,20 +17,6 @@ from django.shortcuts import get_object_or_404
 
 
 class ArticleManager(models.Manager):
-    def get_article_by_path(self, article_path):
-        """
-        Method to get an article or entry by slug field.
-        """
-        queryset = super(ArticleManager,self).get_query_set()
-
-        try:
-            article = queryset.filter(slug__iexact=article_path, visible=True)\
-                .get()
-
-        except Article.DoesNotExist:
-            article = None
-
-        return article
 
     def get_last_articles(self):
         """
@@ -106,42 +93,19 @@ class Article(models.Model):
     class Meta:
         ordering = ["created_date"]
 
-
-class NewsletterManager(models.Manager):
-
-    def get_latest_newsletter(self):
-        """
-        Method to get latest newsletter
-        """
-        queryset = super(NewsletterManager,self).get_query_set()
-        try:
-            newsletter = queryset.all().order_by('-created_date').get()
-        except Newsletter.DoesNotExist:
-            newsletter = None
-
-        return newsletter
-
-    def get_newsletter(self,year,month):
-        """
-        Method to get a single newsletter with year and month
-        """
-        queryset = super(NewsletterManager,self).get_query_set()
-        try:
-            newsletter = queryset.filter(created_date__year=year,created_date__month=month).get()
-        except Newsletter.DoesNotExist:
-            newsletter = None
-
-        return newsletter
+    def get_absolute_url(self):
+        return(reverse('article', args=[self.slug]))
 
 
 class Newsletter(models.Model):
+    uuid = models.CharField(max_length=255, default=lambda: str(uuid.uuid1()))
     title = models.CharField(max_length=255)
     head = models.TextField()
     created_date = models.DateTimeField(editable=False, auto_now_add=True)
     articles = models.ManyToManyField("Article")
     sent = models.BooleanField(default=False)
+    sent_date = models.DateTimeField(editable=False, auto_now=True)
 
-    objects = NewsletterManager()
 
     def __unicode__(self):
         return u"{0} ({1})".format(self.title,str(self.created_date)[:7])

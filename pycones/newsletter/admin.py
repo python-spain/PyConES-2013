@@ -27,7 +27,7 @@ send_newsletter.short_description = (u'Enviar newsletter')
 
 class NewsletterAdmin(admin.ModelAdmin):
     model = Newsletter
-    list_display = ('__unicode__', 'created_date', 'sent')
+    list_display = ('__unicode__', 'created_date', 'sent', 'sent_date')
     actions = [send_newsletter]
 
 admin.site.register(Newsletter, NewsletterAdmin)

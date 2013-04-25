@@ -2,13 +2,13 @@
 
 import uuid
 
-from django.shortcuts import render_to_response,redirect
+from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.db import transaction
 from django.template.loader import render_to_string
 from django.template import RequestContext
-from django import http
+from django.http import HttpResponseRedirect, HttpResponse
 
-from .models import Subscription,Newsletter,Article
+from .models import Subscription, Newsletter, Article
 
 
 def send_welcome_msg(email_user, token, request):
@@ -76,7 +76,7 @@ def unsuscribe_newsletter(request):
     token = request.GET.get('val_token', None)
 
     if not email or not token:
-        context = {"message": u"Parametros incorrectos"}
+        context = {"message": u"Parámetros incorrectos"}
         return render_to_response("newsletter/comingsoon_message.html",
                         context, context_instance=RequestContext(request))
 
@@ -92,42 +92,38 @@ def unsuscribe_newsletter(request):
     return render_to_response("newsletter/comingsoon_message.html",
                         context, context_instance=RequestContext(request))
 
-def get_last_newsletter(request):
+def latest_newsletter(request):
     """
     View to get latest newsletter
     """
-    newsletter = Newsletter.objects.get_latest_newsletter()
+    try:
+        newsletter = Newsletter.objects.all().order_by('-sent_date')[:1][0]
+    except:
+        return HttpResponseRedirect('/')
 
     return render_to_response("newsletter/newsletter.html",
-                    {"newsletter":newsletter},
+                    {"newsletter": newsletter},
                     context_instance=RequestContext(request))
 
-def get_newsletter(request,year_month):
+def newsletter(request, uuid):
     """
-    View to get newsletter by date
+    View to get newsletter by uuid
     """
-    year=year_month[:4]
-    month=year_month[-2:]
-    newsletter = Newsletter.objects.get_newsletter(year,month)
+    newsletter = get_object_or_404(Newsletter, uuid=uuid)
 
     return render_to_response("newsletter/newsletter.html",
-                    {"newsletter":newsletter},
+                    {"newsletter": newsletter},
                     context_instance=RequestContext(request))
 
-def send_newsletter(request,year_month):
-    """
-    View to send a newsletter by email
-    """
-    pass
 
-def get_article(request,article_path):
+def article(request, slug):
     """
-    View to get article by path
+    View to get article by slug
     """
-    article = Article.objects.get_article_by_path(article_path)
+    article = get_object_or_404(Article, slug=slug)
 
     return render_to_response("newsletter/article.html",
-                    {"article":article},
+                    {"article": article},
                     context_instance=RequestContext(request))
 
 
