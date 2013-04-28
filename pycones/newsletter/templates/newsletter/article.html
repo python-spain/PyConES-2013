@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>PyConEs 2013</title>
+        <meta name="description" content="PyConEs 2013">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+    </head>
+    <body style="background: #e0e0e0; padding: 0; margin: 0; font-family:'Open Sans',Arial, Helvetica, sans-serif; color:#333; font-size:12px;">
+    <center>
+        <table width="656" border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0;">
+            <tr width="656" height="158">
+                <td><a href="http://2013.es.pycon.org" alt="PyConEs 2013" target="_blank"><img src="{{ STATIC_URL }}newsletter/img/header.gif" alt="PyConEs 2013"></a></td>
+            </tr><!-- header -->
+        <table width="656" border="0" cellpadding="0" cellspacing="0" style="margin: 0 0 20px 0; padding: 0;">
+            <tr>    
+                <td width="55">&nbsp;</td>
+                <td width="600" style="background: #fff;">
+                <table style="padding: 10px; border-bottom: solid #e0e0e0 1px;">    
+                    <tr>
+                    <td style="font-size: 20px; color: red; font-weight: bold; padding: 10px 0;">{{ article.title }}</td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 10px 0;">{% autoescape off %}{{ article.text }}{% endautoescape %}</td>
+                    </tr>
+                 </table><!-- intro -->
+                 <table width="601" height="40" border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; background: #c7c7c7; color: #fff;">
+                      <tr>
+                         <td vertical-align="middle" align="middle">
+                             PyConEs ©2013 {% if val_token %}| <a style="color: red; font-weight: bold;" href="#">Dar de baja mi suscripción</a>{% endif %}
+                         </td>
+                     </tr>
+                  </table><!-- footer -->
+               </table>
+              </td>
+            </tr>
+        </table>
+        </table>
+    </center>
+    </body>
+</html>
