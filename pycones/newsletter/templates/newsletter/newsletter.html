@@ -29,7 +29,7 @@
                     <td style="font-size: 20px; color: red; font-weight: bold; padding: 10px 0;">{{ newsletter.title }}</td>
                     </tr>
                     <tr>
-                    <td style="padding: 10px 0;">{{ newsletter.head }}</td>
+                    <td style="padding: 10px 0;">{% autoescape off %}{{ newsletter.head }}{% endautoescape %}</td>
                     </tr>
                  </table><!-- intro -->
                  <table style="padding: 20px 10px;">
