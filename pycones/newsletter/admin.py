@@ -22,11 +22,10 @@ def send_newsletter(modeladmin, request, queryset):
         emails = []
         subject = '[PyConEs] %s' % newsletter.title
         context = {
-            'newsleter': newsletter,
+            'newsletter': newsletter,
             'mail': True
         }
         from_email = settings.EMAIL_HOST_USER
-        context = {'newsletter': newsletter}
         template_txt = 'newsletter/newsletter.txt'
         template_html =  'newsletter/newsletter.html'
 

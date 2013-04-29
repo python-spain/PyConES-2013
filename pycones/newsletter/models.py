@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from django.contrib.sites.models import Site
 from django.db import models
 from django.conf import settings
 from django.core.urlresolvers import reverse
@@ -94,7 +95,9 @@ class Article(models.Model):
         ordering = ["created_date"]
 
     def get_absolute_url(self):
-        return(reverse('article', args=[self.slug]))
+        current_site = Site.objects.get_current()
+        url = reverse('article', args=[self.slug])
+        return 'http://%s%s' % (current_site, url)
 
 
 class Newsletter(models.Model):
@@ -113,6 +116,10 @@ class Newsletter(models.Model):
     class Meta:
         ordering = ["created_date"]
 
+    def get_absolute_url(self):
+        current_site = Site.objects.get_current()
+        url = reverse('newsletter', args=[self.uuid])
+        return 'http://%s%s' % (current_site, url)
 
 class Subscription(models.Model):
     user_email = models.EmailField()
