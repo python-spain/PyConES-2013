@@ -9,25 +9,16 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse
 
 from .models import Subscription, Newsletter, Article
-
+from pycones import utils
 
 def send_welcome_msg(email_user, token, request):
-    from django.core.mail import EmailMultiAlternatives
-
     subject = u'¡Bienvenido a PyConES!'
     from_email = u'boletin2013@es.pycon.org'
-
     context = {"email": email_user, "token": token}
-    context_email = {'email_user' : email_user, 'token' : token}
-
-    text_content = render_to_string("newsletter_welcome_mail.txt", context,
-                                    context_instance=RequestContext(request))
-    html_content = render_to_string("newsletter_welcome_mail.html", context,
-                                    context_instance=RequestContext(request))
-
-    msg = EmailMultiAlternatives(subject, text_content, from_email, [email_user])
-    msg.attach_alternative(html_content, "text/html")
-    msg.send()
+    template_txt = 'newsletter/newsletter_welcome_mail.txt'
+    template_html =  'newsletter/newsletter_welcome_mail.html'
+    to = [email_user]
+    utils.send_mail_wrapper(subject, context, from_email, to, template_txt, template_html)
 
 
 @transaction.commit_on_success
@@ -35,7 +26,6 @@ def suscribe_newsletter(request):
     """
     View to suscribe new users to newsletter
     """
-
     if request.method != 'POST':
         return redirect('/')
 
@@ -125,5 +115,4 @@ def article(request, slug):
     return render_to_response("newsletter/article.html",
                     {"article": article},
                     context_instance=RequestContext(request))
-
 

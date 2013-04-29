@@ -1,0 +1,15 @@
+letter de la PyConEs 2013
+
+{{ newsletter.title|upper }}
+
+{{ newsletter.head }}
+
+{% for article in newsletter.articles.all %}
+    {{ article.title }}
+
+    {{ article.text }}
+
+    Artículo completo en {{ article.get_absolute_url }}
+
+{% endfor %}
+

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+from django.conf import settings
 from django.contrib import admin
 from pycones import utils
 from pycones.newsletter.models import Newsletter, Article, Subscription
@@ -15,10 +18,11 @@ def send_newsletter(modeladmin, request, queryset):
         raise PermissionDenied
     for newsletter in queryset:
         subject = newsletter.title
-        template = 'newsletter_mail.html'
+        template = 'newsletter/newsletter_mail.html'
         context = {'newsleter': newsletter}
+        from_email = settings.EMAIL_HOST_USER
         to = [s.user_email for s in Subscription.objects.all()]
-        utils.send_mail_wrapper(subject, template, context, to)
+        utils.send_mail_wrapper(subject, context, from_email, to, template)
         newsletter.sent = True
         newsletter.save()
 
