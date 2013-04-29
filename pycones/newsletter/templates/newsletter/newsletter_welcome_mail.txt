@@ -15,7 +15,7 @@ en mandarnos un tweet o un correo :)
 Aún así no te obligamos a aguantarnos. Podrás darte de baja con el siguiente
 enlace:
 
-http://2013.es.pycon.org/newsletter/unsuscribe/?email={{ mail }}&val_token={{ token }}
+{{ unsubscribe_url }}
 
 Un saludo
 Muchas gracias

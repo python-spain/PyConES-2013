@@ -1,4 +1,4 @@
-letter de la PyConEs 2013
+Newsletter de la PyConEs 2013
 
 {{ newsletter.title|upper }}
 

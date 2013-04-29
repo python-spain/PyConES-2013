@@ -8,7 +8,7 @@ from django.template import loader
 logger = logging.getLogger(__name__)
 
 
-def send_mail_wrapper(subject, context, from_email, to, template_txt, template_html=None):
+def mail_wrapper(subject, context, from_email, to, template_txt, template_html=None):
     try:
         email = EmailMultiAlternatives(
             subject = subject,
@@ -20,7 +20,7 @@ def send_mail_wrapper(subject, context, from_email, to, template_txt, template_h
             html_body = loader.render_to_string(template_html, context)
             email.attach_alternative(html_body, 'text/html')
             email.content_subtype = 'html'
-        email.send()
+        return email
     except IOError as ex:
-        logger.error(u'No se ha podido realizar el envío. Razón:  %s' % (str(ex)))
+        logger.error(u'Error en utils.mail_wrapper: %s' % (str(ex)))
 

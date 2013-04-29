@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE htmlm
 <html>
     <head>
         <meta charset="utf-8">
@@ -12,7 +12,7 @@
         <table width="656" border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0;">
             {% if mail %}
             <tr height="34" vertical-align="middle" align="middle">
-                <td>Si no ves correctamente este newsletter, <a style="color: red; font-weight: bold; text-decoration: none;" href="{{newsletter.get_absolute_url}}" target="_blank">haz click aquí</a></td>
+                <td>Si no ves correctamente este boletín, <a style="color: red; font-weight: bold; text-decoration: none;" href="{{newsletter.get_absolute_url}}" target="_blank">haz click aquí</a></td>
             </tr>
             {% endif %}
             <tr width="656" height="158">
@@ -46,7 +46,7 @@
                      <table width="601" height="40" border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; background: #c7c7c7; color: #fff;">
                       <tr>
                          <td vertical-align="middle" align="middle">
-                             PyConEs ©2013 {% if val_token %}| <a style="color: red; font-weight: bold;" href="#">Dar de baja mi suscripción</a>{% endif %}
+                             PyConEs ©2013 {% if val_token %}| <a style="color: red; font-weight: bold;" href="{{ unsubscribe_url }}">Dar de baja mi suscripción</a>{% endif %}
                          </td>
                      </tr>
                      </table><!-- footer -->

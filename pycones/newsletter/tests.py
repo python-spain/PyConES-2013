@@ -14,7 +14,7 @@ def is_subscribed(user):
 
 def subscribe(email):
     data = {
-        'email_user': email
+        'user_email': email
     }
     request = RequestFactory().post('/', data)
     request.user = AnonymousUser()

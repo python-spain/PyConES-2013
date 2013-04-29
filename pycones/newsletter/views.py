@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import uuid
-
+from django.contrib.sites.models import Site
+from django.core import mail
+from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.db import transaction
 from django.template.loader import render_to_string
@@ -11,15 +13,21 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .models import Subscription, Newsletter, Article
 from pycones import utils
 
-def send_welcome_msg(email_user, token, request):
+def send_welcome_msg(user_email, val_token, request):
     subject = u'¡Bienvenido a PyConES!'
     from_email = u'boletin2013@es.pycon.org'
-    context = {"email": email_user, "token": token}
+    current_site = Site.objects.get_current()
+    unsubscribe_url = 'http://%s%s?user_email=%s&val_token=%s' % (current_site, reverse('unsuscribe_newsletter'), user_email, val_token)
+    context = {
+        "user_email": user_email,
+        "val_token": val_token,
+        "unsubscribe_url": unsubscribe_url
+    }
     template_txt = 'newsletter/newsletter_welcome_mail.txt'
     template_html =  'newsletter/newsletter_welcome_mail.html'
-    to = [email_user]
-    utils.send_mail_wrapper(subject, context, from_email, to, template_txt, template_html)
-
+    to = [user_email]
+    email = utils.mail_wrapper(subject, context, from_email, to, template_txt, template_html)
+    email.send()
 
 @transaction.commit_on_success
 def suscribe_newsletter(request):
@@ -29,14 +37,14 @@ def suscribe_newsletter(request):
     if request.method != 'POST':
         return redirect('/')
 
-    email = request.POST.get('email_user', None)
+    user_email = request.POST.get('user_email', None)
 
-    if not email:
+    if not user_email:
         context = {'message' : u"Error al recoger el email. Inténtalo de nuevo mas tarde"}
         return render_to_response("newsletter/comingsoon_message.html", context,
                                   context_instance=RequestContext(request))
 
-    subscription_queryset = Subscription.objects.filter(user_email=email)
+    subscription_queryset = Subscription.objects.filter(user_email=user_email)
 
     try:
         subscription = subscription_queryset.get()
@@ -45,7 +53,7 @@ def suscribe_newsletter(request):
                                 context,
                                 context_instance=RequestContext(request))
     except Subscription.DoesNotExist:
-        subscription = Subscription(user_email=email, val_token=str(uuid.uuid4()))
+        subscription = Subscription(user_email=user_email, val_token=str(uuid.uuid4()))
         subscription.save()
 
     send_welcome_msg(subscription.user_email, subscription.val_token, request)
@@ -62,15 +70,15 @@ def unsuscribe_newsletter(request):
     if request.method != 'GET':
         return redirect('/')
 
-    email = request.GET.get('email', None)
-    token = request.GET.get('val_token', None)
+    user_email = request.GET.get('user_email', None)
+    val_token = request.GET.get('val_token', None)
 
-    if not email or not token:
+    if not user_email or not val_token:
         context = {"message": u"Parámetros incorrectos"}
         return render_to_response("newsletter/comingsoon_message.html",
                         context, context_instance=RequestContext(request))
 
-    queryset = Subscription.objects.filter(user_email=email, val_token=token)
+    queryset = Subscription.objects.filter(user_email=user_email, val_token=val_token)
     try:
         subscription = queryset.get()
     except Subscription.DoesNotExist:
