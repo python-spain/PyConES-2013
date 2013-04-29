@@ -12,17 +12,17 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Article, ArticleAdmin)
 
-
 def send_newsletter(modeladmin, request, queryset):
     if not request.user.is_staff:
         raise PermissionDenied
     for newsletter in queryset:
         subject = newsletter.title
-        template = 'newsletter/newsletter_mail.html'
-        context = {'newsleter': newsletter}
         from_email = settings.EMAIL_HOST_USER
+        context = {'newsletter': newsletter}
+        template_txt = 'newsletter/newsletter_mail.txt'
+        template_html =  'newsletter/newsletter_mail.html'
         to = [s.user_email for s in Subscription.objects.all()]
-        utils.send_mail_wrapper(subject, context, from_email, to, template)
+        utils.send_mail_wrapper(subject, context, from_email, to, template_txt, template_html)
         newsletter.sent = True
         newsletter.save()
 
