@@ -17,7 +17,6 @@ def send_newsletter(modeladmin, request, queryset):
         raise PermissionDenied
     for newsletter in queryset:
         subject = '[PyConEs] %s' % newsletter.title
-        template = 'newsletter/newsletter_mail.html'
         context = {'newsleter': newsletter}
         from_email = settings.EMAIL_HOST_USER
         context = {'newsletter': newsletter}
