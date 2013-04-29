@@ -30,16 +30,6 @@ DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#DATABASES = {
-#   "default": {
-#      "ENGINE": "django.db.backends.sqlite3", # Add "postgresql_psycopg2", "postgresql", "mysql", "sqlite3" or "oracle".
-#      "NAME": "dev.db",                       # Or path to database file if using sqlite3.
-#      "USER": "",                             # Not used with sqlite3.
-#      "PASSWORD": "",                         # Not used with sqlite3.
-#      "HOST": "",                             # Set to empty string for localhost. Not used with sqlite3.
-#      "PORT": "",                             # Set to empty string for default. Not used with sqlite3.
-#   }
-#}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -229,20 +219,6 @@ FIXTURE_DIRS = [
 
 
 CONFERENCE_ID = 1
-
-if not DEBUG:
-    ######################################################################
-    # Storage settings, only valid on production/heroku environment
-    #####################################################################
-
-    INSTALLED_APPS.append("storages")
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
-    AWS_QUERYSTRING_AUTH = False
-    AWS_STORAGE_BUCKET_NAME = 'pycones'
-    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.
