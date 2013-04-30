@@ -85,6 +85,7 @@ class Article(models.Model):
     created_date = models.DateTimeField(editable=False, auto_now_add=True)
     updated_date = models.DateTimeField(editable=False, auto_now=True)
     visible = models.BooleanField(default=False)
+    order = models.IntegerField(blank=True, null=True)
 
     objects = ArticleManager()
 
@@ -92,7 +93,7 @@ class Article(models.Model):
         return self.title
 
     class Meta:
-        ordering = ["created_date"]
+        ordering = ["order"]
 
     def get_absolute_url(self):
         current_site = Site.objects.get_current()
