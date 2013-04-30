@@ -100,8 +100,14 @@ def latest_newsletter(request):
     except:
         return HttpResponseRedirect('/')
 
+    static_url = 'http://%s%s' % (Site.objects.get_current(),settings.STATIC_URL)
+    context = {
+        "newsletter": newsletter,
+        "static_url": static_url
+    }
+
     return render_to_response("newsletter/newsletter.html",
-                    {"newsletter": newsletter},
+                    context,
                     context_instance=RequestContext(request))
 
 def newsletter(request, uuid):
