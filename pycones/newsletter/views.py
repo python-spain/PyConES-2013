@@ -2,6 +2,7 @@
 
 import uuid
 from django.contrib.sites.models import Site
+from django.conf import settings
 from django.core import mail
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, redirect, get_object_or_404
@@ -107,10 +108,15 @@ def newsletter(request, uuid):
     """
     View to get newsletter by uuid
     """
+    static_url = 'http://%s%s' % (Site.objects.get_current(),settings.STATIC_URL)
     newsletter = get_object_or_404(Newsletter, uuid=uuid)
+    context = {
+        "newsletter": newsletter,
+        "static_url": static_url
+    }
 
     return render_to_response("newsletter/newsletter.html",
-                    {"newsletter": newsletter},
+                    context,
                     context_instance=RequestContext(request))
 
 
