@@ -16,7 +16,7 @@
             </tr>
             {% endif %}
             <tr width="656" height="158">
-                <td align="right" valign="bottom" style="background: url({{STATIC_URL}}newsletter/img/header.gif) no-repeat;">
+                <td align="right" valign="bottom" style="background: url({{static_url}}newsletter/img/header.gif) no-repeat;">
                     <p style="color: #ffffff; font-weight: bold; font-size: 20px; margin: 0 20px 8px 0;">{{ newsletter.title|upper }}</p>
                 </td>
             </tr><!-- header -->
@@ -39,7 +39,7 @@
                          <p><a style="font-size: 20px; color: red; text-decoration: none;" href="{{ article.get_absolute_url }}" target="_blank">{{ article.title }}</a>
                          {% autoescape off %}{{ article.text }}{% endautoescape %}
                          </td>
-                         <td width="55" align="right"><a href="{{ article.get_absolute_url }}" target="_blank"><img src="{{STATIC_URL}}newsletter/img/plus.gif" alt="Ver más"></a></td>
+                         <td width="55" align="right"><a href="{{ article.get_absolute_url }}" target="_blank"><img src="{{static_url}}newsletter/img/plus.gif" alt="Ver más"></a></td>
                      </tr><!-- articulo -->
                      {% endfor%}
                      </tr><!-- articulo -->
