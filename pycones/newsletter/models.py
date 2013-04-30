@@ -97,7 +97,7 @@ class Article(models.Model):
     def get_absolute_url(self):
         current_site = Site.objects.get_current()
         url = reverse('article', args=[self.slug])
-        return 'http://%s%s' % (current_site, url)
+        return 'http://%s%s' % (current_site.domain, url)
 
 
 class Newsletter(models.Model):
@@ -119,11 +119,12 @@ class Newsletter(models.Model):
     def get_absolute_url(self):
         current_site = Site.objects.get_current()
         url = reverse('newsletter', args=[self.uuid])
-        return 'http://%s%s' % (current_site, url)
+        return 'http://%s%s' % (current_site.domain, url)
 
 class Subscription(models.Model):
     user_email = models.EmailField()
     val_token = models.CharField(max_length=128)
+    admin = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.user_email

@@ -18,7 +18,7 @@ def send_welcome_msg(user_email, val_token, request):
     subject = u'¡Bienvenido a PyConES!'
     from_email = u'boletin2013@es.pycon.org'
     current_site = Site.objects.get_current()
-    unsubscribe_url = 'http://%s%s?user_email=%s&val_token=%s' % (current_site, reverse('unsuscribe_newsletter'), user_email, val_token)
+    unsubscribe_url = 'http://%s%s?user_email=%s&val_token=%s' % (current_site.domain, reverse('unsuscribe_newsletter'), user_email, val_token)
     context = {
         "user_email": user_email,
         "val_token": val_token,
