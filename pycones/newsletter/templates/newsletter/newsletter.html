@@ -43,7 +43,7 @@
                          <td width="490" style="border-right: solid 1px #e0e0e0; padding: 10px 10px 10px 0;">
                           <p>
                             <a style="font-size: 20px; color: red; text-decoration: none;" href="{{ article.get_absolute_url }}" target="_blank">{{ article.title }}</a>
-                            {% autoescape off %}{{ article.text }}{% endautoescape %}
+                            {% autoescape off %}{{ article.text|truncatewords_html:50 }}{% endautoescape %}
                           </p>
                          </td>
                          <td width="55" align="right"><a href="{{ article.get_absolute_url }}" target="_blank"><img src="{{static_url}}newsletter/img/plus.gif" alt="Ver más"/></a></td>
