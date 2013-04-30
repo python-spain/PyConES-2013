@@ -7,7 +7,7 @@ import posixpath
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = not (os.getenv("DJANGO_ENV", "devel") == "production")
+DEBUG = True
 TEMPLATE_DEBUG = True
 
 # tells Pinax to serve media through the staticfiles app.
