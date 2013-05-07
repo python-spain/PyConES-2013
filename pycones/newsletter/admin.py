@@ -42,7 +42,7 @@ def send_newsletter(modeladmin, request, queryset):
             email = utils.mail_wrapper(subject, context, from_email, to, template_txt, template_html)
             emails.append(email)
 
-        connection = mail.get_connection() # Use default e-mail connection
+        connection = mail.get_connection(fail_silently=True)
         connection.send_messages(emails)
 
         newsletter.sent = True
