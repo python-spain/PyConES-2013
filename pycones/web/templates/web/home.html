@@ -1,0 +1,57 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>PyCon 2013</title>
+        <meta name="description" content="Comunidad Internacional de Python">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+        <!-- Google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <!-- Flexslider -->
+        <link rel="stylesheet" href="{% static 'web/css/flexslider.css' %}" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="{% static 'web/js/jquery.flexslider.js' %}"></script>
+        <!-- Flexslider script -->
+        <script type="text/javascript" charset="utf-8">
+          $(window).load(function() {
+            $('.flexslider').flexslider();
+          });
+        </script>
+    </head>
+    <body>
+        {% include 'web/header.html' %}
+        <div class="space"></div>
+        {% include 'web/info.html' %}
+        {% include 'web/skyline.html' %}
+        {% include 'web/data.html' %}
+        {% include 'web/sponsors.html' %}
+        <div class="imagen-landscape1">
+            <div class="imagen-landscape-inside">
+                <div class="imagen-pie">
+                    <p>PyCon Santa Clara 2013</p>
+                    <p><a href="http://www.flickr.com/photos/jaaaarel/" target="_blank">Foto: Jaaaarel</a></p>
+                </div>
+            </div>
+        </div><!-- imagen-landscape1 -->
+        {% include 'web/call4papers.html' %}
+        {% include 'web/schedule.html' %}
+        <div class="imagen-landscape2">
+            <div class="imagen-landscape2-inside">
+                <div class="imagen-pie">
+                    <p>PyCon Santa Clara 2013</p>
+                    <p><a href="http://www.flickr.com/photos/jaaaarel/" target="_blank">Foto: Jaaaarel</a></p>
+                </div>
+            </div>
+        </div><!-- imagen-landscape2 -->
+        <div class="twitter-mod">
+            <div class="twitter-mod-inside">
+            <!-- PLUGIN TWITTER FEED -->
+            </div>            
+        </div><!-- twitter-mod -->
+        {% include 'web/footer.html' %}
+    </body>
+</html>

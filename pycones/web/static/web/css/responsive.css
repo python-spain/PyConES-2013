@@ -1,0 +1,51 @@
+/*** < 880px ***/
+@media screen and (max-width: 880px) {
+    
+    .menu {
+        font-size: 1.1em;
+    }
+    
+    .datos-inside {
+        text-align: center;
+    }
+    
+    .horario-tabla ul {
+        font-size: 0.9em;
+    }
+    
+    .footer-menu ul li a.logo-footer {
+        background: none;
+        width: 100%;
+        height: 100%;
+        text-indent: 1em;
+    }
+    
+    .call4papers-btn a {
+        margin-bottom: 60px;
+    }
+}
+
+/*** < 830px ***/
+@media screen and (max-width: 830px) {
+    
+    .informacion img {
+        display: none;
+    }
+    
+    .menu {
+        font-size: 1.7em;
+        padding: 20px 12px;
+    }
+    
+    .call4papers-btn a {
+        margin: 0;
+    }
+    
+    .call4papers-right img {
+        display: none;
+    }
+    
+    .space {
+        height: 195px;
+    }
+}

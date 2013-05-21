@@ -173,9 +173,9 @@ INSTALLED_APPS = [
     "symposion.schedule",
 
     # project
-    "pycones.profile",
     "pycones.proposals",
     "pycones.newsletter",
+    "pycones.web",
 ]
 
 MARKITUP_FILTER = ("markdown.markdown", {"safe_mode": True})

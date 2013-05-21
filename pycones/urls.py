@@ -16,16 +16,13 @@ import symposion.views
 WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
 
 urlpatterns = patterns("",
-    #url(r"^$", direct_to_template, {
-    #    "template": "comingsoon.html",#"homepage.html",
-    #}, name="home"),
-    url(r"^$", TemplateView.as_view(template_name="comingsoon.html")),
+    url(r"^", include('pycones.web.urls')),
+    url(r"^newsletter/", include("pycones.newsletter.urls")),
     url(r"^admin/", include(admin.site.urls)),
 
     url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),
     url(r"^account/login/$", symposion.views.LoginView.as_view(), name="account_login"),
     url(r"^account/", include("account.urls")),
-
     url(r"^dashboard/", symposion.views.dashboard, name="dashboard"),
     url(r"^speaker/", include("symposion.speakers.urls")),
     url(r"^proposals/", include("symposion.proposals.urls")),
@@ -35,9 +32,8 @@ urlpatterns = patterns("",
     url(r"^reviews/", include("symposion.reviews.urls")),
     url(r"^schedule/", include("symposion.schedule.urls")),
     url(r"^markitup/", include("markitup.urls")),
-    url(r"^newsletter/", include("pycones.newsletter.urls")),
 
-    url(r"^", include("symposion.cms.urls")),
+    #url(r"^", include("symposion.cms.urls")),
 )
 
 def mediafiles_urlpatterns():
