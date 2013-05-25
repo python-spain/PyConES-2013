@@ -7,24 +7,14 @@
         <title>PyCon 2013</title>
         <meta name="description" content="Comunidad Internacional de Python">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
-        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
         <!-- Google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <!-- Flexslider -->
         <link rel="stylesheet" href="{% static 'web/css/flexslider.css' %}" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script src="{% static 'web/js/jquery.flexslider.js' %}"></script>
-        <!-- Flexslider script -->
-        <script type="text/javascript" charset="utf-8">
-          $(window).load(function() {
-            $('.flexslider').flexslider();
-          });
-        </script>
+        <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
     </head>
     <body>
         {% include 'web/header.html' %}
-        <div class="space"></div>
         {% include 'web/info.html' %}
         {% include 'web/skyline.html' %}
         {% include 'web/data.html' %}
@@ -53,4 +43,12 @@
         </div><!-- twitter-mod -->
         {% include 'web/footer.html' %}
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="{% static 'web/js/jquery.flexslider.js' %}"></script>
+        <!-- Flexslider script -->
+        <script type="text/javascript" charset="utf-8">
+          $(window).load(function() {
+            $('.flexslider').flexslider();
+          });
+    </script>
 </html>
