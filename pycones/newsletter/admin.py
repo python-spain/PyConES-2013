@@ -36,7 +36,7 @@ def send_newsletter(modeladmin, request, queryset):
         for subscriber in subscribers:
             to = [subscriber.user_email]
             current_site = Site.objects.get_current()
-            context['unsubscribe_url'] = 'http://%s%s?user_email=%s&val_token=%s' % (current_site.domain, reverse('unsuscribe_newsletter'), subscriber.user_email, subscriber.val_token)
+            context['unsubscribe_url'] = 'http://%s%s?user_email=%s&val_token=%s' % (current_site.domain, reverse('unsubscribe_newsletter'), subscriber.user_email, subscriber.val_token)
             context['static_url'] = 'http://%s%s' % (current_site.domain, settings.STATIC_URL)
 
             email = utils.mail_wrapper(subject, context, from_email, to, template_txt, template_html)

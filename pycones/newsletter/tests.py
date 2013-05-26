@@ -2,7 +2,7 @@ from django.contrib.auth.models import AnonymousUser, User
 from django.test import RequestFactory, TestCase
 
 from .models import Subscription
-from .views import suscribe_newsletter, unsuscribe_newsletter
+from .views import subscribe_newsletter, unsubscribe_newsletter
 
 
 def is_subscribed(user):
@@ -18,7 +18,7 @@ def subscribe(email):
     }
     request = RequestFactory().post('/', data)
     request.user = AnonymousUser()
-    return suscribe_newsletter(request)
+    return subscribe_newsletter(request)
 
 
 def unsubscribe(email):
@@ -31,7 +31,7 @@ def unsubscribe(email):
     }
     request = RequestFactory().get('/', data)
     request.user = AnonymousUser()
-    return unsuscribe_newsletter(request)
+    return unsubscribe_newsletter(request)
 
 
 class SubscribeTestCase(TestCase):

@@ -17,7 +17,7 @@ WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
 
 urlpatterns = patterns("",
     url(r"^", include('pycones.web.urls')),
-    url(r"^newsletter/", include("pycones.newsletter.urls")),
+    url(r"^newsletter/", include("pycones.newsletter.urls", namespace="newsletter")),
     url(r"^admin/", include(admin.site.urls)),
 
     url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),

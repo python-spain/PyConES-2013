@@ -18,7 +18,7 @@ def send_welcome_msg(user_email, val_token, request):
     subject = u'¡Bienvenido a PyConES!'
     from_email = u'boletin2013@es.pycon.org'
     current_site = Site.objects.get_current()
-    unsubscribe_url = 'http://%s%s?user_email=%s&val_token=%s' % (current_site.domain, reverse('unsuscribe_newsletter'), user_email, val_token)
+    unsubscribe_url = 'http://%s%s?user_email=%s&val_token=%s' % (current_site.domain, reverse('newsletter:unsubscribe_newsletter'), user_email, val_token)
     context = {
         "user_email": user_email,
         "val_token": val_token,
@@ -31,15 +31,14 @@ def send_welcome_msg(user_email, val_token, request):
     email.send()
 
 @transaction.commit_on_success
-def suscribe_newsletter(request):
+def subscribe_newsletter(request):
     """
-    View to suscribe new users to newsletter
+    View to subscribe new users to newsletter
     """
     if request.method != 'POST':
         return redirect('/')
 
     user_email = request.POST.get('user_email', None)
-
     if not user_email:
         context = {'message' : u"Error al recoger el email. Inténtalo de nuevo mas tarde"}
         return render_to_response("newsletter/comingsoon_message.html", context,
@@ -63,10 +62,9 @@ def suscribe_newsletter(request):
     return render_to_response("newsletter/comingsoon_message.html", context,
                                context_instance=RequestContext(request))
 
-
-def unsuscribe_newsletter(request):
+def unsubscribe_newsletter(request):
     """
-    View to unsuscribe newsletter
+    View to unsubscribe newsletter
     """
     if request.method != 'GET':
         return redirect('/')
