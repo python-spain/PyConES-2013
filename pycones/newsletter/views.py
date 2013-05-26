@@ -74,7 +74,7 @@ def unsubscribe_newsletter(request):
 
     if not user_email or not val_token:
         context = {"message": u"Parámetros incorrectos"}
-        return render_to_response("newsletter/comingsoon_message.html",
+        return render_to_response("newsletter/unsubscribe.html",
                         context, context_instance=RequestContext(request))
 
     queryset = Subscription.objects.filter(user_email=user_email, val_token=val_token)
@@ -86,7 +86,7 @@ def unsubscribe_newsletter(request):
         subscription.delete()
         context = {"message": u"Eliminado de la newsletter correctamente"}
 
-    return render_to_response("newsletter/comingsoon_message.html",
+    return render_to_response("newsletter/unsubscribe.html",
                         context, context_instance=RequestContext(request))
 
 def latest_newsletter(request):
