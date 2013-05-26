@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+
 <article class="patrocinadores" id="patrocinadores">
     <div class="patrocinadores-inside">
         <h2 class="red title">Patrocinadores</h2>
@@ -19,11 +20,51 @@
         <div class="patrocinadores-slider">
             <div class="flexslider">
                 <ul class="slides">
-                    <li><img src="{% static 'web/img/slide1.jpg' %}" /></li>
-                    <li><img src="{% static 'web/img/slide2.jpg' %}" /></li>
-                    <li><img src="{% static 'web/img/slide3.jpg' %}" /></li>
-                    <li><img src="{% static 'web/img/slide3.jpg' %}" /></li>
-                    <!-- items mirrored twice, total of 12 -->
+                    <li><!-- diamante -->
+                    {% if diamonds %}
+                        <ul>
+                        {% for sponsor in diamonds %}
+                            <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                <img src="{{ sponsor.image.url }}"/></a></li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <img src="{% static 'web/img/slide2.jpg' %}" />
+                    {% endif %}
+                    </li>
+                    <li><!-- platino -->
+                    {% if platinums %}
+                        <ul>
+                        {% for sponsor in platinums %}
+                            <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                <img src="{{ sponsor.image.url }}"/></a></li>
+                        {% endfor %}
+                    {% else %}
+                        <img src="{% static 'web/img/slide2.jpg' %}" />
+                    {% endif %}
+                    </li>
+                    <li><!-- oro -->
+                    {% if golds %}
+                        <ul>
+                        {% for sponsor in golds %}
+                            <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                <img src="{{ sponsor.image.url }}"/></a></li>
+                        {% endfor %}
+                    {% else %}
+                        <img src="{% static 'web/img/slide2.jpg' %}" />
+                    {% endif %}
+                    </li><!-- plata -->
+                    <li>
+                    {% if silvers %}
+                        <ul>
+                        {% for sponsor in silvers %}
+                            <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                <img src="{{ sponsor.image.url }}"/></a></li>
+                        {% endfor %}
+                    {% else %}
+                        <img src="{% static 'web/img/slide2.jpg' %}" />
+                    {% endif %}
+                    </li>
                 </ul>
             </div>
         </div><!-- patrocinadores-slider -->

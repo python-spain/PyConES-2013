@@ -8,13 +8,18 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse
 
 from pycones import utils
-
+from pycones.sponsors.models import Sponsor
 
 def home(request):
     """
     View to get the home page
     """
-    context = {}
+    context = {
+        'diamonds': Sponsor.objects.filter(level='diamond'),
+        'platinums': Sponsor.objects.filter(level='platinum'),
+        'golds': Sponsor.objects.filter(level='gold'),
+        'silvers': Sponsor.objects.filter(level='silver'),
+    }
 
     return render_to_response("web/home.html",
                     context,
