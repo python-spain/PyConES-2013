@@ -48,7 +48,10 @@
         <!-- Flexslider script -->
         <script type="text/javascript" charset="utf-8">
           $(window).load(function() {
-            $('.flexslider').flexslider();
+            $('.flexslider').flexslider({
+                controlsContainer: ".patrocinadores-nav",
+                manualControls: ".patrocinadores-nav li"
+            });
           });
     </script>
 </html>

@@ -149,6 +149,11 @@ header {
 }
 
 /* CONTENT */
+.title{
+    font-size: 3em;
+    font-weight: normal;
+}
+
 .space {
     width: 100%;
     height: 110px;
@@ -161,11 +166,6 @@ header {
     margin: 0;
     padding: .5em 1% 0 1%;
     width: 100%;
-}
-
-.informacion h1{
-    font-size: 3em;
-    font-weight: normal;
 }
 
 .informacion-inside {
@@ -278,7 +278,7 @@ header {
 .patrocinadores-inside {
     width: 1050px;
     max-width: 100%;
-    min-height: 550px;
+    min-height: 570px;
     height: 100%;
     margin: 0 auto;
     padding: 0 1%;
@@ -673,6 +673,11 @@ footer {
 /*** < 880px ***/
 @media screen and (max-width: 800px) {
 
+    .title{
+        font-size: 2.5em;
+        text-align: center;
+    }
+
     .menu {
         float: initial;
         font-size: 1.5em;
@@ -692,13 +697,23 @@ footer {
         border: 0;
     }
 
-    .informacion h1{
-        font-size: 2.5em;
+    .informacion img{
+        display: none;
+    }
+
+    .patrocinadores-btn{
+        float: initial;
         text-align: center;
     }
 
-    .informacion img{
-        display: none;
+    .patrocinadores-btn ul li{
+        display: inline-block;
+        float: initial;
+        margin-top: .5em;
+    }
+
+    .patrocinadores-nav{
+        margin: 0;
     }
 
     .datos-inside {
