@@ -452,7 +452,6 @@ header {
     margin: 0;
     padding: 0;
     min-width: 350px;
-    widows: 100%;
     margin: 14px 0 0 2%
 }
 
@@ -592,9 +591,46 @@ footer {
     padding: 1px 1%;
 }
 
+.footer-inside>div{
+    text-align: left;
+    width: 30%;
+}
+
+.footer-contacto {
+    float: left;
+    text-align: left;
+}
+
+.footer-contacto form{
+    text-align: left;
+}
+
+.footer-contacto>form>span{
+    color: white;
+    display: block;
+}
+
+.footer-contacto>form>input{
+    border: 0;
+    padding: .5em;
+}
+
+.footer-contacto>form>textarea{
+    border: 0;
+    height: 70px;
+    margin-bottom: 1em;
+    padding: .5em;
+    width: 100%;
+}
+
+.footer-contacto>form>a.button{
+    background: #e31212;
+    color: #ffffff;
+    padding: .6em;
+}
+
 .footer-menu {
     float: left;
-    width: 25.365853%;
     height: 100%;
     margin: 0;
     padding: 0 1.5%;
@@ -625,42 +661,36 @@ footer {
     float: left;
 }
 
-.footer-contacto {
-    float: left;
-    width: 35.238095%;
-    height: 100%;
-    margin: 0;
-    padding: 0 1.5%;
-}
-
-.footer-contacto-form {
-    float: left;
-    width: 100%;
-    height: 380px;
-    margin: 0;
-    padding: 0;
-    background: #767676;
-}
-
 .footer-newsletter {
     float: left;
-    width: 28.571428%;
     height: 100%;
     margin: 0;
     padding: 0 1.5%;
 }
 
-.footer-newsletter-form {
-    float: left;
-    width: 100%;
-    height: 200px;
-    margin: 0;
-    padding: 0;
-    background: #f0c635;
+.footer-newsletter form{
+    text-align: left;
 }
 
-.footer-copy {
-    float: left;
+.footer-newsletter>form>span{
+    color: white;
+    display: block;
+}
+
+.footer-newsletter>form>input{
+    border: 0;
+    display: block;
+    margin-bottom: 1.5em;
+    padding: .5em;
+}
+
+.footer-newsletter>form>a.button{
+    background: #e31212;
+    color: #ffffff;
+    padding: .6em;
+}
+
+#footer-copy {
     text-align: center;
     font-size: 0.9em;
     color: #b2b2b2;
@@ -716,6 +746,10 @@ footer {
         margin: 0;
     }
 
+    .call4papers-btn a {
+        margin-bottom: 60px;
+    }
+
     .datos-inside {
         text-align: center;
     }
@@ -724,14 +758,14 @@ footer {
         font-size: 0.9em;
     }
 
+    .footer-inside>div{
+        width: 100%;
+    }
+
     .footer-menu ul li a.logo-footer {
         background: none;
         width: 100%;
         height: 100%;
         text-indent: 1em;
-    }
-
-    .call4papers-btn a {
-        margin-bottom: 60px;
     }
 }
