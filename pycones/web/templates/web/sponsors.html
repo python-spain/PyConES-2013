@@ -22,51 +22,63 @@
                 <ul class="slides">
                     <li><!-- diamante -->
                         {% if diamonds %}
-                            <ul>
+                            <ul class="one-column">
                             {% for sponsor in diamonds %}
-                                <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
-                                    <img src="{{ sponsor.image.url }}"/></a></li>
+                                <li>
+                                    <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                        <div style="background-image:url('{{ sponsor.image.url }}');"></div>
+                                    </a>
+                                </li>
                             {% endfor %}
                             </ul>
                         {% else %}
-                            <h3>Sé el primer patrocinador de diamante de la PyConES</h3>
+                            <h3>Sé el primer patrocinador de <span class="diamante">diamante</span> de la PyConES</h3>
                         {% endif %}
                     </li>
                     <li><!-- platino -->
                         {% if platinums %}
-                            <ul>
+                            <ul class="two-columns">
                             {% for sponsor in platinums %}
-                                <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
-                                    <img src="{{ sponsor.image.url }}"/></a></li>
+                                <li>
+                                    <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                        <div style="background-image:url('{{ sponsor.image.url }}');"></div>
+                                    </a>
+                                </li>
                             {% endfor %}
                             </ul>
                         {% else %}
-                            <h3>Sé el primer patrocinador de platino de la PyConES</h3>
+                            <h3>Sé el primer patrocinador de <span class="platino">platino</span> de la PyConES</h3>
                         {% endif %}
                     </li>
                     <li><!-- oro -->
-                    {% if golds %}
-                        <ul>
-                        {% for sponsor in golds %}
-                            <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
-                                <img src="{{ sponsor.image.url }}"/></a></li>
-                        {% endfor %}
-                        </ul>
-                    {% else %}
-                        <h3>Sé el primer patrocinador de oro de la PyConES</h3>
-                    {% endif %}
+                        {% if golds %}
+                            <ul class="four-columns">
+                            {% for sponsor in golds %}
+                                <li>
+                                    <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                        <div style="background-image:url('{{ sponsor.image.url }}');"></div>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            <h3>Sé el primer patrocinador de <span class="oro">oro</span> de la PyConES</h3>
+                        {% endif %}
                     </li><!-- plata -->
                     <li>
-                    {% if silvers %}
-                        <ul>
-                        {% for sponsor in silvers %}
-                            <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
-                                <img src="{{ sponsor.image.url }}"/></a></li>
-                        {% endfor %}
-                        </ul>
-                    {% else %}
-                        <h3>Sé el primer patrocinador de plata de la PyConES</h3>
-                    {% endif %}
+                        {% if silvers %}
+                            <ul class="five-columns">
+                            {% for sponsor in silvers %}
+                                <li>
+                                    <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                        <div style="background-image:url('{{ sponsor.image.url }}');"></div>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            <h3>Sé el primer patrocinador de <span class="plata">plata</span> de la PyConES</h3>
+                        {% endif %}
                     </li>
                 </ul>
             </div>

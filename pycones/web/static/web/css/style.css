@@ -1,12 +1,13 @@
 /* GENERAL */
 body {
     background: #ffffff;
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
     color: #5b5b5b;
     font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
     line-height: 1.6em;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 img,
@@ -278,14 +279,10 @@ header {
 .patrocinadores-inside {
     width: 1050px;
     max-width: 100%;
-    min-height: 570px;
+    min-height: 600px;
     height: 100%;
     margin: 0 auto;
     padding: 0 1%;
-}
-
-.patrocinadores h1 {
-    float: left;
 }
 
 .patrocinadores-btn {
@@ -352,23 +349,83 @@ header {
 .patrocinadores-nav ul li a.platino:hover {color: #e1a9d7;}
 .patrocinadores-nav ul li a.oro:hover {color: #cbb924;}
 .patrocinadores-nav ul li a.plata:hover {color: #c8c8c8;}
-.patrocinadores-nav ul li a.bronce:hover {color: #b08153;}
 
 .patrocinadores-slider {
     float: left;
     width: 100%;
-    max-height: 370px;
+}
+
+.patrocinadores-slider span{
+    font-weight: bold;
+}
+
+.patrocinadores-slider span.diamante{
+    color: #4ccfeb;
+}
+.patrocinadores-slider span.platino{
+    color: #e1a9d7;
+}
+.patrocinadores-slider span.oro{
+    color: #cbb924;
+}
+.patrocinadores-slider span.plata{
+    color: #c8c8c8;
+}
+
+.patrocinadores-slider .slides li{
+    text-align: center;
+}
+
+.patrocinadores-slider .slides li h3{
+    font-size: 2.4em;
+    font-weight: normal;
+    line-height: 1em;
+}
+
+.patrocinadores-slider .slides li ul{
+    list-style: none;
+}
+
+.patrocinadores-slider .slides li ul li{
+    display: inline-block;
+    margin: 0 auto;
+    padding: .5em;
+}
+
+.one-column>*{
+    width: 80%;
+}
+
+.two-columns>*{
+    width: 45%;
+}
+
+.four-columns>*{
+    width: 23%;
+}
+
+.five-columns>*{
+    width: 18%;
+}
+
+.patrocinadores-slider .slides li ul li div{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100%;
 }
 
 .imagen-landscape1 {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
     background-image: url(../img/landscape1.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     background-color: #484848;
+    clear: both;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .imagen-landscape-inside {
@@ -696,8 +753,12 @@ footer {
     color: #b2b2b2;
     width: 100%;
     clear: both;
-    padding: 1.5% 0;
-    margin: 0;
+    padding: 2em 0;
+    margin: 1em 0 0 0;
+}
+
+#newsletter-message{
+    color: #f0c635;
 }
 
 /*** < 880px ***/
@@ -746,8 +807,28 @@ footer {
         margin: 0;
     }
 
+    .patrocinadores-slider .slides li ul{
+        padding: 0;
+    }
+
+    .two-columns>*{
+        width: 70%;
+    }
+
+    .four-columns>*{
+        width: 45%;
+    }
+
+    .five-columns>*{
+        width: 23%;
+    }
+
     .call4papers-btn a {
-        margin-bottom: 60px;
+        float: initial;
+    }
+
+    .call4papers-right {
+        float: initial;
     }
 
     .datos-inside {
