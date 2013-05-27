@@ -47,11 +47,13 @@
         {% endcomment %}
         {% include 'web/footer.html' %}
     </body>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script src="{% static 'web/js/jquery.flexslider.js' %}"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}web/js/web.js"></script>
-        <!-- Flexslider script -->
-        <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" src="{{ STATIC_URL }}web/js/jquery.min.js"></script>
+    <script src="{% static 'web/js/jquery.flexslider.js' %}"></script>
+
+    <script type="text/javascript" src="{{ STATIC_URL }}web/js/web.js"></script>
+
+    <!-- Flexslider script -->
+    <script type="text/javascript" charset="utf-8">
           $(window).load(function() {
             $('.flexslider').flexslider({
                 controlsContainer: ".patrocinadores-nav",

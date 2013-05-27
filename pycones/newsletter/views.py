@@ -9,7 +9,7 @@ from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.db import transaction
 from django.template.loader import render_to_string
 from django.template import RequestContext
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseBadRequest
 from django.utils import simplejson as json
 
 from .models import Subscription, Newsletter, Article
@@ -42,15 +42,15 @@ def subscribe_newsletter(request):
     user_email = request.POST.get('user_email', None)
     if not user_email:
         context = {'message' : u"Error al recoger el email. Inténtalo de nuevo más tarde"}
-        return HttpResponse(json.dumps(context), content_type="text/plain")
+        return HttpResponseBadRequest(json.dumps(context),
+                                      content_type="application/json")
 
     subscription_queryset = Subscription.objects.filter(user_email=user_email)
 
     try:
         subscription = subscription_queryset.get()
         context = {'message' : u"Se ha producido un error. Quizás ya estes dado de alta."}
-        return HttpResponse(json.dumps(context), content_type="text/plain")
-
+        return HttpResponseBadRequest(json.dumps(context), content_type="application/json")
     except Subscription.DoesNotExist:
         subscription = Subscription(user_email=user_email, val_token=str(uuid.uuid4()))
         subscription.save()
@@ -58,7 +58,7 @@ def subscribe_newsletter(request):
     send_welcome_msg(subscription.user_email, subscription.val_token, request)
 
     context = {'message' : u"Registrado. Muchas gracias"}
-    return HttpResponse(json.dumps(context), content_type="text/plain")
+    return HttpResponse(json.dumps(context), content_type="application/json")
 
 def unsubscribe_newsletter(request):
     """

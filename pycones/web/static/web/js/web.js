@@ -1,16 +1,23 @@
-function subscribeNewsletter(){
-    $('#subscribe-newsletter').live('click', function(e){
-        e.preventDefault();
-        var form = $("#newsletter-form");
-        $.post(form.attr('action'), form.serialize(), function(data){
-            $('#newsletter-message')[0].innerText = data.message;
-            //Falta hacer desaparecer el mensaje tras unos segundos 
-        }, 'json');
-    });
-}
+;(function () {
+  $('#subscribe-newsletter').click(function(e){
+      e.preventDefault();
 
-function main() {
-    subscribeNewsletter();
-}
-$(document).ready(main);
+      var showMessage = function(message, cls) {
+        $('#newsletter-message').html('<p class="' + cls + '">' + message + '</p>')
+                                .show()
+                                .delay(3000)
+                                .fadeOut();
 
+      };
+
+      var form = $("#newsletter-form");
+
+      $.post(form.attr('action'), form.serialize(), null, 'json')
+       .done(function(data){
+         showMessage(data.message, "alert alert-success");
+        })
+       .fail(function(data) {
+          showMessage(data.responseJSON.message, "alert alert-error");
+        });
+  });
+})();

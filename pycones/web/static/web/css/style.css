@@ -762,6 +762,18 @@ footer {
     color: #f0c635;
 }
 
+.alert {
+  // TODO
+}
+
+.alert-error {
+  // TODO
+}
+
+.alert-success {
+  // TODO
+}
+
 /*** < 880px ***/
 @media screen and (max-width: 800px) {
 
