@@ -21,27 +21,28 @@
             <div class="flexslider">
                 <ul class="slides">
                     <li><!-- diamante -->
-                    {% if diamonds %}
-                        <ul>
-                        {% for sponsor in diamonds %}
-                            <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
-                                <img src="{{ sponsor.image.url }}"/></a></li>
-                        {% endfor %}
-                        </ul>
-                    {% else %}
-                        <h3>Sé el primer patrocinador de diamante de la PyConES</h3>
-                    {% endif %}
+                        {% if diamonds %}
+                            <ul>
+                            {% for sponsor in diamonds %}
+                                <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                    <img src="{{ sponsor.image.url }}"/></a></li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            <h3>Sé el primer patrocinador de diamante de la PyConES</h3>
+                        {% endif %}
                     </li>
                     <li><!-- platino -->
-                    {% if platinums %}
-                        <ul>
-                        {% for sponsor in platinums %}
-                            <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
-                                <img src="{{ sponsor.image.url }}"/></a></li>
-                        {% endfor %}
-                    {% else %}
-                        <h3>Sé el primer patrocinador de platino de la PyConES</h3>
-                    {% endif %}
+                        {% if platinums %}
+                            <ul>
+                            {% for sponsor in platinums %}
+                                <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                                    <img src="{{ sponsor.image.url }}"/></a></li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            <h3>Sé el primer patrocinador de platino de la PyConES</h3>
+                        {% endif %}
                     </li>
                     <li><!-- oro -->
                     {% if golds %}
@@ -50,6 +51,7 @@
                             <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
                                 <img src="{{ sponsor.image.url }}"/></a></li>
                         {% endfor %}
+                        </ul>
                     {% else %}
                         <h3>Sé el primer patrocinador de oro de la PyConES</h3>
                     {% endif %}
@@ -61,6 +63,7 @@
                             <li><a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
                                 <img src="{{ sponsor.image.url }}"/></a></li>
                         {% endfor %}
+                        </ul>
                     {% else %}
                         <h3>Sé el primer patrocinador de plata de la PyConES</h3>
                     {% endif %}
