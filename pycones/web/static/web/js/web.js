@@ -3,10 +3,10 @@
       e.preventDefault();
 
       var showMessage = function(message, cls) {
-        $('#newsletter-message').html('<p class="' + cls + '">' + message + '</p>')
-                                .show()
-                                .delay(3000)
-                                .fadeOut();
+          $('#newsletter-message').html('<p class="' + cls + '">' + message + '</p>')
+                                  .show()
+                                  .delay(3000)
+                                  .fadeOut();
 
       };
 
@@ -14,10 +14,10 @@
 
       $.post(form.attr('action'), form.serialize(), null, 'json')
        .done(function(data){
-         showMessage(data.message, "alert alert-success");
+           showMessage(data.message, "alert alert-success");
         })
        .fail(function(data) {
-          showMessage(data.responseJSON.message, "alert alert-error");
-        });
+           showMessage(data.responseJSON.message, "alert alert-error");
+       });
   });
 })();
