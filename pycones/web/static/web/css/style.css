@@ -779,7 +779,6 @@ a.button-yellow{
   // TODO
 }
 
-
 /*** < 880px ***/
 @media screen and (max-width: 800px) {
 
@@ -877,6 +876,4 @@ a.button-yellow{
     .footer-newsletter>form>input{
         margin: 0 auto;
     }
-
-
 }
