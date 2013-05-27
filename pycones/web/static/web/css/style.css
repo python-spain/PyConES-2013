@@ -655,6 +655,7 @@ footer {
 
 .footer-contacto {
     float: left;
+    margin-top: 2em;
     text-align: left;
 }
 
@@ -680,7 +681,7 @@ footer {
     width: 100%;
 }
 
-.footer-contacto>form>a.button{
+.footer-contacto a.button{
     background: #e31212;
     color: #ffffff;
     padding: .6em;
@@ -744,7 +745,7 @@ footer {
 .footer-newsletter>form>a.button{
     background: #e31212;
     color: #ffffff;
-    padding: .6em;
+    padding: .7em;
 }
 
 #footer-copy {
@@ -840,13 +841,24 @@ footer {
     }
 
     .footer-inside>div{
+        text-align: center;
+    }
+
+    .footer-inside>div.footer-menu{
+        text-align: left;
+    }
+
+    .footer-inside>div{
         width: 100%;
     }
 
-    .footer-menu ul li a.logo-footer {
-        background: none;
-        width: 100%;
-        height: 100%;
-        text-indent: 1em;
+    .footer-newsletter form{
+        text-align: center;
     }
+
+    .footer-newsletter>form>input{
+        margin: 0 auto;
+    }
+
+
 }
