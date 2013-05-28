@@ -55,9 +55,13 @@
     <!-- Flexslider script -->
     <script type="text/javascript" charset="utf-8">
           $(window).load(function() {
-            $('.flexslider').flexslider({
+            $('#patrocinadores-slides').flexslider({
                 controlsContainer: ".patrocinadores-nav",
                 manualControls: ".patrocinadores-nav li"
+            });
+            $('#informacion-slides').flexslider({
+                controlsContainer: ".nav-datos",
+                manualControls: ".nav-datos li"
             });
           });
     </script>
