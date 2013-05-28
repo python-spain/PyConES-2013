@@ -761,6 +761,11 @@ footer {
 #newsletter-message{
     color: #f0c635;
 }
+a.button-yellow{
+    background: #f0c635;
+    color: #ffffff;
+    padding: .6em;
+}
 
 .alert {
   // TODO
@@ -773,6 +778,7 @@ footer {
 .alert-success {
   // TODO
 }
+
 
 /*** < 880px ***/
 @media screen and (max-width: 800px) {
