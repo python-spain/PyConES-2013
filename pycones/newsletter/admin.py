@@ -20,7 +20,7 @@ def send_newsletter(modeladmin, request, queryset):
 
     for newsletter in queryset:
         emails = []
-        subject = '[PyConEs] %s' % newsletter.title
+        subject = '[PyConES] %s' % newsletter.title
         context = {
             'newsletter': newsletter,
             'mail': True
