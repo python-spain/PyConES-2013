@@ -49,7 +49,7 @@ def subscribe_newsletter(request):
 
     try:
         subscription = subscription_queryset.get()
-        context = {'message' : u"Se ha producido un error. Quizás ya estes dado de alta."}
+        context = {'message' : u"Se ha producido un error. Quizás ya estés dado de alta."}
         return HttpResponseBadRequest(json.dumps(context), content_type="application/json")
     except Subscription.DoesNotExist:
         subscription = Subscription(user_email=user_email, val_token=str(uuid.uuid4()))
