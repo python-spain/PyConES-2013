@@ -4,19 +4,19 @@
  <footer id="contacto">
     <div class="footer-inside">
          <div class="footer-contacto">
-                <a class="button" target="_blank" href="mailto:contacto2013@es.pycon.org">contacto2013@es.pycon.org</a>
-            {% comment %}
             <h2 class="white">Contacta con nosotros</h2>
-            <form method="POST">
+            <p style="color: #ffffff">Escríbenos a <a href="mailto:contacto2013@es.pycon.org">contacto2013@es.pycon.org</a> o rellena el siguiente formulario</p>
+            <form method="POST" id="contact-us-form" action="{% url 'contact_us' %}">
+                {%csrf_token%}
                 <span>Nombre:</span>
-                <input type="text" placeholder="Nombre"/>
+                <input name="name" type="text" placeholder="Nombre"/>
                 <span>Email:</span>
-                <input type="text" placeholder="Email"/>
-                <span>Mensaje</span>
-                <textarea></textarea>
-                <a href="#" class="button">Enviar</a>
+                <input name="contact_email" type="text" placeholder="Email"/>
+                <span>Mensaje:</span>
+                <textarea name="message"></textarea>
+                <p id="contact-message"></p>
+                <a href="#" id="contact-us" class="button">Enviar</a>
             </form>
-            {% endcomment %}
         </div><!-- footer-contacto -->
         <div class="footer-menu">
             <ul>
