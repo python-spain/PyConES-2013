@@ -8,6 +8,7 @@
             <p style="color: #ffffff">Escríbenos a <a href="mailto:contacto2013@es.pycon.org">contacto2013@es.pycon.org</a> o rellena el siguiente formulario</p>
             <form method="POST" id="contact-us-form" action="{% url 'contact_us' %}">
                 {%csrf_token%}
+                <p id="contact-us-message"></p>
                 <span>Nombre:</span>
                 <input name="name" type="text" placeholder="Nombre"/>
                 <span>Email:</span>

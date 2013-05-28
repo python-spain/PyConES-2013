@@ -38,7 +38,7 @@ def contact_us(request):
 
     name = request.POST.get('name', None)
     contact_email = request.POST.get('contact_email', None)
-    message += request.POST.get('message', None)
+    message = request.POST.get('message', None)
     if not name or not contact_email or not message:
         context = {'message': u'Rellena todos los campos'}
         return HttpResponseBadRequest(json.dumps(context),
