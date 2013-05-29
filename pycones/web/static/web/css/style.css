@@ -762,9 +762,7 @@ footer {
     color: #f0c635;
 }
 a.button-yellow{
-    background: #f0c635;
-    color: #ffffff;
-    padding: .6em;
+    color: #f0c635;
 }
 
 .alert {
@@ -772,7 +770,7 @@ a.button-yellow{
 }
 
 .alert-error {
- //TODO 
+ //TODO
 }
 
 .alert-success {
