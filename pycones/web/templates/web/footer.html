@@ -3,21 +3,6 @@
 
  <footer id="contacto">
     <div class="footer-inside">
-         <div class="footer-contacto">
-            <h2 class="white">Contacta con nosotros</h2>
-            <p style="color: #ffffff">Escríbenos a <a href="mailto:contacto2013@es.pycon.org">contacto2013@es.pycon.org</a> o rellena el siguiente formulario</p>
-            <form method="POST" id="contact-us-form" action="{% url 'contact_us' %}">
-                {%csrf_token%}
-                <span>Nombre:</span>
-                <input name="name" type="text" placeholder="Nombre"/>
-                <span>Email:</span>
-                <input name="contact_email" type="text" placeholder="Email"/>
-                <span>Mensaje:</span>
-                <textarea name="message"></textarea>
-                <p id="contact-us-message"></p>
-                <a href="#" id="contact-us" class="button">Enviar</a>
-            </form>
-        </div><!-- footer-contacto -->
         <div class="footer-menu">
             <ul>
                 <li><a class="logo-footer" href="#">PyCon 2013</a></li>
@@ -44,6 +29,21 @@
                 <a href="{% url 'newsletter:latest_newsletter' %}" target="_blank" class="link-yellow">Ver última newsletter</a>
             </form>
         </div><!-- footer-newsletter -->
+        <div class="footer-contacto">
+            <h2 class="white">Contacta con nosotros</h2>
+            <p style="color: #ffffff">Escríbenos a <a href="mailto:contacto2013@es.pycon.org">contacto2013@es.pycon.org</a> o rellena el siguiente formulario</p>
+            <form method="POST" id="contact-us-form" action="{% url 'contact_us' %}">
+                {%csrf_token%}
+                <span>Nombre:</span>
+                <input name="name" type="text" placeholder="Nombre"/>
+                <span>Email:</span>
+                <input name="contact_email" type="text" placeholder="Email"/>
+                <span>Mensaje:</span>
+                <textarea name="message"></textarea>
+                <p id="contact-us-message"></p>
+                <a href="#" id="contact-us" class="button">Enviar</a>
+            </form>
+        </div><!-- footer-contacto -->
         <div id="footer-copy">Copyright © 1990-2013, Python Software Foundation</div>
     </div><!-- footer-inside -->
 </footer>
