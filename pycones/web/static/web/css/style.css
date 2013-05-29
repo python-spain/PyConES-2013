@@ -778,9 +778,10 @@ a.link-yellow{
 }
 
 #code_of_conduct{
-    background: url(../img/triangle.png) repeat-x top;
+    background: url(../img/triangle_up.png) repeat-x bottom;
     box-sizing: border-box;
-    padding-top: 65px;
+    display: none;
+    padding: 1em 0 65px 0;
 }
 
 .conduct-inside {
