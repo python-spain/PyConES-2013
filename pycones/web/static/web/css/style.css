@@ -777,6 +777,26 @@ a.link-yellow{
   // TODO
 }
 
+#code_of_conduct{
+    background: url(../img/triangle.png) repeat-x top;
+    box-sizing: border-box;
+    padding-top: 65px;
+}
+
+.conduct-inside {
+    width: 1050px;
+    max-width: 100%;
+    min-height: 570px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1px 1%;
+}
+
+.conduct-inside h3{
+    font-size: 2em;
+    font-weight: normal;
+}
+
 /*** < 880px ***/
 @media screen and (max-width: 800px) {
 
@@ -873,5 +893,19 @@ a.link-yellow{
 
     .footer-newsletter>form>input{
         margin: 0 auto;
+    }
+
+    .conduct-inside{
+        padding: 0;
+        text-align: left;
+    }
+
+    .conduct-inside h3{
+        font-size: 1.8em;
+        padding: 0 .5em;
+    }
+
+    .conduct-inside p{
+        padding: 0 1em;
     }
 }
