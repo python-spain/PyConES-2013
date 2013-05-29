@@ -50,3 +50,11 @@ def contact_us(request):
 
     context = {'message': u'Mensaje enviado. Muchas gracias'}
     return HttpResponse(json.dumps(context), content_type="application/json")
+
+def code_of_conduct(request):
+    if request.method != 'GET':
+        return redirect('/')
+    context = {}
+    return render_to_response('web/code_of_conduct.html',
+                    context,
+                    context_instance=RequestContext(request))
