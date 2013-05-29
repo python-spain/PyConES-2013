@@ -804,6 +804,10 @@ a.link-yellow{
     padding: .4em;
 }
 
+.conduct-inside .close-button:hover{
+    cursor: pointer;
+}
+
 /*** < 880px ***/
 @media screen and (max-width: 800px) {
 
