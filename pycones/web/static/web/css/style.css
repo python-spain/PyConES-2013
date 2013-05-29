@@ -768,11 +768,11 @@ a.button-yellow{
 }
 
 .alert {
-  // TODO
+    color: #ffffff;
 }
 
 .alert-error {
-  // TODO
+ //TODO 
 }
 
 .alert-success {

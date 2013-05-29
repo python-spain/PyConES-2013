@@ -8,14 +8,13 @@
             <p style="color: #ffffff">Escríbenos a <a href="mailto:contacto2013@es.pycon.org">contacto2013@es.pycon.org</a> o rellena el siguiente formulario</p>
             <form method="POST" id="contact-us-form" action="{% url 'contact_us' %}">
                 {%csrf_token%}
-                <p id="contact-us-message"></p>
                 <span>Nombre:</span>
                 <input name="name" type="text" placeholder="Nombre"/>
                 <span>Email:</span>
                 <input name="contact_email" type="text" placeholder="Email"/>
                 <span>Mensaje:</span>
                 <textarea name="message"></textarea>
-                <p id="contact-message"></p>
+                <p id="contact-us-message"></p>
                 <a href="#" id="contact-us" class="button">Enviar</a>
             </form>
         </div><!-- footer-contacto -->
@@ -30,7 +29,7 @@
                 <li><a href="#"><span class="white">{ }</span> Precios</a></li>
                 {% endcomment %}
                 <li>&nbsp;</li>
-                <li><a href="#"><span class="red">{ }</span> Aviso legal</a></li>
+                {% comment %}<li><a href="#"><span class="red">{ }</span> Aviso legal</a></li>{% endcomment %}
                 <li><a href="{% url 'code_of_conduct' %}" target="_new"><span class="red">{ }</span> Código de conducta</a></li>
             </ul>
         </div><!-- footer-menu -->
@@ -42,7 +41,7 @@
                 <input name="user_email" type="text" placeholder="Email"/>
                 <p id="newsletter-message"></p>
                 <a href="#" id="subscribe-newsletter" class="button">Enviar</a><br><br>
-                <a href="/newsletter/latest" target="_blank" class="button-yellow">Ver última newsletter</a>
+                <a href="{% url 'newsletter:latest_newsletter' %}" target="_blank" class="button-yellow">Ver última newsletter</a>
             </form>
         </div><!-- footer-newsletter -->
         <div id="footer-copy">Copyright © 1990-2013, Python Software Foundation</div>
