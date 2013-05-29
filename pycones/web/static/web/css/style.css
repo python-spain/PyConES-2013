@@ -780,7 +780,7 @@ a.link-yellow{
     background: url(../img/triangle_up.png) repeat-x bottom;
     box-sizing: border-box;
     display: none;
-    padding: 1em 0 65px 0;
+    padding: 1em 0 70px 0;
 }
 
 .conduct-inside {
@@ -795,6 +795,13 @@ a.link-yellow{
 .conduct-inside h3{
     font-size: 2em;
     font-weight: normal;
+}
+
+.conduct-inside .close-button{
+    background: #858585;
+    border-radius: .5em;
+    color: #fff;
+    padding: .4em;
 }
 
 /*** < 880px ***/
