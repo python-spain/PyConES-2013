@@ -286,7 +286,7 @@ header {
 }
 
 .patrocinadores-btn {
-    float: right;
+    //float: right;
     margin: 10px 0 0 0;
     padding: 0;
 }
@@ -525,6 +525,8 @@ header {
     color: red;
     background: #ffffff;
 }
+
+.call4papers-btn .folleto-pdf { background: #767676; }
 
 .horario {
     width: 100%;
