@@ -36,6 +36,33 @@
        });
    });
 
+  $('.more-info-footer').click(function(e){
+      e.preventDefault();
+      var href = $(this);
+      var divToToggle = $('#text-' + href[0].id);
+      toggleMoreInfoFooter(divToToggle);
+  });
+
+  $('#close-legal-terms').click(function(e){
+      e.preventDefault();
+      var divToToggle = $('#text-legal-terms');
+      toggleMoreInfoFooter(divToToggle);
+  });
+
+  $('#close-code-of-conduct').click(function(e){
+      e.preventDefault();
+      var divToToggle = $('#text-code-of-conduct');
+      toggleMoreInfoFooter(divToToggle);
+  });
+
+  function toggleMoreInfoFooter(divToToggle){
+      if(divToToggle.css('display') == 'none'){
+          divToToggle.slideDown(1500);
+      } else {
+          divToToggle.slideUp(1500);
+      }
+  }
+
   // Sliders
   $('#patrocinadores-slides').flexslider({
       controlsContainer: '.patrocinadores-nav',
@@ -48,19 +75,6 @@
    });
   // Fin sliders
 
-  // Code_of_conduct javascript
-  $('#conduct-link').on('click',toggleCodeOfConduct);
-  $('#close-conduct1-link , #close-conduct2-link').on('click',toggleCodeOfConduct);
-
-  function toggleCodeOfConduct(){
-    coc = $('#code_of_conduct');
-    if(coc.css('display') == 'none'){
-        coc.slideDown(1500);
-    }else{
-        coc.slideUp(700);
-    }
-   }
-  // Fin Code_of_conduct javascript
 
 })();
 
