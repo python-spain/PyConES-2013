@@ -14,6 +14,7 @@
       $.post(form.attr('action'), form.serialize(), null, 'json')
        .done(function(data){
            showMessage("#newsletter-message", data.message, "alert alert-success");
+           $('#newsletter-form input[type=text]').val('');
         })
        .fail(function(data) {
            var responseJSON = JSON.parse(data.responseText);
