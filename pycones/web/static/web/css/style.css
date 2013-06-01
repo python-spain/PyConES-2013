@@ -285,6 +285,7 @@ header {
     padding: 0 1%;
 }
 
+
 .patrocinadores-btn {
     //float: right;
     margin: 10px 0 0 0;
@@ -299,23 +300,23 @@ header {
 }
 
 .patrocinadores-btn ul li {
-    float: left;
+    float: right;
 }
 
 .patrocinadores-btn ul li a {
+    box-sizing: border-box;
     float: left;
+    font-size: 1.2em;
     height: 53px;
     margin: 0 0 0 15px;
-    padding: 0;
-    text-indent: -1000em;
+    padding: .75em;
     cursor: pointer;
 }
 
-.patrocinadores-btn ul li a.folleto-pdf {background: url(../img/sprite.png) -409px 0 no-repeat; width: 189px;}
-.patrocinadores-btn ul li a.contacto-patrocinador {background: url(../img/sprite.png) -618px 0 no-repeat; width: 274px;}
+.patrocinadores-btn ul li a.folleto-pdf {background: #858585; color: #fff;}
+.patrocinadores-btn ul li a.contacto-patrocinador {background: #e31212; color: #fff;}
 
-.patrocinadores-btn ul li a.folleto-pdf:hover {background: url(../img/sprite.png) -409px -54px no-repeat;}
-.patrocinadores-btn ul li a.contacto-patrocinador:hover {background: url(../img/sprite.png) -618px -54px no-repeat;}
+.patrocinadores-btn ul li a.folleto-pdf:hover, .patrocinadores-btn ul li a.contacto-patrocinador:hover {background: #f0c635; opacity: 1;}
 
 .patrocinadores-nav {
     float: left;
@@ -846,7 +847,7 @@ a.link-yellow{
 
     .patrocinadores-btn{
         float: initial;
-        text-align: center;
+        text-align: left;
     }
 
     .patrocinadores-btn ul li{
@@ -877,6 +878,7 @@ a.link-yellow{
 
     .call4papers-btn a {
         float: initial;
+        margin: 0;
     }
 
     .call4papers-right {
