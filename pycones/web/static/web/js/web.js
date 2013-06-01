@@ -29,6 +29,7 @@
       $.post(form.attr('action'), form.serialize(), null, 'json')
        .done(function(data){
            showMessage("#contact-us-message", data.message, "alert alert-success");
+           $('#contact-us-form input[type=text], #contact-us-form textarea').val('');
        })
        .fail(function(data){
            var responseJSON = JSON.parse(data.responseText);
