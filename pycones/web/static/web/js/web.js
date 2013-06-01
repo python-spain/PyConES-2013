@@ -65,12 +65,10 @@
 
   // Sliders
   $('#patrocinadores-slides').flexslider({
-      controlsContainer: '.patrocinadores-nav',
       manualControls: '.patrocinadores-nav li'
    });
 
   $('#informacion-slides').flexslider({
-      controlsContainer: '.nav-datos',
       manualControls: '.nav-datos li'
    });
   // Fin sliders

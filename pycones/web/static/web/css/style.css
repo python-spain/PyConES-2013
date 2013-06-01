@@ -809,6 +809,10 @@ a.link-yellow{
     cursor: pointer;
 }
 
+.flex-direction-nav{
+    display: none;
+}
+
 /*** < 880px ***/
 @media screen and (max-width: 800px) {
 
