@@ -1,0 +1,354 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-03 19:40+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4)\n"
+
+#: pycones/settings.py:49 pycones/settings.py:244
+msgid "Català"
+msgstr ""
+
+#: pycones/settings.py:50 pycones/settings.py:245
+msgid "Euskara"
+msgstr ""
+
+#: pycones/settings.py:51 pycones/settings.py:246
+msgid "Español"
+msgstr ""
+
+#: pycones/settings.py:52 pycones/settings.py:247
+msgid "Galego"
+msgstr ""
+
+#: pycones/templates/homepage.html:6
+msgid "Welcome"
+msgstr ""
+
+#: pycones/templates/about/what_next.html:6
+#: pycones/templates/about/what_next.html:9
+msgid "What Next?"
+msgstr ""
+
+#: pycones/templates/about/what_next.html:32
+#, python-format
+msgid ""
+"Start by <a href=\"%(signup_url)s\">signing up</a> and <a href="
+"\"%(login_url)s\">logging in</a>."
+msgstr ""
+
+#: pycones/templates/about/what_next.html:34
+#, python-format
+msgid "Start by <a href=\"%(login_url)s\">logging in</a>."
+msgstr ""
+
+#: pycones/web/templates/web/call4papers.html:13
+msgid ""
+"\n"
+"        <p>¿Tienes una charla interesante sobre Python? Anímate a "
+"compartirla con la comunidad.</p>\n"
+"        <p>La conferencia consta de dos tracks, uno para principiantes y "
+"otro más avanzado; esperamos charlas donde Python sea el protagonista: "
+"desarrollo, administración de sistemas, juegos, extensión con otros "
+"lenguajes, usos científicos, hardware (RaspberryPi), etc...</p>\n"
+"        <p>Las charlas se esperan en español o, si es ponente internacional, "
+"en inglés. Durarán unos 50 minutos (aprox) y lal final del día habrá una "
+"hora para charlas rápidas (5 minutos) que se organizarán en la propia "
+"conferencia.</p>\n"
+"        <p>Envíanos tu propuesta antes del 15 de septiembre indicando el "
+"nivel al que va dirigido y un resumen de la charla para que podamos "
+"evaluarla.</p>\n"
+"        <p>¡Esperamos vuestras propuestas!</p>\n"
+"        "
+msgstr ""
+
+#: pycones/web/templates/web/code_of_conduct.html:6
+#: pycones/web/templates/web/footer.html:23
+msgid "Código de conducta"
+msgstr ""
+
+#: pycones/web/templates/web/code_of_conduct.html:7
+msgid ""
+"\n"
+"        <p>PyConES es una conferencia de comunidad pensada para la "
+"comunicación y la colaboración dentro de la comunidad de desarrolladores.</"
+"p>\n"
+"\n"
+"        <p>Valoramos la participación de cada miembro de la comunidad Python "
+"y queremos que todos los asistentes tengan una experiencia entretenida y "
+"satisfactoria. Para ello, se espera que todos los asistentes muestren "
+"respeto y cortesía hacia el resto durante la conferencia y todos los eventos "
+"relacionados con ella, estén oficialmente hospedados por PyConES o no.</p>\n"
+"\n"
+"        <p>Para aclarar lo que se espera, todos los delegados, "
+"conferenciantes, expositores y voluntarios en cualquier evento de PyConES "
+"deberán aceptar el siguiente Código de Conducta. Los organizadores cuidarán "
+"el cumplimiento de este código durante el evento.</p>\n"
+"\n"
+"        <p>PyConES tiene como misión proporcionar una experiencia en la "
+"conferencia libre de acoso o discriminación para todos, sin distinción de "
+"género, orientación sexual, discapacidad, apariencia física, tamaño "
+"corporal, etnia o religión. No se tolerará la discriminación de los "
+"participantes de la conferencia de ninguna forma.</p>\n"
+"\n"
+"        <p>Todo el contenido debería ser el apropiado para una audiencia "
+"profesional incluyendo a personas procedentes de diferentes sectores. El "
+"lenguaje y las imágenes de contenido sexual no son apropiados para la "
+"conferencia, incluyendo las charlas.</p>\n"
+"\n"
+"        <p>Sé amable con los demás. No insultes o humilles a otros "
+"asistentes. Compórtate de manera profesional. Recuerda que las bromas "
+"sexistas, racistas o discriminatorias no son apropiadas para PyConES.</p>\n"
+"\n"
+"        <p>Los asistentes que incumplan estas reglas podrán ser sancionados "
+"o se les podrá pedir que abandonen la conferencia sin derecho a reembolso a "
+"discreción de los organizadores.</p>\n"
+"\n"
+"        <p>Por acoso se entiende comentarios ofensivos relacionados con "
+"género, orientación sexual, discapacidad, apariencia física, tamaño "
+"corporal, etnia o religión, pornografía en espacios públicos, intimidación "
+"deliberada, acecho, persecución, acoso por fotografías o grabaciones, "
+"constante interrupción de charlas u otros eventos, contacto físico "
+"inapropiado y atención sexual no deseada.</p>\n"
+"\n"
+"        <p>Los participantes que sean apercibidos por acoso deberán "
+"abstenerse de continuar inmediatamente.</p>\n"
+"\n"
+"        <p>Los expositores, las casetas o pabellones de patrocinadores o "
+"empresas y actividades similares también están sujetas a la política "
+"antiacoso. En particular, los expositores no deberían utilizar material o "
+"llevar a cabo actividades sexistas. El personal de las casetas (incluyendo "
+"voluntarios) no deberían utilizar uniformes o vestimentas sexistas, puesto "
+"que se crearía un ambiente sexualizado.</p>\n"
+"\n"
+"        <p>Sé cuidadoso al seleccionar las palabras. Recuerda que las bromas "
+"sexistas, racistas y excluyentes en general pueden ser ofensivas para los "
+"demás. El exceso de palabras malsonantes o bromas ofensivas no son "
+"apropiados para PyConES.</p>\n"
+"\n"
+"        <p>Si un participante se comportara de forma que violase este Código "
+"de Conducta, los organizadores de la conferencia podrán tomar las medidas "
+"que ellos consideren adecuadas, incluyendo el apercibimiento o expulsión sin "
+"derecho a reembolso.</p>\n"
+"\n"
+"        <h3>Información de contacto</h3>\n"
+"\n"
+"        <p>Si estás siendo objeto de acoso, notas que alguien está siendo "
+"acosado, o tienes cualquier otra preocupación, por favor ponte en contacto "
+"con un miembro del personal de la conferencia. El personal de la conferencia "
+"vestirá camisetas con la inscripción \"Personal PyConES\". Además puedes "
+"hablar con el personal del lugar y pedir que se te ponga en contacto con el "
+"responsable de la conferencia - Yamila Moreno</p>\n"
+"\n"
+"        <p>Si el asunto es especialmente urgente, por favor contacta con "
+"cualquiera de estas personas:\n"
+"        <ul>\n"
+"            <li>Yamila  Moreno</li>\n"
+"            <li>Alberto Chamorro</li>\n"
+"            <li>Juan Luis Cano</li>\n"
+"        </ul>\n"
+"        </p>\n"
+"\n"
+"        <p>El personal de la conferencia ayudará con gusto a los "
+"participantes para que se pongan en contacto con el personal de seguridad "
+"del lugar o la policía local, proporcionar custodia, o de alguna manera "
+"asistir a aquellos que sean objeto de acoso para puedan sentirse seguros "
+"mientras dure la conferencia. Nosotros valoramos tu asistencia.</p>\n"
+"\n"
+"        <p>Gracias por hacer de este un evento abierto a la comunidad y "
+"amistoso.</p>\n"
+"\n"
+"        <h3>Licencia</h3>\n"
+"\n"
+"        <p>Este Código de Conducta se basa en los códigos de conducta de "
+"PyCon US 2013 (<a href=\"https://us.pycon.org/2013/about/code-of-conduct\" "
+"target=\"_new\">https://us.pycon.org/2013/about/code-of-conduct/</a>) y "
+"PyConAr 2012 (<a href=\"http://ar.pycon.org/2012/conference/diversity\" "
+"target=\"_new\">http://ar.pycon.org/2012/conference/diversity/</a>), y está "
+"disponible bajo una licencia Creative Commons Atribución 3.0 España.</p>\n"
+"        "
+msgstr ""
+
+#: pycones/web/templates/web/code_of_conduct.html:52
+#: pycones/web/templates/web/legal_terms.html:12
+msgid "cerrar"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:10
+#: pycones/web/templates/web/header.html:17
+#: pycones/web/templates/web/info.html:7
+msgid "Información"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:11
+#: pycones/web/templates/web/header.html:18
+#: pycones/web/templates/web/sponsors.html:6
+msgid "Patrocinadores"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:30
+msgid "Suscríbete!"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:31
+#: pycones/web/templates/web/footer.html:44
+#: pycones/web/templates/web/footer.html:45
+msgid "Email"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:33
+#: pycones/web/templates/web/footer.html:49
+msgid "Enviar"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:34
+msgid "Ver última newsletter"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:38
+msgid "Contacta con nosotros"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:39
+msgid "Escríbenos a"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:39
+msgid "o rellena el siguiente formulario"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:42
+#: pycones/web/templates/web/footer.html:43
+msgid "Nombre"
+msgstr ""
+
+#: pycones/web/templates/web/footer.html:46
+msgid "Mensaje"
+msgstr ""
+
+#: pycones/web/templates/web/header.html:8
+msgid "PYCON ESPAÑA 2013"
+msgstr ""
+
+#: pycones/web/templates/web/header.html:19
+msgid "Call4papers"
+msgstr ""
+
+#: pycones/web/templates/web/header.html:20
+msgid "Contacto"
+msgstr ""
+
+#: pycones/web/templates/web/home.html:9
+msgid "PyCon España 2013"
+msgstr ""
+
+#: pycones/web/templates/web/home.html:30
+#: pycones/web/templates/web/home.html:39
+msgid "Foto: Jaaaarel"
+msgstr ""
+
+#: pycones/web/templates/web/info.html:9
+msgid ""
+"\n"
+"            <p>PyConES es la conferencia dedicada de forma exclusiva al "
+"lenguaje de programación Python. Se celebrará por primera vez en España tras "
+"los éxitos cosechados por el formato PyCon en los cinco continentes (<a href="
+"\"http://pycon.org\" target=\"_new\">http://pycon.org</a>).</p>\n"
+"            <p>PyConES está organizada por la asociación Python España, "
+"formada por aficionados y profesionales del lenguaje de programación Python; "
+"se encarga de velar por el desarrollo y la difusión de Python dentro del "
+"territorio español.</p>\n"
+"            "
+msgstr ""
+
+#: pycones/web/templates/web/legal_terms.html:6
+msgid "Aviso legal"
+msgstr ""
+
+#: pycones/web/templates/web/schedule.html:6
+msgid "Horario"
+msgstr ""
+
+#: pycones/web/templates/web/schedule.html:9
+msgid "Viernes 22"
+msgstr ""
+
+#: pycones/web/templates/web/schedule.html:10
+msgid "Sábado 23"
+msgstr ""
+
+#: pycones/web/templates/web/schedule.html:11
+msgid "Domingo 24"
+msgstr ""
+
+#: pycones/web/templates/web/schedule.html:20
+#: pycones/web/templates/web/schedule.html:27
+#: pycones/web/templates/web/schedule.html:34
+#: pycones/web/templates/web/schedule.html:41
+#: pycones/web/templates/web/schedule.html:48
+msgid "más info"
+msgstr ""
+
+#: pycones/web/templates/web/skyline.html:7
+msgid "Madrid 22-24 de noviembre de 2013"
+msgstr ""
+
+#: pycones/web/templates/web/skyline.html:8
+msgid "EU Informática, Universidad Politécnica de Madrid"
+msgstr ""
+
+#: pycones/web/templates/web/sponsors.html:10
+msgid "Folleto PDF"
+msgstr ""
+
+#: pycones/web/templates/web/sponsors.html:15
+msgid "DIAMANTE"
+msgstr ""
+
+#: pycones/web/templates/web/sponsors.html:16
+msgid "PLATINO"
+msgstr ""
+
+#: pycones/web/templates/web/sponsors.html:17
+msgid "ORO"
+msgstr ""
+
+#: pycones/web/templates/web/sponsors.html:18
+msgid "PLATA"
+msgstr ""
+
+#: pycones/web/templates/web/sponsors.html:36
+msgid ""
+"Sé el primer patrocinador de <span class=\"diamante\">diamante</span> de la "
+"PyConES"
+msgstr ""
+
+#: pycones/web/templates/web/sponsors.html:51
+msgid ""
+"Sé el primer patrocinador de <span class=\"platino\">platino</span> de la "
+"PyConES"
+msgstr ""
+
+#: pycones/web/templates/web/sponsors.html:66
+msgid ""
+"Sé el primer patrocinador de <span class=\"oro\">oro</span> de la PyConES"
+msgstr ""
+
+#: pycones/web/templates/web/sponsors.html:81
+msgid ""
+"Sé el primer patrocinador de <span class=\"plata\">plata</span> de la PyConES"
+msgstr ""

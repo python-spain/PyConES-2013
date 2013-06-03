@@ -4,3 +4,4 @@ dev.db
 site_media
 venv
 local_settings*
+*.mo

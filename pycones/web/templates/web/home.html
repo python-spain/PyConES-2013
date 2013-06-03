@@ -1,10 +1,12 @@
 {% load static from staticfiles %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>PyCon España 2013</title>
+        <title>{% trans 'PyCon España 2013' %}</title>
         <meta name="description" content="Comunidad Internacional de Python">
         <meta name="viewport" content="width=device-width">
         <!-- Google fonts -->
@@ -25,7 +27,7 @@
             <div class="imagen-landscape-inside">
                 <div class="imagen-pie">
                     <p>PyCon Santa Clara 2013</p>
-                    <p><a href="http://www.flickr.com/photos/jaaaarel/" target="_blank">Foto: Jaaaarel</a></p>
+                    <p><a href="http://www.flickr.com/photos/jaaaarel/" target="_blank">{% trans 'Foto: Jaaaarel' %}</a></p>
                 </div>
             </div>
         </div><!-- imagen-landscape1 -->
@@ -34,7 +36,7 @@
             <div class="imagen-landscape2-inside">
                 <div class="imagen-pie">
                     <p>PyCon Santa Clara 2013</p>
-                    <p><a href="http://www.flickr.com/photos/jaaaarel/" target="_blank">Foto: Jaaaarel</a></p>
+                    <p><a href="http://www.flickr.com/photos/jaaaarel/" target="_blank">{% trans 'Foto: Jaaaarel' %}</a></p>
                 </div>
             </div>
         </div><!-- imagen-landscape2 -->

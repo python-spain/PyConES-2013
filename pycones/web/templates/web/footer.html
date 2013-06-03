@@ -1,52 +1,53 @@
 {% load static from staticfiles %}
 {% load url from future %}
+{% load i18n %}
 
  <footer id="contacto">
     <div class="footer-inside">
         <div class="footer-menu">
             <ul>
                 <li><a class="logo-footer" href="#">PyCon 2013</a></li>
-                <li><a href="#informacion"><span class="white">{ }</span> Información</a></li>
-                <li><a href="#patrocinadores"><span class="white">{ }</span> Patrocinadores</a></li>
+                <li><a href="#informacion"><span class="white">{ }</span> {% trans 'Información' %}</a></li>
+                <li><a href="#patrocinadores"><span class="white">{ }</span> {% trans 'Patrocinadores' %}</a></li>
                 <li><a href="#call4papers"><span class="white">{ }</span> Call4papers</a></li>
                 {% comment %}
-                <li><a href="#"><span class="white">{ }</span> Horario</a></li>
-                <li><a href="#"><span class="white">{ }</span> Precios</a></li>
+                <li><a href="#"><span class="white">{ }</span> {% trans 'Horario' %}</a></li>
+                <li><a href="#"><span class="white">{ }</span> {% trans 'Precios' %}</a></li>
                 {% endcomment %}
                 <li>&nbsp;</li>
                 {% comment %}
-                <li><a href="#" id="legal-terms" class="more-info-footer"><span class="red">{ }</span> Aviso legal</a></li>
+                <li><a href="#" id="legal-terms" class="more-info-footer"><span class="red">{ }</span> {% trans 'Aviso legal' %}</a></li>
                 {% endcomment %}
-                <li><a href="#" id="code-of-conduct" class="more-info-footer"><span class="red">{ }</span> Código de conducta</a></li>
+                <li><a href="#" id="code-of-conduct" class="more-info-footer"><span class="red">{ }</span> {% trans 'Código de conducta' %}</a></li>
             </ul>
         </div><!-- footer-menu -->
         <div class="footer-newsletter">
             <h2 class="white">Newsletter</h2>
             <form method="POST" action="{% url 'newsletter:subscribe_newsletter' %}" id="newsletter-form">
                 {%csrf_token%}
-                <span>Suscríbete!</span>
-                <input name="user_email" type="text" placeholder="Email"/>
+                <span>{% trans 'Suscríbete!' %}</span>
+                <input name="user_email" type="text" placeholder="{% trans 'Email' %}"/>
                 <p id="newsletter-message"></p>
-                <a href="#" id="subscribe-newsletter" class="button">Enviar</a><br><br>
-                <a href="{% url 'newsletter:latest_newsletter' %}" target="_blank" class="link-yellow">>>> Ver última newsletter</a>
+                <a href="#" id="subscribe-newsletter" class="button">{% trans 'Enviar' %}</a><br><br>
+                <a href="{% url 'newsletter:latest_newsletter' %}" target="_blank" class="link-yellow">>>> {% trans 'Ver última newsletter' %}</a>
             </form>
         </div><!-- footer-newsletter -->
         <div class="footer-contacto">
-            <h2 class="white">Contacta con nosotros</h2>
-            <p style="color: #ffffff">Escríbenos a <a href="mailto:contacto2013@es.pycon.org">contacto2013@es.pycon.org</a> o rellena el siguiente formulario</p>
+            <h2 class="white">{% trans 'Contacta con nosotros' %}</h2>
+            <p style="color: #ffffff">{% trans 'Escríbenos a' %} <a href="mailto:contacto2013@es.pycon.org">contacto2013@es.pycon.org</a> {% trans 'o rellena el siguiente formulario' %}</p>
             <form method="POST" id="contact-us-form" action="{% url 'contact_us' %}">
                 {%csrf_token%}
-                <span>Nombre:</span>
-                <input name="name" type="text" placeholder="Nombre"/>
-                <span>Email:</span>
-                <input name="contact_email" type="text" placeholder="Email"/>
-                <span>Mensaje:</span>
+                <span>{% trans 'Nombre' %}:</span>
+                <input name="name" type="text" placeholder="{% trans 'Nombre' %}"/>
+                <span>{% trans 'Email' %}:</span>
+                <input name="contact_email" type="text" placeholder="{% trans 'Email' %}"/>
+                <span>{% trans 'Mensaje' %}:</span>
                 <textarea name="message"></textarea>
                 <p id="contact-us-message"></p>
-                <a href="#" id="contact-us" class="button">Enviar</a>
+                <a href="#" id="contact-us" class="button">{% trans 'Enviar' %}</a>
             </form>
         </div><!-- footer-contacto -->
-        <div id="footer-copy">Copyright © 1990-2013, Python Software Foundation</div>
+        {% comment %}<div id="footer-copy">Copyright © 1990-2013, Python Software Foundation</div>{% endcomment %}
     </div><!-- footer-inside -->
 </footer>
 

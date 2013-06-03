@@ -3,6 +3,8 @@
 
 import os
 import posixpath
+from django.utils.translation import ugettext_lazy as _
+
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -42,6 +44,21 @@ TIME_ZONE = "Europe/Madrid"
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = "es"
+
+LANGUAGES = (
+    ('ca', _(u'Català')),
+    ('eu', _(u'Euskara')),
+    ('es', _(u'Español')),
+    ('ga', _(u'Galego')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(PROJECT_ROOT, "locale"),
+)
+
+# Rosetta settings
+ROSETTA_MESSAGES_SOURCE_LANGUAGE_CODE = 'es'
+ROSETTA_MESSAGES_SOURCE_LANGUAGE_NAME = u'Español'
 
 SITE_ID = 1
 
@@ -159,6 +176,7 @@ INSTALLED_APPS = [
     "sitetree",
     "account",
     "south",
+    "rosetta",
 
     # symposion
     "symposion",
@@ -222,6 +240,22 @@ FIXTURE_DIRS = [
 
 
 CONFERENCE_ID = 1
+
+LANGUAGES = (
+    ('ca', _(u'Català')),
+    ('eu', _(u'Euskara')),
+    ('es', _(u'Español')),
+    ('ga', _(u'Galego')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(PROJECT_ROOT, "locale"),
+    )
+
+# Rosetta settings
+ROSETTA_MESSAGES_SOURCE_LANGUAGE_CODE = 'es'
+ROSETTA_MESSAGES_SOURCE_LANGUAGE_NAME = u'Español'
+
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.
