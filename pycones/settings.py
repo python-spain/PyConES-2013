@@ -177,6 +177,7 @@ INSTALLED_APPS = [
     "pycones.newsletter",
     "pycones.web",
     "pycones.sponsors",
+    "pycones.call4papers",
 ]
 
 MARKITUP_FILTER = ("markdown.markdown", {"safe_mode": True})
