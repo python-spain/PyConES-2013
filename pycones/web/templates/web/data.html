@@ -1,11 +1,12 @@
 {% load static from staticfiles %}
+{% load i18n %}
 {% comment %}
 <div class="nav-datos">
     <ul>
-        <li id="current"><a href="#">Dónde/Cuándo</a></li>
-        <li><a href="#">Cómo llegar</a></li>
-        <li><a href="#">Conoce Madrid</a></li>
-        <li><a href="#">Alójate</a></li>
+        <li id="current"><a href="#">{% trans 'Dónde/Cuándo' %}</a></li>
+        <li><a href="#">{% trans 'Cómo llegar' %}</a></li>
+        <li><a href="#">{% trans 'Conoce Madrid' %}</a></li>
+        <li><a href="#">{% trans 'Alójate' %}</a></li>
     </ul>
 </div><!-- nav-datos -->
 

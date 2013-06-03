@@ -1,10 +1,11 @@
 {% load static from staticfiles %}
+{% load i18n %}
 
 
 <header>
     <div class="header-inside">
         <div class="logo-header">
-            <a href="/"><h1>PYCON ESPAÑA 2013</h1></a>
+            <a href="/"><h1>{% trans 'PYCON ESPAÑA 2013' %}</h1></a>
         </div>
         <div class="social-header">
             <ul>
@@ -13,11 +14,11 @@
         </div>
         <nav>
             <ul class="menu">
-                <li><a href="#informacion">Información</a></li>
-                <li><a href="#patrocinadores">Patrocinadores</a></li>
-                <li><a href="#call4papers">Call4papers</a></li>
-                <li><a class="nav-last" href="#contacto">Contacto</a></li>
-                <!-- <li><a class="nav-precios" href="#precios">Precios</a></li>-->
+                <li><a href="#informacion">{% trans 'Información' %}</a></li>
+                <li><a href="#patrocinadores">{% trans 'Patrocinadores' %}</a></li>
+                <li><a href="#call4papers">{% trans 'Call4papers' %}</a></li>
+                <li><a class="nav-last" href="#contacto">{% trans 'Contacto' %}</a></li>
+                {% comment %}<li><a class="nav-precios" href="#precios">{% trans 'Precios' %}</a></li>{% endcomment %}
             </ul>
         </nav>
     </div><!-- header-inside -->

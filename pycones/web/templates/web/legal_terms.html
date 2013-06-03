@@ -1,12 +1,14 @@
 {% load static from staticfiles %}
+{% load i18n %}
+
 <aside id="text-legal-terms" class="text-more-info-footer">
     <div class="conduct-inside">
-        <h2 class="title">Aviso legal</h2>
+        <h2 class="title">{% trans 'Aviso legal' %}</h2>
 
         <p>PyConES es una conferencia de comunidad pensada para la comunicación y la colaboración dentro de la comunidad de desarrolladores.</p>
 
         <h3>Información de contacto</h3>
 
-        <a class="close-button" id="close-legal-terms">cerrar</a>
+        <a class="close-button" id="close-legal-terms">{% trans 'cerrar' %}</a>
     </div>
 </aside>

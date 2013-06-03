@@ -1,26 +1,21 @@
 {% load static from staticfiles %}
+{% load i18n %}
 
 <article class="patrocinadores" id="patrocinadores">
     <div class="patrocinadores-inside">
-        <h2 class="red title">Patrocinadores</h2>
+        <h2 class="red title">{% trans 'Patrocinadores' %}</h2>
         <div class="patrocinadores-btn">
             <ul>
                 <li><a href="mailto:patrocinadores2013@es.pycon.org" class="contacto-patrocinador">patrocinadores2013@es.pycon.org</a></li>
-                <li><a href="{% static 'sponsors/pycones_es.pdf' %}" target="_new"target="_new" class="folleto-pdf">Folleto PDF</a></li>
+                <li><a href="{% static 'sponsors/pycones_es.pdf' %}" target="_new"target="_new" class="folleto-pdf">{% trans 'Folleto PDF' %}</a></li>
             </ul>
-            <!--<div class="call4papers-btn">
-                <a href="mailto:patrocinadores2013@es.pycon.org">patrocinadores2013@es.pycon.org</a>
-            </div>
-            <div class="call4papers-btn">
-                <a class="folleto-pdf" href="{% static 'sponsors/pycones_es.pdf' %}">Folleto PDF</a>
-            </div>-->
         </div>
         <div class="patrocinadores-nav">
             <ul>
-                <li><a href="#" class="diamante">DIAMANTE</a></li>
-                <li><a href="#" class="platino">PLATINO</a></li>
-                <li><a href="#" class="oro">ORO</a></li>
-                <li><a href="#" class="plata">PLATA</a></li>
+                <li><a href="#" class="diamante">{% trans 'DIAMANTE' %}</a></li>
+                <li><a href="#" class="platino">{% trans 'PLATINO' %}</a></li>
+                <li><a href="#" class="oro">{% trans 'ORO' %}</a></li>
+                <li><a href="#" class="plata">{% trans 'PLATA' %}</a></li>
             </ul>
         </div>
         <div class="patrocinadores-slider">
@@ -38,7 +33,7 @@
                             {% endfor %}
                             </ul>
                         {% else %}
-                            <h3>Sé el primer patrocinador de <span class="diamante">diamante</span> de la PyConES</h3>
+                            <h3>{% trans 'Sé el primer patrocinador de <span class="diamante">diamante</span> de la PyConES' %}</h3>
                         {% endif %}
                     </li>
                     <li><!-- platino -->
@@ -53,7 +48,7 @@
                             {% endfor %}
                             </ul>
                         {% else %}
-                            <h3>Sé el primer patrocinador de <span class="platino">platino</span> de la PyConES</h3>
+                            <h3>{% trans 'Sé el primer patrocinador de <span class="platino">platino</span> de la PyConES' %}</h3>
                         {% endif %}
                     </li>
                     <li><!-- oro -->
@@ -68,7 +63,7 @@
                             {% endfor %}
                             </ul>
                         {% else %}
-                            <h3>Sé el primer patrocinador de <span class="oro">oro</span> de la PyConES</h3>
+                            <h3>{% trans 'Sé el primer patrocinador de <span class="oro">oro</span> de la PyConES' %}</h3>
                         {% endif %}
                     </li><!-- plata -->
                     <li>
@@ -83,7 +78,7 @@
                             {% endfor %}
                             </ul>
                         {% else %}
-                            <h3>Sé el primer patrocinador de <span class="plata">plata</span> de la PyConES</h3>
+                            <h3>{% trans 'Sé el primer patrocinador de <span class="plata">plata</span> de la PyConES' %}</h3>
                         {% endif %}
                     </li>
                 </ul>
