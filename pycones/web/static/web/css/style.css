@@ -904,7 +904,9 @@ a.link-yellow{
     .footer-inside>div{
         width: 100%;
     }
-
+    .footer-newsletter, .footer-menu, .footer-contacto {
+        float: initial;
+    }
     .footer-newsletter form{
         text-align: center;
     }
@@ -912,7 +914,9 @@ a.link-yellow{
     .footer-newsletter>form>input{
         margin: 0 auto;
     }
-
+    .footer-contacto{
+        padding-bottom: 1em;
+    }
     .conduct-inside{
         padding: 0;
         text-align: left;
