@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-03 19:40+0200\n"
+"POT-Creation-Date: 2013-06-04 20:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,19 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
 "4)\n"
 
-#: pycones/settings.py:49 pycones/settings.py:244
+#: pycones/settings.py:49 pycones/settings.py:245
 msgid "Català"
 msgstr ""
 
-#: pycones/settings.py:50 pycones/settings.py:245
+#: pycones/settings.py:50 pycones/settings.py:246
 msgid "Euskara"
 msgstr ""
 
-#: pycones/settings.py:51 pycones/settings.py:246
+#: pycones/settings.py:51 pycones/settings.py:247
 msgid "Español"
 msgstr ""
 
-#: pycones/settings.py:52 pycones/settings.py:247
+#: pycones/settings.py:52 pycones/settings.py:248
 msgid "Galego"
 msgstr ""
 
@@ -66,9 +66,9 @@ msgid ""
 "desarrollo, administración de sistemas, juegos, extensión con otros "
 "lenguajes, usos científicos, hardware (RaspberryPi), etc...</p>\n"
 "        <p>Las charlas se esperan en español o, si es ponente internacional, "
-"en inglés. Durarán unos 50 minutos (aprox) y lal final del día habrá una "
-"hora para charlas rápidas (5 minutos) que se organizarán en la propia "
-"conferencia.</p>\n"
+"en inglés. Durarán unos 50 minutos (aprox) y al final del día habrá una hora "
+"para charlas rápidas (5 minutos) que se organizarán en la propia conferencia."
+"</p>\n"
 "        <p>Envíanos tu propuesta antes del 15 de septiembre indicando el "
 "nivel al que va dirigido y un resumen de la charla para que podamos "
 "evaluarla.</p>\n"
