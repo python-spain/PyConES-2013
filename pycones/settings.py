@@ -45,21 +45,6 @@ TIME_ZONE = "Europe/Madrid"
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = "es"
 
-LANGUAGES = (
-    ('ca', _(u'Català')),
-    ('eu', _(u'Euskara')),
-    ('es', _(u'Español')),
-    ('ga', _(u'Galego')),
-)
-
-LOCALE_PATHS = (
-    os.path.join(PROJECT_ROOT, "locale"),
-)
-
-# Rosetta settings
-ROSETTA_MESSAGES_SOURCE_LANGUAGE_CODE = 'es'
-ROSETTA_MESSAGES_SOURCE_LANGUAGE_NAME = u'Español'
-
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
