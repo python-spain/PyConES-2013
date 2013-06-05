@@ -12,12 +12,3 @@ See http://eldarion.com/symposion/ for commercial support, customization and hos
 - `python manage.py syncdb`
 - `python manage.py loaddata fixtures/*`
 
-## Setup Heroku remote
-
-- `heroku login`
-- `heroku keys:add`
-- `heroku git:remote --app pycones`
-
-## Deploy
-
-- `git push heroku master`
