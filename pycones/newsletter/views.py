@@ -92,7 +92,7 @@ def latest_newsletter(request):
     View to get latest newsletter
     """
     try:
-        newsletter = Newsletter.objects.all().order_by('-sent_date')[:1][0]
+        newsletter = Newsletter.objects.filter(sent=True).order_by('-sent_date')[:1][0]
     except:
         return HttpResponseRedirect('/')
 
