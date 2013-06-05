@@ -241,6 +241,8 @@ LOCALE_PATHS = (
 # Rosetta settings
 ROSETTA_MESSAGES_SOURCE_LANGUAGE_CODE = 'es'
 ROSETTA_MESSAGES_SOURCE_LANGUAGE_NAME = u'Español'
+ROSETTA_STORAGE_CLASS = 'rosetta.storage.SessionRosettaStorage'
+
 
 
 # local_settings.py can be used to override environment-specific settings
