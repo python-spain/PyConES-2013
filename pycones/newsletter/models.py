@@ -97,7 +97,7 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         current_site = Site.objects.get_current()
-        url = reverse('article', args=[self.slug])
+        url = reverse('newsletter:article', args=[self.slug])
         return 'http://%s%s' % (current_site.domain, url)
 
 
@@ -119,7 +119,7 @@ class Newsletter(models.Model):
 
     def get_absolute_url(self):
         current_site = Site.objects.get_current()
-        url = reverse('newsletter', args=[self.uuid])
+        url = reverse('newsletter:newsletter', args=[self.uuid])
         return 'http://%s%s' % (current_site.domain, url)
 
 class Subscription(models.Model):
