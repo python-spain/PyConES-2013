@@ -232,6 +232,7 @@ LANGUAGES = (
     ('eu', _(u'Euskara')),
     ('es', _(u'Español')),
     ('ga', _(u'Galego')),
+    ('en', _(u'English')),
 )
 
 LOCALE_PATHS = (
