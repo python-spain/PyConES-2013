@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import json
+
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.core.mail import send_mail
@@ -7,7 +9,6 @@ from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template.loader import render_to_string
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseBadRequest
-from django.utils import simplejson as json
 
 from pycones import utils
 from pycones.sponsors.models import Sponsor

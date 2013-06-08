@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import uuid
+import json
+
 from django.contrib.sites.models import Site
 from django.conf import settings
 from django.core import mail
@@ -10,7 +12,6 @@ from django.db import transaction
 from django.template.loader import render_to_string
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseBadRequest
-from django.utils import simplejson as json
 
 from .models import Subscription, Newsletter, Article
 from pycones import utils
