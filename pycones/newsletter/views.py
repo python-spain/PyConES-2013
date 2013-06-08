@@ -13,8 +13,23 @@ from django.template.loader import render_to_string
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseBadRequest
 
-from .models import Subscription, Newsletter, Article
 from pycones import utils
+from .models import Subscription, Newsletter, Article
+
+
+def _make_static_url():
+    return 'http://{0}{1}'.format(
+                        Site.objects.get_current(),
+                        settings.STATIC_URL)
+
+
+def _make_unsubscribe_url(user_email, val_token):
+    url = reverse('newsletter:unsubscribe_newsletter')
+    current_site = Site.objects.get_current()
+
+    return 'http://{0}{1}?user_email={2}&val_token={3}'.format(
+                current_site.domain, url, user_email, val_token)
+
 
 def send_welcome_msg(user_email, val_token, request):
     subject = u'¡Bienvenido a PyConES!'
