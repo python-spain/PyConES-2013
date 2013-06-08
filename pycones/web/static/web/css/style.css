@@ -883,6 +883,11 @@ a.link-yellow{
 
     .call4papers-right {
         float: initial;
+        text-align: center;
+    }
+
+    .call4papers-right > img{
+        float: initial;
     }
 
     .datos-inside {
