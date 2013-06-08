@@ -78,6 +78,7 @@ def subscribe_newsletter(request):
     context = {'message' : u"Registrado. Muchas gracias"}
     return HttpResponse(json.dumps(context), content_type="application/json")
 
+
 def unsubscribe_newsletter(request):
     """
     View to unsubscribe newsletter
@@ -90,8 +91,8 @@ def unsubscribe_newsletter(request):
 
     if not user_email or not val_token:
         context = {"message": u"Parámetros incorrectos"}
-        return render_to_response("newsletter/unsubscribe.html",
-                        context, context_instance=RequestContext(request))
+        return render_to_response("newsletter/unsubscribe.html", context,
+                                  context_instance=RequestContext(request))
 
     queryset = Subscription.objects.filter(user_email=user_email, val_token=val_token)
     try:
@@ -102,8 +103,9 @@ def unsubscribe_newsletter(request):
         subscription.delete()
         context = {"message": u"Eliminado de la newsletter correctamente"}
 
-    return render_to_response("newsletter/unsubscribe.html",
-                        context, context_instance=RequestContext(request))
+    return render_to_response("newsletter/unsubscribe.html", context,
+                              context_instance=RequestContext(request))
+
 
 def latest_newsletter(request):
     """
@@ -119,9 +121,9 @@ def latest_newsletter(request):
         "static_url": _make_static_url()
     }
 
-    return render_to_response("newsletter/newsletter.html",
-                    context,
-                    context_instance=RequestContext(request))
+    return render_to_response("newsletter/newsletter.html", context,
+                              context_instance=RequestContext(request))
+
 
 def newsletter(request, uuid):
     """
@@ -133,9 +135,8 @@ def newsletter(request, uuid):
         "static_url": _make_static_url()
     }
 
-    return render_to_response("newsletter/newsletter.html",
-                    context,
-                    context_instance=RequestContext(request))
+    return render_to_response("newsletter/newsletter.html", context,
+                              context_instance=RequestContext(request))
 
 
 def article(request, slug):
@@ -144,7 +145,6 @@ def article(request, slug):
     """
     article = get_object_or_404(Article, slug=slug)
 
-    return render_to_response("newsletter/article.html",
-                    {"article": article},
-                    context_instance=RequestContext(request))
+    return render_to_response("newsletter/article.html", {"article": article},
+                              context_instance=RequestContext(request))
 
