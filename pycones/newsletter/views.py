@@ -34,18 +34,20 @@ def _make_unsubscribe_url(user_email, val_token):
 def send_welcome_msg(user_email, val_token, request):
     subject = u'¡Bienvenido a PyConES!'
     from_email = u'boletin2013@es.pycon.org'
-    current_site = Site.objects.get_current()
-    unsubscribe_url = 'http://%s%s?user_email=%s&val_token=%s' % (current_site.domain, reverse('newsletter:unsubscribe_newsletter'), user_email, val_token)
+
     context = {
         "user_email": user_email,
         "val_token": val_token,
-        "unsubscribe_url": unsubscribe_url
+        "unsubscribe_url": _make_unsubscribe_url(user_email, val_token)
     }
+
     template_txt = 'newsletter/newsletter_welcome_mail.txt'
     template_html =  'newsletter/newsletter_welcome_mail.html'
     to = [user_email]
+
     email = utils.mail_wrapper(subject, context, from_email, to, template_txt, template_html)
     email.send()
+
 
 @transaction.commit_on_success
 def subscribe_newsletter(request):
@@ -112,10 +114,9 @@ def latest_newsletter(request):
     except:
         return HttpResponseRedirect('/')
 
-    static_url = 'http://%s%s' % (Site.objects.get_current(),settings.STATIC_URL)
     context = {
         "newsletter": newsletter,
-        "static_url": static_url
+        "static_url": _make_static_url()
     }
 
     return render_to_response("newsletter/newsletter.html",
@@ -126,11 +127,10 @@ def newsletter(request, uuid):
     """
     View to get newsletter by uuid
     """
-    static_url = 'http://%s%s' % (Site.objects.get_current(),settings.STATIC_URL)
     newsletter = get_object_or_404(Newsletter, uuid=uuid)
     context = {
         "newsletter": newsletter,
-        "static_url": static_url
+        "static_url": _make_static_url()
     }
 
     return render_to_response("newsletter/newsletter.html",
