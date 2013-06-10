@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import uuid
+import json
+
 from django.contrib.sites.models import Site
 from django.conf import settings
 from django.core import mail
@@ -10,26 +12,42 @@ from django.db import transaction
 from django.template.loader import render_to_string
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseBadRequest
-from django.utils import simplejson as json
 
-from .models import Subscription, Newsletter, Article
 from pycones import utils
+from .models import Subscription, Newsletter, Article
+
+
+def _make_static_url():
+    return 'http://{0}{1}'.format(
+                        Site.objects.get_current(),
+                        settings.STATIC_URL)
+
+
+def _make_unsubscribe_url(user_email, val_token):
+    url = reverse('newsletter:unsubscribe_newsletter')
+    current_site = Site.objects.get_current()
+
+    return 'http://{0}{1}?user_email={2}&val_token={3}'.format(
+                current_site.domain, url, user_email, val_token)
+
 
 def send_welcome_msg(user_email, val_token, request):
     subject = u'¡Bienvenido a PyConES!'
     from_email = u'boletin2013@es.pycon.org'
-    current_site = Site.objects.get_current()
-    unsubscribe_url = 'http://%s%s?user_email=%s&val_token=%s' % (current_site.domain, reverse('newsletter:unsubscribe_newsletter'), user_email, val_token)
+
     context = {
         "user_email": user_email,
         "val_token": val_token,
-        "unsubscribe_url": unsubscribe_url
+        "unsubscribe_url": _make_unsubscribe_url(user_email, val_token)
     }
+
     template_txt = 'newsletter/newsletter_welcome_mail.txt'
     template_html =  'newsletter/newsletter_welcome_mail.html'
     to = [user_email]
+
     email = utils.mail_wrapper(subject, context, from_email, to, template_txt, template_html)
     email.send()
+
 
 @transaction.commit_on_success
 def subscribe_newsletter(request):
@@ -60,6 +78,7 @@ def subscribe_newsletter(request):
     context = {'message' : u"Registrado. Muchas gracias"}
     return HttpResponse(json.dumps(context), content_type="application/json")
 
+
 def unsubscribe_newsletter(request):
     """
     View to unsubscribe newsletter
@@ -72,8 +91,8 @@ def unsubscribe_newsletter(request):
 
     if not user_email or not val_token:
         context = {"message": u"Parámetros incorrectos"}
-        return render_to_response("newsletter/unsubscribe.html",
-                        context, context_instance=RequestContext(request))
+        return render_to_response("newsletter/unsubscribe.html", context,
+                                  context_instance=RequestContext(request))
 
     queryset = Subscription.objects.filter(user_email=user_email, val_token=val_token)
     try:
@@ -84,8 +103,9 @@ def unsubscribe_newsletter(request):
         subscription.delete()
         context = {"message": u"Eliminado de la newsletter correctamente"}
 
-    return render_to_response("newsletter/unsubscribe.html",
-                        context, context_instance=RequestContext(request))
+    return render_to_response("newsletter/unsubscribe.html", context,
+                              context_instance=RequestContext(request))
+
 
 def latest_newsletter(request):
     """
@@ -96,30 +116,27 @@ def latest_newsletter(request):
     except:
         return HttpResponseRedirect('/')
 
-    static_url = 'http://%s%s' % (Site.objects.get_current(),settings.STATIC_URL)
     context = {
         "newsletter": newsletter,
-        "static_url": static_url
+        "static_url": _make_static_url()
     }
 
-    return render_to_response("newsletter/newsletter.html",
-                    context,
-                    context_instance=RequestContext(request))
+    return render_to_response("newsletter/newsletter.html", context,
+                              context_instance=RequestContext(request))
+
 
 def newsletter(request, uuid):
     """
     View to get newsletter by uuid
     """
-    static_url = 'http://%s%s' % (Site.objects.get_current(),settings.STATIC_URL)
     newsletter = get_object_or_404(Newsletter, uuid=uuid)
     context = {
         "newsletter": newsletter,
-        "static_url": static_url
+        "static_url": _make_static_url()
     }
 
-    return render_to_response("newsletter/newsletter.html",
-                    context,
-                    context_instance=RequestContext(request))
+    return render_to_response("newsletter/newsletter.html", context,
+                              context_instance=RequestContext(request))
 
 
 def article(request, slug):
@@ -128,7 +145,6 @@ def article(request, slug):
     """
     article = get_object_or_404(Article, slug=slug)
 
-    return render_to_response("newsletter/article.html",
-                    {"article": article},
-                    context_instance=RequestContext(request))
+    return render_to_response("newsletter/article.html", {"article": article},
+                              context_instance=RequestContext(request))
 

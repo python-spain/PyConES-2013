@@ -51,10 +51,12 @@
         {% include 'web/legal_terms.html' %}
         {% include 'web/footer.html' %}
     </body>
-    <script type="text/javascript" src="{{ STATIC_URL }}web/js/jquery-1.8.3.min.js"></script>
+
+    <script src="{% static 'web/js/jquery-1.8.3.min.js' %}"></script>
     <script src="{% static 'web/js/jquery.flexslider.js' %}"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}web/js/web.js"></script>
-    <script type="text/javascript">
+    <script src="{% static 'web/js/web.js' %}"></script>
+
+    <script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-5340683-11']);
     _gaq.push(['_trackPageview']);
