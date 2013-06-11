@@ -33,6 +33,7 @@ urlpatterns = patterns("",
     url(r"^schedule/", include("symposion.schedule.urls")),
     url(r"^markitup/", include("markitup.urls")),
     url(r'^rosetta/', include('rosetta.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 
     #url(r"^", include("symposion.cms.urls")),
 )
