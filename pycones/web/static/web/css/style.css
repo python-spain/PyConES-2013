@@ -936,3 +936,10 @@ a.link-yellow{
         padding: 0 1em;
     }
 }
+
+.title-form {
+        float: left;
+}
+.title-form span {
+        margin: 0 10p 0;
+}
