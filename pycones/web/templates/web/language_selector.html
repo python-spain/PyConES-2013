@@ -5,7 +5,7 @@
     <div class="language-selector-inside">
         <ul class="languages">
             <form name="setLang" action="/i18n/setlang/" method="POST">{% csrf_token %}
-                <input type="hidden" name="language">
+                <input type="hidden" name="language" id="language_hidden">
 
                 <li>
                     <a href="#" onclick="setLanguage('es')">Español</a>
