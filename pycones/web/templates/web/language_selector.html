@@ -1,0 +1,29 @@
+{% load static from staticfiles %}
+{% load i18n %}
+
+<article class="language-selector">
+    <div class="language-selector-inside">
+        <ul class="languages">
+            <form name="setLang" action="/i18n/setlang/" method="POST">{% csrf_token %}
+                <input type="hidden" name="language">
+
+                <li>
+                    <a href="#" onclick="setLanguage('es')">Español</a>
+                </li>
+                <li>
+                    <a href="#" onclick="setLanguage('ca')">Català</a>
+                </li>
+                <li>
+                    <a href="#" onclick="setLanguage('ga')">Galego</a>
+                </li>
+                <li>
+                    <a href="#" onclick="setLanguage('eu')">Euskara</a>
+                </li>
+                <li>
+                    <a href="#" onclick="setLanguage('en')">English</a>
+                </li>
+
+            </form>
+        </ul>
+    </div><!-- informacion-inside -->
+</article>

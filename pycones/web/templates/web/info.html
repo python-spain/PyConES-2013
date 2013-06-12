@@ -5,6 +5,7 @@
     <div class="informacion-inside">
         <img src="{% static 'web/img/world.png' %}" alt="Pycon Madrid 2013" border="0" align="right" />
         <h2 class="white title">{% trans 'Información' %}</h2>
+        {% comment %}
         <h3 class="welcome">
             <form name="setLangEs" action="/i18n/setlang/" method="POST" class="title-form">{% csrf_token %}
                 <input type="hidden" name="language" value="es">
@@ -27,6 +28,7 @@
                 <a href="#" onclick="document.setLangEn.submit(); return false;">Welcome</a>
             </form>
         </h3>
+        {% endcomment %}
         {% blocktrans %}
         <p>PyConES es la conferencia dedicada de forma exclusiva al lenguaje de programación Python. Se celebrará por primera vez en España como PyConES tras los éxitos cosechados por el formato PyCon en los cinco continentes (<a href="http://pycon.org" target="_new">http://pycon.org</a>).</p>
         <p>PyConES está organizada por la asociación Python España, que agrupa tanto a aficionados a Python como a usuarios profesionales, y cuyo principal objetivo es velar por la difusión y el desarrollo de Python dentro del territorio español.</p>
