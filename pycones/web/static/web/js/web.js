@@ -75,6 +75,16 @@
    });
   // Fin sliders
 
+  // setLang
+  $('#setLang a').click(function(e){
+    e.preventDefault();
+    var lang = $(this).attr('data-lang');
+    $('#language').val(lang);
+
+    var form = $("#setLang");
+    form.submit();
+
+  });
 
 })();
 

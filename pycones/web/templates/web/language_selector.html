@@ -4,23 +4,23 @@
 <article class="language-selector">
     <div class="language-selector-inside">
         <ul class="languages">
-            <form name="setLang" action="/i18n/setlang/" method="POST">{% csrf_token %}
-                <input type="hidden" name="language" id="language_hidden">
+            <form id="setLang" name="setLang" action="/i18n/setlang/" method="POST">{% csrf_token %}
+                <input type="hidden" name="language" id="language">
 
                 <li>
-                    <a href="#" onclick="setLanguage('es')">Español</a>
+                    <a href="#" data-lang="es">Español</a>
                 </li>
                 <li>
-                    <a href="#" onclick="setLanguage('ca')">Català</a>
+                    <a href="#" data-lang="ca">Català</a>
                 </li>
                 <li>
-                    <a href="#" onclick="setLanguage('ga')">Galego</a>
+                    <a href="#" data-lang="ga">Galego</a>
                 </li>
                 <li>
-                    <a href="#" onclick="setLanguage('eu')">Euskara</a>
+                    <a href="#" data-lang="eu">Euskara</a>
                 </li>
                 <li>
-                    <a href="#" onclick="setLanguage('en')">English</a>
+                    <a href="#" data-lang="en">English</a>
                 </li>
 
             </form>
