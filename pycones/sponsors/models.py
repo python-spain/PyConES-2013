@@ -34,6 +34,13 @@ STATUS_LEVELS = (
 
 ACCEPTED_LEVEL = (('none', u'NONE'),) + SPONSOR_LEVELS
 
+INVOICE_STATUS = (
+    ('none', u'None'),
+    ('sent', u'Enviada'),
+    ('aceptada', u'Aceptada'),
+    ('recibida', u'Recibida'),
+)
+
 class Prospect(models.Model):
     company = models.CharField(max_length=100)
     web = models.CharField(max_length=255, blank=True, null=True)
@@ -46,6 +53,7 @@ class Prospect(models.Model):
     user_in_charge = models.ForeignKey(User, blank=True, null=True)
     comments = models.TextField(blank=True, null=True)
     accepted_level = models.CharField(max_length=100, choices=ACCEPTED_LEVEL, default=ACCEPTED_LEVEL[0])
+    invoice_status = models.CharField(max_length=100, choices=INVOICE_STATUS, default=INVOICE_STATUS[0])
 
     class Meta:
         verbose_name = u'candidato'
@@ -53,3 +61,5 @@ class Prospect(models.Model):
 
     def __unicode__(self):
         return self.company
+
+
