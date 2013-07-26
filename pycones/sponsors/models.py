@@ -32,6 +32,8 @@ STATUS_LEVELS = (
     ('accepted', u'Aceptado'),
 )
 
+ACCEPTED_LEVEL = (('none', u'NONE'),) + SPONSOR_LEVELS
+
 class Prospect(models.Model):
     company = models.CharField(max_length=100)
     web = models.CharField(max_length=255, blank=True, null=True)
@@ -43,6 +45,7 @@ class Prospect(models.Model):
                         null=True, blank=True)
     user_in_charge = models.ForeignKey(User, blank=True, null=True)
     comments = models.TextField(blank=True, null=True)
+    accepted_level = models.CharField(max_length=100, choices=ACCEPTED_LEVEL, default=ACCEPTED_LEVEL[0])
 
     class Meta:
         verbose_name = u'candidato'
