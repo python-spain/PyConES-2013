@@ -858,6 +858,7 @@ a.link-yellow{
 }
 .tickets > a > img{
     max-width: 210px;
+    margin-bottom: 1em;
     width: 50%;
 }
 
