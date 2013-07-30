@@ -19,10 +19,10 @@ def home(request):
     View to get the home page
     """
     context = {
-        'diamonds': Sponsor.objects.filter(level='diamond'),
-        'platinums': Sponsor.objects.filter(level='platinum'),
-        'golds': Sponsor.objects.filter(level='gold'),
-        'silvers': Sponsor.objects.filter(level='silver'),
+        'diamonds': Sponsor.objects.filter(level='diamond').order_by("?"),
+        'platinums': Sponsor.objects.filter(level='platinum').order_by("?"),
+        'golds': Sponsor.objects.filter(level='gold').order_by("?"),
+        'silvers': Sponsor.objects.filter(level='silver').order_by("?"),
     }
 
     return render_to_response("web/home.html", context,
