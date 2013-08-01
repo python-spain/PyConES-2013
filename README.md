@@ -9,6 +9,7 @@ See http://eldarion.com/symposion/ for commercial support, customization and hos
 ## Quickstart
 
 - `pip install -r requirements.txt`
+- `copy pycones/local_settings.py.sample to pycones/local_settings.py
 - `python manage.py syncdb`
 - `python manage.py migrate 
  
