@@ -415,6 +415,10 @@ header {
     width: 100%;
 }
 
+.patrocinadores-slider .slides li ul.five-columns li{
+        margin: 0 1em;
+}
+
 .imagen-landscape1 {
     background-image: url(../img/landscape1.jpg);
     background-repeat: no-repeat;
@@ -922,9 +926,6 @@ a.link-yellow{
 
     .five-columns>*{
         width: 23%;
-    }
-    .patrocinadores-slider .slides li ul.five-columns li{
-        margin: 0 1em;
     }
 
     .call4papers-btn a {
