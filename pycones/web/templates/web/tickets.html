@@ -2,10 +2,13 @@
 {% load i18n %}
 
 <article class="tickets" id="tickets">
-        <h2 class="red title">{% trans 'Entradas early bird ya a la venta' %}</h2>
+        <h2 class="red title">{% trans 'Entradas' %}</h2>
         {% blocktrans %}
+        <p>Agotadas las entradas en la modalidad early bird. En breve activaremos la venta de entradas normales. ¡Estad atentos!</p>
+        {% endblocktrans %}
+        {% comment %}
         <p>Adquiere ya tu entrada para la PyConES; el ticket te da derecho a asistir a las conferencias que se organicen. Además, la entrada incluye comida y coffee breaks sábado y domingo.</p>
         <p>Pulsa la entrada para iniciar el proceso de compra.</p>
-        {% endblocktrans %}
         <a href="http://www.ticketea.com/pycones" target="_blank"><img src="{% static 'web/img/ticket.png' %}"  alt={% trans 'Venta de entradas' %} /></a>
+        {% endcomment %}
 </article>
