@@ -23,6 +23,7 @@ def home(request):
         'platinums': Sponsor.objects.filter(level='platinum').order_by("?"),
         'golds': Sponsor.objects.filter(level='gold').order_by("?"),
         'silvers': Sponsor.objects.filter(level='silver').order_by("?"),
+        'bronze': Sponsor.objects.filter(level='bronze').order_by("?"),
     }
 
     return render_to_response("web/home.html", context,
