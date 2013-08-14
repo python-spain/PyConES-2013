@@ -314,12 +314,65 @@ header {
 
 .patrocinadores-btn ul li a.folleto-pdf:hover, .patrocinadores-btn ul li a.contacto-patrocinador:hover {background: #f0c635; opacity: 1;}
 
-.patrocinadores-inside h3{
-    font-family: 'Open Sans';
-    font-size: 2em;
-    font-weight: normal;
+.patrocinadores-inside{
+    text-align: center;
 }
-
+.patrocinadores-inside h3{
+    font-weight: normal;
+    font-size: 2em;
+}
+.patrocinadores-inside h4{
+    font-weight: normal;
+    font-size: 1.6em;
+}
+.patrocinadores-inside .diamante{
+    color: #4ccfeb;
+}
+.patrocinadores-inside .platino{
+    color: #e1a9d7;
+}
+.patrocinadores-inside .oro{
+    color: #cbb924;
+}
+.patrocinadores-inside .plata{
+    color: #c8c8c8;
+}
+.patrocinadores-inside .patrocinadores-zone{
+    width: 100%;
+}
+.patrocinadores-zone p{
+    font-size: 1.3em;
+}
+.patrocinadores-zone ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.patrocinadores-zone ul li{
+    display: inline-block;
+    margin: 0 auto;
+    padding: .5em;
+}
+.one-column>li{
+    width: 80%;
+}
+.two-columns>li{
+    width: 45%;
+}
+.four-columns>li{
+    width: 23%;
+}
+.five-columns>li{
+    margin: 0 1em;
+    width: 18%;
+}
+.patrocinadores-zone ul li div{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100%;
+}
 /*.patrocinadores-nav {
     float: left;
     width: 680px;

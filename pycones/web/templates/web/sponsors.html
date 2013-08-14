@@ -24,7 +24,7 @@
                 {% endfor %}
                 </ul>
             {% else %}
-                <p>{% trans 'Sé el primer patrocinador <span class="diamante">diamante</span> de la PyConES' %}</p>
+                <p>{% trans 'Sé el primer patrocinador diamante de la PyConES' %}</p>
             {% endif %}
         </div>
 
@@ -41,7 +41,7 @@
                 {% endfor %}
                 </ul>
             {% else %}
-                <p>{% trans 'Sé el primer patrocinador <span class="platino">platino</span> de la PyConES' %}</p>
+                <p>{% trans 'Sé el primer patrocinador platino de la PyConES' %}</p>
             {% endif %}
         </div>
 
@@ -58,7 +58,7 @@
                 {% endfor %}
                 </ul>
             {% else %}
-                <p>{% trans 'Sé el primer patrocinador <span class="oro">oro</span> de la PyConES' %}</p>
+                <p>{% trans 'Sé el primer patrocinador oro de la PyConES' %}</p>
             {% endif %}
         </div>
 
@@ -75,12 +75,26 @@
                 {% endfor %}
                 </ul>
             {% else %}
-                <p>{% trans 'Sé el primer patrocinador <span class="plata">plata</span> de la PyConES' %}</p>
+                <p>{% trans 'Sé el primer patrocinador plata de la PyConES' %}</p>
             {% endif %}
         </div>
 
         <h4>{% trans 'Con la colaboración de' %}</h4>
-        <div class="patrocinadores-zone"></div>
+        <div class="patrocinadores-zone">
+            {% if silvers %}
+                <ul class="five-columns">
+                {% for sponsor in silvers %}
+                    <li>
+                        <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                            <div style="background-image:url('{{ sponsor.image.url }}');"></div>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>{% trans 'Sé la primera empresa en colaborar con PyConES' %}</p>
+            {% endif %}
+        </div>
 
 
 
