@@ -10,6 +10,82 @@
                 <li><a href="/static/sponsors/pycones_{{LANGUAGE_CODE}}.pdf" target="_new"target="_new" class="folleto-pdf">{% trans 'Folleto (PDF)' %}</a></li>
             </ul>
         </div>
+
+        <h3 class="diamante">{% trans 'DIAMANTE' %}</h3>
+        <div class="patrocinadores-zone">
+            {% if diamonds %}
+                <ul class="one-column">
+                {% for sponsor in diamonds %}
+                    <li>
+                        <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                            <div style="background-image:url('{{ sponsor.image.url }}');"></div>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>{% trans 'Sé el primer patrocinador <span class="diamante">diamante</span> de la PyConES' %}</p>
+            {% endif %}
+        </div>
+
+        <h3 class="platino">{% trans 'PLATINO' %}</h3>
+        <div class="patrocinadores-zone">
+            {% if platinums %}
+                <ul class="two-columns">
+                {% for sponsor in platinums %}
+                    <li>
+                        <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                            <div style="background-image:url('{{ sponsor.image.url }}');"></div>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>{% trans 'Sé el primer patrocinador <span class="platino">platino</span> de la PyConES' %}</p>
+            {% endif %}
+        </div>
+
+        <h3 class="oro">{% trans 'ORO' %}</h3>
+        <div class="patrocinadores-zone">
+            {% if golds %}
+                <ul class="four-columns">
+                {% for sponsor in golds %}
+                    <li>
+                        <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                            <div style="background-image:url('{{ sponsor.image.url }}');"></div>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>{% trans 'Sé el primer patrocinador <span class="oro">oro</span> de la PyConES' %}</p>
+            {% endif %}
+        </div>
+
+        <h3 class="plata">{% trans 'PLATA' %}</h3>
+        <div class="patrocinadores-zone">
+            {% if silvers %}
+                <ul class="five-columns">
+                {% for sponsor in silvers %}
+                    <li>
+                        <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
+                            <div style="background-image:url('{{ sponsor.image.url }}');"></div>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>{% trans 'Sé el primer patrocinador <span class="plata">plata</span> de la PyConES' %}</p>
+            {% endif %}
+        </div>
+
+        <h4>{% trans 'Con la colaboración de' %}</h4>
+        <div class="patrocinadores-zone"></div>
+
+
+
+
+        {% comment %}
         <div class="patrocinadores-nav">
             <ul>
                 <li><a href="#" class="diamante">{% trans 'DIAMANTE' %}</a></li>
@@ -84,6 +160,8 @@
                 </ul>
             </div>
         </div><!-- patrocinadores-slider -->
+        {% endcomment %}
+
     </div><!-- patrocinadores-inside -->
 </article>
 

@@ -266,7 +266,6 @@ header {
     text-align: center;
 }
 
-
 .patrocinadores {
     width: 100%;
     height: 100%;
@@ -285,8 +284,8 @@ header {
 
 
 .patrocinadores-btn {
-    //float: right;
     margin: 10px 0 0 0;
+    min-height: 53px;
     padding: 0;
 }
 
@@ -305,7 +304,6 @@ header {
     box-sizing: border-box;
     float: left;
     font-size: 1.2em;
-    height: 53px;
     margin: 0 0 0 15px;
     padding: .75em;
     cursor: pointer;
@@ -316,7 +314,13 @@ header {
 
 .patrocinadores-btn ul li a.folleto-pdf:hover, .patrocinadores-btn ul li a.contacto-patrocinador:hover {background: #f0c635; opacity: 1;}
 
-.patrocinadores-nav {
+.patrocinadores-inside h3{
+    font-family: 'Open Sans';
+    font-size: 2em;
+    font-weight: normal;
+}
+
+/*.patrocinadores-nav {
     float: left;
     width: 680px;
     max-width: 100%;
@@ -418,6 +422,7 @@ header {
 .patrocinadores-slider .slides li ul.five-columns li{
         margin: 0 1em;
 }
+*/
 
 .imagen-landscape1 {
     background-image: url(../img/landscape1.jpg);
@@ -908,7 +913,7 @@ a.link-yellow{
         margin-top: .5em;
     }
 
-    .patrocinadores-nav{
+/*    .patrocinadores-nav{
         margin: 0;
     }
 
@@ -927,7 +932,7 @@ a.link-yellow{
     .five-columns>*{
         width: 23%;
     }
-
+*/
     .call4papers-btn a {
         float: initial;
         margin: 0;
