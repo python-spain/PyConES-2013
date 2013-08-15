@@ -11,7 +11,7 @@
             </ul>
         </div>
 
-        <h3 class="diamante">{% trans 'DIAMANTE' %}</h3>
+        <h3 class="diamante">>>> print('{% trans 'DIAMANTE' %}')</h3>
         <div class="patrocinadores-zone">
             {% if diamonds %}
                 <ul class="one-column">
@@ -28,7 +28,7 @@
             {% endif %}
         </div>
 
-        <h3 class="platino">{% trans 'PLATINO' %}</h3>
+        <h3 class="platino">>>> print('{% trans 'PLATINO' %}')</h3>
         <div class="patrocinadores-zone">
             {% if platinums %}
                 <ul class="two-columns">
@@ -45,7 +45,7 @@
             {% endif %}
         </div>
 
-        <h3 class="oro">{% trans 'ORO' %}</h3>
+        <h3 class="oro">>>> print('{% trans 'ORO' %}')</h3>
         <div class="patrocinadores-zone">
             {% if golds %}
                 <ul class="four-columns">
@@ -62,7 +62,7 @@
             {% endif %}
         </div>
 
-        <h3 class="plata">{% trans 'PLATA' %}</h3>
+        <h3 class="plata">>>> print('{% trans 'PLATA' %}')</h3>
         <div class="patrocinadores-zone">
             {% if silvers %}
                 <ul class="five-columns">
@@ -79,11 +79,11 @@
             {% endif %}
         </div>
 
-        <h4>{% trans 'Con la colaboración de' %}</h4>
+        <h4># {% trans 'Colaboran' %}</h4>
         <div class="patrocinadores-zone">
-            {% if silvers %}
+            {% if bronze %}
                 <ul class="five-columns">
-                {% for sponsor in silvers %}
+                {% for sponsor in bronze %}
                     <li>
                         <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
                             <div style="background-image:url('{{ sponsor.image.url }}');"></div>
@@ -92,7 +92,7 @@
                 {% endfor %}
                 </ul>
             {% else %}
-                <p>{% trans 'Sé la primera empresa en colaborar con PyConES' %}</p>
+                <p>{% trans 'Sé el primero en colaborar con PyConES' %}</p>
             {% endif %}
         </div>
 

@@ -315,27 +315,33 @@ header {
 .patrocinadores-btn ul li a.folleto-pdf:hover, .patrocinadores-btn ul li a.contacto-patrocinador:hover {background: #f0c635; opacity: 1;}
 
 .patrocinadores-inside{
+    margin-bottom: 2rem;
     text-align: center;
 }
-.patrocinadores-inside h3{
+.patrocinadores-inside h3, h4{
+    color: #fff;
     font-weight: normal;
-    font-size: 2em;
+    font-size: 2.5em;
+    line-height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2em;
+    text-align: left;
 }
 .patrocinadores-inside h4{
-    font-weight: normal;
-    font-size: 1.6em;
+    background: #9c9c9c;
 }
 .patrocinadores-inside .diamante{
-    color: #4ccfeb;
+    background: #4ccfeb;
 }
 .patrocinadores-inside .platino{
-    color: #e1a9d7;
+    background: #e1a9d7;
 }
 .patrocinadores-inside .oro{
-    color: #cbb924;
+    background: #cbb924;
 }
 .patrocinadores-inside .plata{
-    color: #c8c8c8;
+    background: #c8c8c8;
 }
 .patrocinadores-inside .patrocinadores-zone{
     width: 100%;
@@ -926,17 +932,14 @@ a.link-yellow{
 
 /*** < 880px ***/
 @media screen and (max-width: 800px) {
-
     .title{
         font-size: 2.5em;
         text-align: center;
     }
-
     .menu {
         float: initial;
         font-size: 1.5em;
     }
-
     .menu li{
         box-sizing: border-box;
         display: inline-block;
@@ -946,76 +949,61 @@ a.link-yellow{
         padding: .5em;
         width: 100%;
     }
-
     .menu li a{
         border: 0;
     }
-
     .informacion img{
         display: none;
     }
-
     .patrocinadores-btn{
         float: initial;
         text-align: left;
     }
-
     .patrocinadores-btn ul li{
         display: inline-block;
         float: initial;
         margin-top: .5em;
     }
-
-/*    .patrocinadores-nav{
-        margin: 0;
-    }
-
-    .patrocinadores-slider .slides li ul{
+    .patrocinadores-inside{
         padding: 0;
     }
-
+    .patrocinadores-inside h3,h4{
+        font-size: 2em;
+        line-height: 1.7rem;
+        padding-left: .2em;
+    }
     .two-columns>*{
         width: 70%;
     }
-
     .four-columns>*{
         width: 45%;
     }
-
     .five-columns>*{
-        width: 23%;
+        width: 30%;
     }
-*/
     .call4papers-btn a {
         float: initial;
         margin: 0;
     }
-
     .call4papers-right {
         float: initial;
         text-align: center;
     }
-
     .call4papers-right > img{
         float: initial;
     }
-
     .datos-inside {
         text-align: center;
     }
-
     .horario-tabla ul {
         font-size: 0.9em;
     }
-
     .footer-inside>div{
         text-align: center;
     }
-
     .footer-inside>div.footer-menu{
         text-align: left;
     }
-
     .footer-inside>div{
         width: 100%;
     }
@@ -1036,12 +1024,10 @@ a.link-yellow{
         padding: 0;
         text-align: left;
     }
-
     .conduct-inside h3{
         font-size: 1.8em;
         padding: 0 .5em;
     }
-
     .conduct-inside p{
         padding: 0 1em;
     }
