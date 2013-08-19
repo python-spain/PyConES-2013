@@ -329,19 +329,19 @@ header {
     text-align: left;
 }
 .patrocinadores-inside h4{
-    background: #9c9c9c;
+    color: #9c9c9c;
 }
 .patrocinadores-inside .diamante{
-    background: #4ccfeb;
+    color: #4ccfeb;
 }
 .patrocinadores-inside .platino{
-    background: #e1a9d7;
+    color: #e1a9d7;
 }
 .patrocinadores-inside .oro{
-    background: #cbb924;
+    color: #cbb924;
 }
 .patrocinadores-inside .plata{
-    background: #c8c8c8;
+    color: #c8c8c8;
 }
 .patrocinadores-inside .patrocinadores-zone{
     width: 100%;
