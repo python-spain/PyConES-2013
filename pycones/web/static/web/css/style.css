@@ -972,13 +972,13 @@ a.link-yellow{
         line-height: 1.7rem;
         padding-left: .2em;
     }
-    .two-columns>*{
+    .two-columns>li{
         width: 70%;
     }
-    .four-columns>*{
+    .four-columns>li{
         width: 45%;
     }
-    .five-columns>*{
+    .five-columns>li{
         width: 30%;
     }
     .call4papers-btn a {
