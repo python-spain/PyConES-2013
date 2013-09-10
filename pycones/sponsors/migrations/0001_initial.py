@@ -8,31 +8,9 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'Sponsor'
-        db.create_table('sponsorship_sponsor', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('url', self.gf('django.db.models.fields.URLField')(max_length=255)),
-            ('level', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
-        ))
-        db.send_create_signal('sponsorship', ['Sponsor'])
-
+        pass
 
     def backwards(self, orm):
-        # Deleting model 'Sponsor'
-        db.delete_table('sponsorship_sponsor')
+        pass
 
-
-    models = {
-        'sponsorship.sponsor': {
-            'Meta': {'object_name': 'Sponsor'},
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
-            'level': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'url': ('django.db.models.fields.URLField', [], {'max_length': '255'})
-        }
-    }
-
-    complete_apps = ['sponsorship']
+    complete_apps = ['sponsors']
