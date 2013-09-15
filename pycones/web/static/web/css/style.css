@@ -379,110 +379,7 @@ header {
     height: 100px;
     width: 100%;
 }
-/*.patrocinadores-nav {
-    float: left;
-    width: 680px;
-    max-width: 100%;
-    min-height: 75px;
-    height: 100%;
-    margin: 0 18%;
-    padding: 0;
-    clear: both;
-}
-
-.patrocinadores-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.patrocinadores-nav ul li {
-    float: left;
-    margin: 20px 3.5% 0 3.5%;
-    font-size: 1.50em;
-    display: block;
-}
-
-.patrocinadores-nav ul li a {
-    color: #767676;
-}
-
-.patrocinadores-nav ul li a.diamante:hover {color: #4ccfeb;}
-.patrocinadores-nav ul li a.platino:hover {color: #e1a9d7;}
-.patrocinadores-nav ul li a.oro:hover {color: #cbb924;}
-.patrocinadores-nav ul li a.plata:hover {color: #c8c8c8;}
-
-.patrocinadores-slider {
-    float: left;
-    width: 100%;
-}
-
-.patrocinadores-slider span{
-    font-weight: bold;
-}
-
-.patrocinadores-slider span.diamante{
-    color: #4ccfeb;
-}
-.patrocinadores-slider span.platino{
-    color: #e1a9d7;
-}
-.patrocinadores-slider span.oro{
-    color: #cbb924;
-}
-.patrocinadores-slider span.plata{
-    color: #c8c8c8;
-}
-
-.patrocinadores-slider .slides li{
-    text-align: center;
-}
-
-.patrocinadores-slider .slides li h3{
-    font-size: 2.4em;
-    font-weight: normal;
-    line-height: 1em;
-}
-
-.patrocinadores-slider .slides li ul{
-    list-style: none;
-}
-
-.patrocinadores-slider .slides li ul li{
-    display: inline-block;
-    margin: 0 auto;
-    padding: .5em;
-}
-
-.one-column>*{
-    width: 80%;
-}
-
-.two-columns>*{
-    width: 45%;
-}
-
-.four-columns>*{
-    width: 23%;
-}
-
-.five-columns>*{
-    width: 18%;
-}
-
-.patrocinadores-slider .slides li ul li div{
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100px;
-    width: 100%;
-}
-
-.patrocinadores-slider .slides li ul.five-columns li{
-        margin: 0 1em;
-}
-*/
-
+.folleto-pdf { background: #767676; }
 .imagen-landscape1 {
     background-image: url(../img/landscape1.jpg);
     background-repeat: no-repeat;
@@ -537,168 +434,25 @@ header {
     bottom: 0;
     right: 0;
 }
-
-.call4papers {
+.agenda {
     background: #f0c635;
     width: 100%;
     margin: 0;
     padding: 0;
 }
-
-.call4papers-inside {
-    width: 1050px;
+.agenda-inside {
+    height: 100%;
+    margin: 0 auto;
     max-width: 100%;
     min-height: 420px;
-    height: 100%;
-    margin: 0 auto;
     padding: 6px 1%;
-}
-
-.call4papers-text {
-    float: left;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-.call4papers-img {
-    float: right;
-    max-width: 375px;
-    max-height: 286px;
-    margin: 14px 0 0 0;
-    padding: 0;
-    background-image: url(img/world.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-.call4papers-right {
-    float: right;
-    margin: 0;
-    padding: 0;
-    min-width: 350px;
-    margin: 14px 0 0 2%
-}
-
-.call4papers-btn a {
-    float: right;
-    background: #e31212;
-    padding: 15px 20px;
-    color: #ffffff;
-    margin: 40px 23px 0 0;
-    font-size: 1.2em;
-}
-
-.call4papers-btn a:hover {
-    color: red;
-    background: #ffffff;
-}
-
-.call4papers-btn .folleto-pdf { background: #767676; }
-
-.horario {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.horario-inside {
     width: 1050px;
-    max-width: 100%;
-    min-height: 580px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0 1%;
 }
-
-.horario h1 {
-    float: left;
+.agenda-inside p{
+    font-size: 2.5em;
+    line-height: 1em;
+    margin-top: 2em;
 }
-
-.horario-btn {
-    float: right;
-    margin: 10px 0 0 0;
-    padding: 0;
-    font-size: 1.25em;
-}
-
-.horario-btn ul {
-    display: block;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.horario-btn ul li {
-    float: left;
-}
-
-.horario-btn ul li a {
-    float: left;
-    margin: 0 0 0 15px;
-    padding: 15px 24px 23px 24px;
-    color: #484848;
-    text-align: center;
-}
-
-.horario-btn ul li a:hover,
-.horario-btn ul li#current a {
-    cursor: pointer;
-    color: #ffffff;
-    background: url(../img/sprite.png) 0 -125px no-repeat;
-}
-
-.horario-tabla {
-    float:left;
-    width: 100%;
-    margin: 10px 0 0 0;
-    padding: 0;
-}
-
-.horario-tabla ul {
-    border-top: 4px solid #c2c2c2;
-    list-style: none;
-    padding: 20px;
-    margin: 0;
-    float: left;
-    width: 100%;
-}
-
-
-.horario-tabla ul li {
-    padding: 5px;
-    display: inline;
-    text-align: center;
-    float: left;
-}
-
-.horario-tabla ul li.horario-hora {color: #599eca; font-size: 1.8em; font-weight: bold; width: 12.682926%;}
-.horario-tabla ul li.horario-tema {color: #e31212; width: 32.682926%;}
-.horario-tabla ul li.horario-ponente {width: 23.902439%;}
-.horario-tabla ul li.horario-donde {width:  13.170731%;}
-.horario-tabla ul li.horario-masinfo {background: url(../img/sprite.png) 0 -200px no-repeat; padding-left: 30px; 13.658536%;}
-
-.horario-tabla ul li.horario-masinfo a:hover {text-decoration: underline;}
-
-
-.twitter-mod {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #767676;
-}
-
-.twitter-mod-inside {
-    width: 1050px;
-    max-width: 100%;
-    min-height: 200px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0 1%;
-    background: url(../img/sprite.png) 0 -240px no-repeat;
-}
-
 /* FOOTER */
 footer {
     width: 100%;
@@ -980,17 +734,6 @@ a.link-yellow{
     }
     .five-columns>li{
         width: 30%;
-    }
-    .call4papers-btn a {
-        float: initial;
-        margin: 0;
-    }
-    .call4papers-right {
-        float: initial;
-        text-align: center;
-    }
-    .call4papers-right > img{
-        float: initial;
     }
     .datos-inside {
         text-align: center;
