@@ -434,13 +434,13 @@ header {
     bottom: 0;
     right: 0;
 }
-.agenda {
+.schedule{
     background: #f0c635;
     width: 100%;
     margin: 0;
     padding: 0;
 }
-.agenda-inside {
+.schedule-inside{
     height: 100%;
     margin: 0 auto;
     max-width: 100%;
@@ -448,10 +448,75 @@ header {
     padding: 6px 1%;
     width: 1050px;
 }
-.agenda-inside p{
-    font-size: 2.5em;
-    line-height: 1em;
-    margin-top: 2em;
+.schedule-list{
+    display: inline-table;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.schedule-list>li{
+    background: white;
+    box-sizing: border-box;
+    border-left: 1em solid white;
+    min-height: 3em;
+    padding: 1%;
+    width: 100%;
+}
+.schedule-list>.list-title{
+    font-size: 2.3em;
+    min-height: 1.2em;
+    padding: .3em 0;
+    text-align: center;
+}
+.list-title.track1{
+    background: #2ecc71;
+    color: white;
+}
+.list-title.track2{
+    background: red;
+    color: white;
+}
+.list-title.track3{
+    background: #3498db;
+    color: white;
+    margin-bottom: .5em;
+}
+.schedule-list>li.track1{
+    border-left-color: #2ecc71;
+}
+.schedule-list>li.track2{
+    border-left-color: red;
+}
+.schedule-list>li.track3{
+    border-left-color: #3498db;
+    margin-bottom: .5em;
+}
+.schedule-list>li.track0{
+    background: grey;
+    border-left-color: grey;
+    clear: left;
+    color: white;
+    text-align: center;
+    margin-bottom: .7em;
+    width: 100%;
+}
+.schedule-list>li>span{
+    display: block;
+}
+.schedule-list>li>p{
+    display: none;
+    font-size: .9em;
+}
+.schedule-list>li>p.author{
+    font-weight: bold;
+    text-align: center;
+}
+.schedule-list>li>.hour{
+    font-size: 1.4em;
+}
+.schedule-list>li>.paper-title{
+    font-size: 1.1em;
 }
 /* FOOTER */
 footer {
@@ -780,6 +845,15 @@ a.link-yellow{
     }
     .tickets>h2{
         text-align: center;
+    }
+    .schedule-list>li{
+        width: 96%;
+    }
+    .schedule-list>li.track0{
+        width: 96%;
+    }
+    .schedule-list>li.track1{
+        margin-bottom: 0;
     }
 }
 
