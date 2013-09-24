@@ -474,7 +474,7 @@ header {
     color: white;
 }
 .list-title.track2{
-    background: red;
+    background: #e31212;
     color: white;
 }
 .list-title.track3{
@@ -486,7 +486,7 @@ header {
     border-left-color: #2ecc71;
 }
 .schedule-list>li.track2{
-    border-left-color: red;
+    border-left-color: #e31212;
 }
 .schedule-list>li.track3{
     border-left-color: #3498db;
