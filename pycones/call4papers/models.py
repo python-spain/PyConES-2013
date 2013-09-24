@@ -20,6 +20,7 @@ class Speaker(models.Model):
 TALK_LEVELS = (
     ('basic', u'Básico'),
     ('advanced', u'Avanzado'),
+    ('scientific', u'Científico'),
 )
 
 class Talk(models.Model):
