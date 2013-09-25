@@ -30,6 +30,7 @@ class Talk(models.Model):
     speaker = models.ForeignKey(Speaker)
     abstract = models.TextField(blank=True, null=True)
     selected = models.BooleanField(default=False)
+    confirmed = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = u'charla'
