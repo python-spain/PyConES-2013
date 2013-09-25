@@ -13,7 +13,7 @@ class Speaker(models.Model):
 
     class Meta:
         verbose_name = u'ponente'
-        ordering = 'name'
+        ordering = ['name',]
 
     def __unicode__(self):
         return self.name
