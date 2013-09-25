@@ -281,8 +281,9 @@ header {
     margin: 0 auto;
     padding: 0 1%;
 }
-
-
+.patrocinadores-inside>h2{
+    text-align:left;
+}
 .patrocinadores-btn {
     margin: 10px 0 0 0;
     min-height: 53px;
@@ -660,25 +661,31 @@ a.link-yellow{
 .languages li>a{
     color: #fff;
 }
-.tickets {
-    background: #ffffff;
+.tickets{
+    background: #fff;
     box-sizing: border-box;
-    margin: 0 auto;
-    max-width: 100%;
+    margin: 0;
     padding: .5em 1% 0 1%;
-    text-align: center;
+    width: 100%;
+}
+.tickets-inside{
     width: 1050px;
+    max-width: 100%;
+    min-height: 300px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1%;
 }
-.tickets > p{
+.tickets-inside > p{
     text-align: left;
 }
-.tickets > h2{
+.tickets-inside > h2{
     text-align: left;
 }
-.tickets > a{
+.tickets-inside > a{
     transition-duration : 0s;
 }
-.tickets > a > img{
+.tickets-inside > a > img{
     max-width: 210px;
     margin-bottom: 1em;
     width: 50%;
