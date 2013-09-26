@@ -8,5 +8,6 @@ admin.site.register(Speaker)
 class TalkAdmin(admin.ModelAdmin):
     list_display = ('title', 'level', 'selected', 'confirmed')
     list_filter = ('level', 'selected', 'confirmed')
+    filter_horizontal = ('speakers',)
 
 admin.site.register(Talk, TalkAdmin)
