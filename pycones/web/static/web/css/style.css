@@ -459,9 +459,14 @@ header {
     background: white;
     box-sizing: border-box;
     border-left: 1em solid white;
+    float: left;
     min-height: 3em;
     padding: 1%;
-    width: 100%;
+    margin-bottom: 1em;
+    width: 33%;
+}
+.schedule-list>li:hover{
+    cursor: pointer;
 }
 .schedule-list>.list-title{
     font-size: 2.3em;
@@ -470,7 +475,7 @@ header {
     text-align: center;
 }
 .list-title.track1{
-    background: #2ecc71;
+    background: #e37012;
     color: white;
 }
 .list-title.track2{
@@ -478,24 +483,26 @@ header {
     color: white;
 }
 .list-title.track3{
-    background: #3498db;
+    background: #1233e3;
     color: white;
     margin-bottom: .5em;
 }
 .schedule-list>li.track1{
-    border-left-color: #2ecc71;
+    border-left-color: #e37012;
+    clear: left;
 }
 .schedule-list>li.track2{
     border-left-color: #e31212;
 }
 .schedule-list>li.track3{
-    border-left-color: #3498db;
+    border-left-color: #1233e3;
     margin-bottom: .5em;
+    clear: right;
 }
 .schedule-list>li.track0{
     background: grey;
     border-left-color: grey;
-    clear: left;
+    clear: both;
     color: white;
     text-align: center;
     margin-bottom: .7em;
@@ -504,11 +511,13 @@ header {
 .schedule-list>li>span{
     display: block;
 }
-.schedule-list>li>p{
+.schedule-list>li>div{
     display: none;
+}
+.schedule-list>li>div>p{
     font-size: .9em;
 }
-.schedule-list>li>p.author{
+.schedule-list>li>div>p.author{
     font-weight: bold;
     text-align: center;
 }
