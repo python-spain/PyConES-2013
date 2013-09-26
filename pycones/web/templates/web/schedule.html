@@ -5,9 +5,17 @@
     <div class="schedule-inside">
         <h2 class="title white">{% trans 'Horario Sábado' %}</h2>
         <ul class="schedule-list">
-            <li class="list-title track1 white">{% trans 'Track básico' %}</li>
+            <li class="track0">
+                <span class="hour">08:00</span>
+                <span class="paper-title">{% trans 'ACREDITACIÓN (rotonda)' %}</span>
+            </li>
+            <li class="track0">
+                <span class="hour">08:30</span>
+                <span class="paper-title">{% trans 'PRESENTACIÓN (salón de actos)' %}</span>
+            </li>
+            <li class="list-title track1 white">{% trans 'Track PRODUBAN (básico)' %}</li>
             <li class="list-title track2 white">{% trans 'Track avanzado' %}</li>
-            <li class="list-title track3 white">{% trans 'Track científico' %}</li>
+            <li class="list-title track3 white">{% trans 'Track BITYVIP (científico)' %}</li>
             <li class="track1">
                 <span class="hour">9:00</span>
                 <span class="paper-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
@@ -35,8 +43,7 @@
             <li class="track1">
                 <span class="hour">10:00</span>
                 <span class="paper-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-            </li>
-            <li class="track2">
+            </li> <li class="track2">
                 <span class="hour">10:00</span>
                 <span class="paper-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
             </li>
@@ -103,9 +110,9 @@
         </ul>
         <h2 class="title white">{% trans 'Horario Domingo' %}</h2>
         <ul class="schedule-list">
-            <li class="list-title track1 white">{% trans 'Track básico' %}</li>
+            <li class="list-title track1 white">{% trans 'Track PRODUBAN (básico)' %}</li>
             <li class="list-title track2 white">{% trans 'Track avanzado' %}</li>
-            <li class="list-title track3 white">{% trans 'Track científico' %}</li>
+            <li class="list-title track3 white">{% trans 'Track BITYVIP (científico)' %}</li>
             <li class="track1">
                 <span class="hour">9:00</span>
                 <span class="paper-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
@@ -190,6 +197,10 @@
             <li class="track3">
                 <span class="hour">9:00</span>
                 <span class="paper-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            </li>
+            <li class="track0">
+                <span class="hour">18:30</span>
+                <span class="paper-title">{% trans 'Lighting talks' %}</span>
             </li>
         </ul>
     </div>
