@@ -28,7 +28,7 @@ class Talk(models.Model):
     title = models.CharField(max_length=200)
     level = models.CharField(max_length=100, choices=TALK_LEVELS,
                         blank=True, null=True)
-    speakers = models.ManyToManyField(Speaker, related_name='speakers')
+    speakers = models.ManyToManyField(Speaker, related_name='talks')
     abstract = models.TextField(blank=True, null=True)
     selected = models.BooleanField(default=False)
     confirmed = models.BooleanField(default=False)
