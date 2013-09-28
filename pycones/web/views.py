@@ -12,18 +12,30 @@ from django import http
 
 from pycones import utils
 from pycones.sponsors.models import Sponsor
+from pycones.call4papers.models import Talk, SC_TRACK, SC_DAY, SC_HOUR
 
 
 def home(request):
     """
     View to get the home page
     """
+    talks = {}
+    for sc_track in SC_TRACK:
+        for sc_day in SC_DAY:
+            for sc_hour in SC_HOUR:
+                slot = sc_track + sd_day + sc_hour
+                talk = Talk.objects.get(slot=slot)
+                talks.update({
+                    slot:render_to_string('web/talk.html', {'talk':talk})
+                })
+
     context = {
         'diamonds': Sponsor.objects.filter(level='diamond').order_by("?"),
         'platinums': Sponsor.objects.filter(level='platinum').order_by("?"),
         'golds': Sponsor.objects.filter(level='gold').order_by("?"),
         'silvers': Sponsor.objects.filter(level='silver').order_by("?"),
         'bronze': Sponsor.objects.filter(level='bronze').order_by("?"),
+        'talks': talks,
     }
 
     return render_to_response("web/home.html", context,
