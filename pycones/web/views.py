@@ -23,12 +23,14 @@ def home(request):
     for sc_track in SC_TRACK:
         for sc_day in SC_DAY:
             for sc_hour in SC_HOUR:
-                slot = sc_track + sd_day + sc_hour
-                talk = Talk.objects.get(slot=slot)
-                talks.update({
-                    slot:render_to_string('web/talk.html', {'talk':talk})
-                })
-
+                slot = sc_track[0] + sc_day[0] + sc_hour[0]
+                try:
+                    talk = Talk.objects.get(slot=slot)
+                    talks.update({
+                        slot:render_to_string('web/talk.html', {'talk':talk})
+                    })
+                except:
+                    pass
     context = {
         'diamonds': Sponsor.objects.filter(level='diamond').order_by("?"),
         'platinums': Sponsor.objects.filter(level='platinum').order_by("?"),
