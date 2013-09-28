@@ -83,7 +83,11 @@
 
     var form = $("#setLang");
     form.submit();
+  });
 
+  // schedule toggle
+  $('#agenda ul.schedule-list li').on('click',function(event){
+    $(this).find('div').toggle();
   });
 
 })();
