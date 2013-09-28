@@ -23,6 +23,17 @@ TALK_LEVELS = (
     ('advanced', u'Avanzado'),
     ('scientific', u'Científico'),
 )
+SC_DAY = (('s', u'Sábado'), ('d', u'Domingo'))
+SC_TRACK = (('b', u'Básico'), ('a', u'Avanzado'), ('c', u'Científico'))
+SC_HOUR = (
+    ('9', u'9'),
+    ('10', u'10'),
+    ('11', u'11:30'),
+    ('12', u'12:30'),
+    ('15', u'15'),
+    ('16', u'16'),
+    ('17', u'17:30'),
+)
 
 class Talk(models.Model):
     title = models.CharField(max_length=200)
@@ -32,10 +43,32 @@ class Talk(models.Model):
     abstract = models.TextField(blank=True, null=True)
     selected = models.BooleanField(default=False)
     confirmed = models.BooleanField(default=False)
+    sc_hour = models.CharField(max_length=2,
+                        blank=True, null=True,
+                        choices=SC_HOUR)
+    sc_track = models.CharField(max_length=1,
+                        blank=True, null=True,
+                        choices=SC_TRACK)
+    sc_day = models.CharField(max_length=1,
+                        blank=True, null=True,
+                        choices=SC_DAY)
+    slot = models.CharField(max_length=10,
+                        blank=True, null=True,
+                        unique=True)
+
+    def _slot(self):
+        return u'{}{}{}'.format(self.sc_track, self.sc_day, self.sc_hour)
 
     class Meta:
         verbose_name = u'charla'
 
     def __unicode__(self):
         return self.title
+
+    def save(self):
+        if self.sc_day != None and self.sc_track != None and self.sc_hour != None:
+            self.slot = self._slot()
+        super(Talk, self).save()
+
+
 

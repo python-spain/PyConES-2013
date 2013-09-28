@@ -1,0 +1,21 @@
+{% load static from staticfiles %}
+{% load i18n %}
+
+<article class="accommodation" id="alojamiento">
+    <div class="accommodation-inside">
+        <h2 class="white title">{% trans 'Alojamiento' %}</h2>
+        {% blocktrans %}
+        <p>El campus sur de la UPM está algo apartado del centro, así que nuestra recomendación es que os alojéis en zonas bien comunicadas en transporte público:</p>
+        <ul>
+            <li><strong>En metro</strong>: la estación Sierra de Guadalupe (L1) está a 10 minutos andando.</li>
+            <li><strong>En tren</strong>: la estación Vallecas (C2 y C7) está a 10 minutos andando.</li>
+            <li><strong>En autobús</strong>: hay varios autobuses que llegan: líneas 54, 58, 103, 142, 143, 63, 145.</li>
+        </ul>
+        <p>La línea 1 de metro comunica perfectamente el centro y la universidad. La zona de Méndez Álvaro y Pacífico están muy bien ubicadas y tendrán precios asequibles.</p>
+        <p>Aparte, el campus tiene aparcamiento para quienes vengan en coche.</p>
+        <p>La oferta de hoteles, hostales, o habitaciones privadas en Madrid es muy grande y hay un amplio abanico de opciones.</p>
+        <p>Si buscáis opciones especialmente asequibles, podéis buscar en redes como <a href="www.airbnb.com" target="_blank">www.airbnb.com</a> o albergues.</p>
+        {% endblocktrans %}
+    </div><!--accommodation-inside -->
+</article>
+
