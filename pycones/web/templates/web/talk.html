@@ -1,0 +1,9 @@
+
+                <span class="paper-title">{{talk.title}}</span>
+                <div>
+                    <p>{{talk.abstract}}</p>
+                    {% for speaker in talk.speakers.all %}
+                    <a target="_blank" href="http://twitter.com/{{speaker.twitter}}">{{speaker.name}}</a>
+                    <p>{{speaker.bio}}</p>
+                    {% endfor %}
+                </div>
