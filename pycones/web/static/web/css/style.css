@@ -435,71 +435,8 @@ header {
     bottom: 0;
     right: 0;
 }
-<<<<<<< Updated upstream
-.schedule{
-=======
-
-.call4papers {
-    background: #f0c635;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.call4papers-inside {
-    width: 1050px;
-    max-width: 100%;
-    min-height: 420px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 6px 1%;
-}
-
-.call4papers-text {
-    float: left;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-.call4papers-img {
-    float: right;
-    max-width: 375px;
-    max-height: 286px;
-    margin: 14px 0 0 0;
-    padding: 0;
-    background-image: url(img/world.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-.call4papers-right {
-    float: right;
-    margin: 0;
-    padding: 0;
-    min-width: 350px;
-    margin: 14px 0 0 2%
-}
-
-.call4papers-btn a {
-    float: right;
-    background: #e31212;
-    padding: 15px 20px;
-    color: #ffffff;
-    margin: 40px 23px 0 0;
-    font-size: 1.2em;
-}
-
-.call4papers-btn a:hover {
-    color: red;
-    background: #ffffff;
-}
-
-.call4papers-btn .folleto-pdf { background: #767676; }
-
-
 
 .agenda {
->>>>>>> Stashed changes
     background: #f0c635;
     width: 100%;
     margin: 0;
@@ -883,14 +820,6 @@ a.link-yellow{
     .five-columns>li{
         width: 30%;
     }
-    .call4papers-btn a { 
-        float: initial; 
-        margin: 0; 
-    } 
-    .call4papers-right { 
-        float: initial; 
-    } 
-
     .datos-inside {
         text-align: center;
     }
