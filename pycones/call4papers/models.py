@@ -61,6 +61,7 @@ class Talk(models.Model):
 
     class Meta:
         verbose_name = u'charla'
+        unique_together = ['sc_track', 'sc_day', 'sc_hour']
 
     def __unicode__(self):
         return self.title
