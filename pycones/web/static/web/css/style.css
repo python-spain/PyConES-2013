@@ -435,8 +435,22 @@ header {
     bottom: 0;
     right: 0;
 }
-
-.agenda {
+.call4papers{
+    background: #f0c635;
+    box-sizing: border-box;
+    margin: 0;
+    padding: .5em 1% 0 1%;
+    width: 100%;
+}
+.call4papers-inside{
+    height: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    min-height: 420px;
+    padding: 6px 1%;
+    width: 1050px;
+}
+.schedule{
     background: #f0c635;
     width: 100%;
     margin: 0;
@@ -471,7 +485,7 @@ header {
     cursor: pointer;
 }
 .schedule-list>.list-title{
-    font-size: 1.8em;
+    font-size: 2.3em;
     min-height: 1.2em;
     padding: .3em 0;
     text-align: center;
