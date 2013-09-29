@@ -481,12 +481,13 @@ header {
     box-sizing: border-box;
     border-left: 1em solid white;
     float: left;
-    min-height: 3em;
+    min-height: 6.25rem;
     padding: 1%;
     margin-bottom: 1em;
     width: 33%;
 }
 .schedule-list>li:hover{
+    box-shadow: 0px 0px 10px #000;
     cursor: pointer;
 }
 .schedule-list>.list-title{
@@ -525,8 +526,9 @@ header {
     border-left-color: grey;
     clear: both;
     color: white;
-    text-align: center;
     margin-bottom: .7em;
+    min-height: 3em;
+    text-align: center;
     width: 99%;
 }
 .schedule-list>li>span{
@@ -894,6 +896,7 @@ a.link-yellow{
         font-size: .9em;
         margin-bottom: 0;
         padding: .7em;
+        min-height: 3em;
         width: 96%;
     }
     .schedule-list>li.track0{
