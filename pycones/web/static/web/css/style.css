@@ -47,6 +47,10 @@ a:hover {
     color: #ffffff;
 }
 
+.clear{
+    clear: both;
+    margin-bottom: 1em;
+}
 /* HEADER */
 header {
     width: 100%;
