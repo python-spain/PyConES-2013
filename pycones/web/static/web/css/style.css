@@ -479,6 +479,8 @@ header {
 .schedule-list>li{
     background: white;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
     border-left: 1em solid white;
     float: left;
     min-height: 6.25rem;
