@@ -61,11 +61,11 @@ header {
 }
 
 .header-inside {
-    width: 1050px;
+    margin: 0 auto;
     max-width: 100%;
     min-height: 110px;
-    margin: 0 auto;
     padding: 0 1%;
+    width: 1050px;
 }
 
 .logo-header {
@@ -396,17 +396,6 @@ header {
     padding: 0;
     width: 100%;
 }
-
-.imagen-landscape-inside {
-    width: 1050px;
-    max-width: 100%;
-    min-height: 330px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0 1%;
-    position: relative;
-}
-
 .imagen-landscape2 {
     width: 100%;
     height: 100%;
@@ -417,17 +406,21 @@ header {
     background-position: center top;
     background-color: #000000;
 }
-
-.imagen-landscape2-inside {
+.imagen-landscape-inside,.imagen-landscape2-inside {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
     width: 1050px;
     max-width: 100%;
-    min-height: 670px;
+    min-height: 330px;
     height: 100%;
     margin: 0 auto;
     padding: 0 1%;
     position: relative;
 }
-
+.imagen-landscape2-inside {
+    min-height: 670px;
+}
 .imagen-pie {
     position: absolute;
     background: #484848;
@@ -606,7 +599,7 @@ footer {
     height: 70px;
     margin-bottom: 1em;
     padding: .5em;
-    width: 100%;
+    width: 90%;
 }
 
 .footer-contacto a.button{
@@ -774,12 +767,13 @@ a.link-yellow{
     width: 100%;
 }
 .tickets-inside{
-    width: 1050px;
-    max-width: 100%;
-    min-height: 300px;
     height: 100%;
     margin: 0 auto;
+    max-width: 100%;
+    min-height: 300px;
     padding: 0 1%;
+    text-align: center;
+    width: 1050px;
 }
 .tickets-inside > p{
     text-align: left;
@@ -794,6 +788,11 @@ a.link-yellow{
     max-width: 210px;
     margin-bottom: 1em;
     width: 50%;
+}
+.tickets-inside,.language-selector-inside,.header-inside,.datos-inside{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
 }
 
 /*** < 880px ***/
@@ -892,7 +891,7 @@ a.link-yellow{
         margin: .2em 0;
         width: 48%;
     }
-    .tickets>h2{
+    .tickets-inside > h2{
         text-align: center;
     }
 }

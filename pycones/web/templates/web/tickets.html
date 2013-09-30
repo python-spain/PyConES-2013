@@ -4,14 +4,15 @@
 <article class="tickets" id="tickets">
     <div class="tickets-inside">
         <h2 class="red title">{% trans 'Entradas' %}</h2>
-        {% blocktrans %}
-        <p>Agotadas las entradas. El 1 de octubre pondremos a la venta más a través de <a href="http://www.ticketea.com" target="_new">ticketea</a>. ¡Estad atentos!</p>
-        {% endblocktrans %}
-
         {% comment %}
+        <p>Agotadas las entradas. El 1 de octubre pondremos a la venta más a través de <a href="http://www.ticketea.com" target="_new">ticketea</a>. ¡Estad atentos!</p>
+        {% endcomment %}
+
+        {% blocktrans %}
         <p>Debido a la gran demanda de asistentes que no quieren perderse la PyConES, hemos puesto a la venta un nuevo lote de entradas. Corre que se acaban.</p>
         <p>Pulsa en la imagen para iniciar el proceso de compra.</p>
+        {% endblocktrans %}
         <a href="http://www.ticketea.com/pycones" target="_blank"><img src="{% static 'web/img/ticket.png' %}"  alt={% trans 'Venta de entradas' %} /></a>
-        {% endcomment %}
+
     </div>
 </article>
