@@ -530,11 +530,15 @@ header {
     text-align: center;
     width: 99%;
 }
+.schedule-list>li.track0 a{
+    color: #f0c635;
+}
 .schedule-list>li>span{
     display: block;
 }
 .schedule-list>li>div{
     display: none;
+    text-align: left;
 }
 .schedule-list>li>div>p{
     font-size: .9em;
