@@ -9,6 +9,15 @@ from django.views.generic import TemplateView
 from django.contrib import admin
 admin.autodiscover()
 
+from rest_framework.routers import DefaultRouter
+from pycones.call4papers.api import TalkViewSet, SpeakerViewSet
+from pycones.sponsors.api import SponsorViewSet
+
+api_router = DefaultRouter()
+api_router.register('talks', TalkViewSet)
+api_router.register('speakers', SpeakerViewSet)
+api_router.register('sponsors', SponsorViewSet)
+
 import symposion.views
 
 # from pinax.apps.account.openid_consumer import PinaxConsumer
@@ -17,6 +26,7 @@ WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
 
 urlpatterns = patterns("",
     url(r"^", include('pycones.web.urls')),
+    url(r"^api/v1/", include(api_router.urls)),
     url(r"^newsletter/", include("pycones.newsletter.urls", namespace="newsletter")),
     url(r"^admin/", include(admin.site.urls)),
 
