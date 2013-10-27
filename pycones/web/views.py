@@ -25,7 +25,7 @@ def home(request):
             for sc_hour in SC_HOUR:
                 slot = sc_track[0] + sc_day[0] + sc_hour[0]
                 try:
-                    talk = Talk.objects.get(slot=slot)
+                    talk = Talk.objects.get(slot=slot, selected=True)
                     talks.update({
                         slot:render_to_string('web/talk.html', {'talk':talk})
                     })
