@@ -9,7 +9,7 @@ SPONSOR_LEVELS = (
     ('platinum', u'PLATINO'),
     ('gold', u'ORO'),
     ('silver', u'PLATA'),
-    ('bronze', u'BRONZE'),
+    ('bronce', u'BRONCE'),
 )
 
 class Sponsor(models.Model):

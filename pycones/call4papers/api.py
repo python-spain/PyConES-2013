@@ -10,11 +10,12 @@ class TalkSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Talk
-        exclude = ('selected', 'slot')
+        exclude = ('selected', 'slot', 'confirmed')
 
 class SpeakerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Speaker
+        exclude = ('email',)
 
 
 class TalkViewSet(viewsets.ReadOnlyModelViewSet):
@@ -23,5 +24,5 @@ class TalkViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class SpeakerViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Speaker.objects.filter(talks__selected=True)
+    queryset = Speaker.objects.filter(talks__selected=True).distinct()
     serializer_class = SpeakerSerializer

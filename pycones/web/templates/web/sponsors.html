@@ -81,9 +81,9 @@
 
         <h4>{% trans 'Colaboran' %}</h4>
         <div class="patrocinadores-zone">
-            {% if bronze %}
+            {% if bronce %}
                 <ul class="five-columns">
-                {% for sponsor in bronze %}
+                {% for sponsor in bronce %}
                     <li>
                         <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.name }}">
                             <div style="background-image:url('{{ sponsor.image.url }}');"></div>
