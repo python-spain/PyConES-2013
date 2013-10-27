@@ -163,6 +163,7 @@ INSTALLED_APPS = [
     "account",
     "south",
     "rosetta",
+    "rest_framework",
 
     # symposion
     "symposion",

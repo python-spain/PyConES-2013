@@ -34,4 +34,4 @@ boto
 django-storages
 South==0.7.6
 django-rosetta==0.7.2
-
+djangorestframework==2.3.8
