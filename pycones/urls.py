@@ -18,34 +18,14 @@ api_router.register('talks', TalkViewSet)
 api_router.register('speakers', SpeakerViewSet)
 api_router.register('sponsors', SponsorViewSet)
 
-import symposion.views
-
-# from pinax.apps.account.openid_consumer import PinaxConsumer
-
-WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
 
 urlpatterns = patterns("",
     url(r"^", include('pycones.web.urls')),
+    url(r"^admin/", include(admin.site.urls)),
     url(r"^api/v1/", include(api_router.urls)),
     url(r"^newsletter/", include("pycones.newsletter.urls", namespace="newsletter")),
-    url(r"^admin/", include(admin.site.urls)),
-
-    url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),
-    url(r"^account/login/$", symposion.views.LoginView.as_view(), name="account_login"),
-    url(r"^account/", include("account.urls")),
-    url(r"^dashboard/", symposion.views.dashboard, name="dashboard"),
-    url(r"^speaker/", include("symposion.speakers.urls")),
-    url(r"^proposals/", include("symposion.proposals.urls")),
-    url(r"^sponsors/", include("symposion.sponsorship.urls")),
-    url(r"^boxes/", include("symposion.boxes.urls")),
-    url(r"^teams/", include("symposion.teams.urls")),
-    url(r"^reviews/", include("symposion.reviews.urls")),
-    url(r"^schedule/", include("symposion.schedule.urls")),
-    url(r"^markitup/", include("markitup.urls")),
     url(r'^rosetta/', include('rosetta.urls')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-
-    #url(r"^", include("symposion.cms.urls")),
 )
 
 def mediafiles_urlpatterns():
