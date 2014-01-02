@@ -56,6 +56,8 @@ class Talk(models.Model):
     slot = models.CharField(max_length=10,
                         blank=True, null=True,
                         unique=True)
+    video_url = models.CharField(max_length=255,
+                        blank=True, null=True)
 
     def _slot(self):
         return u'{}{}{}'.format(self.sc_track, self.sc_day, self.sc_hour)
