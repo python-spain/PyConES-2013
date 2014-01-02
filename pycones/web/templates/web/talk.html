@@ -2,6 +2,7 @@
                 <span class="paper-title">{{talk.title}}</span>
                 <div>
                     <p><a href="{{talk.video_url}}" target="_new">{% trans 'Ver vídeo' %}</a></p>
+                    <p><a href="media/{{talk.slides}}" target="_new">{% trans 'Descargar pdf' %}</a></p>
                     <p>{{talk.abstract}}</p>
                     {% for speaker in talk.speakers.all %}
                     <a target="_blank" href="http://twitter.com/{{speaker.twitter}}">{{speaker.name}}</a>

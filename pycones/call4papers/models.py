@@ -58,6 +58,8 @@ class Talk(models.Model):
                         unique=True)
     video_url = models.CharField(max_length=255,
                         blank=True, null=True)
+    slides = models.FileField(upload_to='.',
+                        blank=True, null=True)
 
     def _slot(self):
         return u'{}{}{}'.format(self.sc_track, self.sc_day, self.sc_hour)
