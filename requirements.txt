@@ -5,8 +5,9 @@
 
 Django==1.4.5
 django-debug-toolbar==0.9.4
-PIL==1.1.7
+Pillow
 psycopg2
 South==0.7.6
 django-rosetta==0.7.2
 djangorestframework==2.3.8
+gunicorn==19.1.1
